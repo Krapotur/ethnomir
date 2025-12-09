@@ -25,7 +25,7 @@ class TicketAndCalendarWidgets extends StatelessWidget {
                   right: 10,
                 ),
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 241, 157, 154),
+                  color: const Color.fromARGB(255, 255, 178, 176),
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
                     image: AssetImage("assets/images/ticket.png"),
@@ -60,7 +60,7 @@ class TicketAndCalendarWidgets extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
                     image: AssetImage("assets/images/calendar.png"),
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
