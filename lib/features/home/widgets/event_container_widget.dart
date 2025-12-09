@@ -29,13 +29,13 @@ class EventContainerWidget extends StatelessWidget {
             alignment: AlignmentGeometry.bottomRight,
             children: [
               Container(
-                width: 100,
-                height: imgTitle == 'zoo' ? 70 : 110,
+                width: double.infinity,
+                height: imgTitle == 'zoo' ? 75 : 120,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
                     image: AssetImage("assets/images/$imgTitle.png"),
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),

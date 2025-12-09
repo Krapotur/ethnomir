@@ -29,7 +29,19 @@ class HomeScreen extends StatelessWidget {
             NewsFeedWidget(),
             SizedBox(height: 20),
             EventsWidget(),
+            SizedBox(height: 20),
           ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        width: double.infinity,
+        height: 110,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          image: DecorationImage(
+            image: AssetImage("assets/images/bottombar.png"),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
