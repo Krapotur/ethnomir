@@ -27,9 +27,10 @@ class HomeScreen extends StatelessWidget {
             TicketAndCalendarWidgets(),
             SizedBox(height: 20),
             NewsFeedWidget(),
-            SizedBox(height: 20),
+            SizedBox(height: 25),
             EventsWidget(),
-            SizedBox(height: 20),
+            SizedBox(height: 25),
+            RestaurantsWidget()
           ],
         ),
       ),

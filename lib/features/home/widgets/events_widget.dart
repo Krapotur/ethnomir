@@ -56,32 +56,11 @@ class EventsWidget extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              height: 2.4,
-              width: 30,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color(0xFFF47920),
-              ),
-            ),
+            UnderLineWidget(),
             SizedBox(width: 5),
-            Container(
-              height: 2.4,
-              width: 30,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color(0xFFF47920),
-              ),
-            ),
+            UnderLineWidget(),
             SizedBox(width: 5),
-            Container(
-              height: 2.4,
-              width: 30,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color(0xFFF47920),
-              ),
-            ),
+            UnderLineWidget(),
           ],
         ),
       ],
