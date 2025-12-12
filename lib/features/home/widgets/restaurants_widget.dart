@@ -23,9 +23,12 @@ class RestaurantsWidget extends StatelessWidget {
               'Рестораны',
               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 23),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text('Все'), Icon(Icons.keyboard_arrow_right)],
+            GestureDetector(
+              onTap: () => Navigator.of(context).pushNamed('/restaurants'),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [Text('Все'), Icon(Icons.keyboard_arrow_right)],
+              ),
             ),
           ],
         ),
