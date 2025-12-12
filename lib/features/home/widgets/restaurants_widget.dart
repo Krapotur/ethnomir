@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:ethnomir/features/home/widgets/widgets.dart';
+import 'package:ethnomir/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 
 class RestaurantsWidget extends StatelessWidget {
@@ -24,7 +26,7 @@ class RestaurantsWidget extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 23),
             ),
             GestureDetector(
-              onTap: () => Navigator.of(context).pushNamed('/restaurants'),
+              onTap: () => AutoRouter.of(context).push(RestaurantsRoute()),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [Text('Все'), Icon(Icons.keyboard_arrow_right)],
