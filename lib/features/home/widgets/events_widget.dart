@@ -33,7 +33,7 @@ class EventsWidget extends StatelessWidget {
           children: [
             Text(
               'Активности',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

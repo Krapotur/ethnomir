@@ -23,7 +23,7 @@ class RestaurantsWidget extends StatelessWidget {
           children: [
             Text(
               'Рестораны',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 23),
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 25),
             ),
             GestureDetector(
               onTap: () => AutoRouter.of(context).replaceAll([RestaurantsRoute()]),

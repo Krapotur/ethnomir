@@ -36,7 +36,13 @@ class TicketAndCalendarWidgets extends StatelessWidget {
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text('Билет'), Text('в ЭтноМир')],
+                  children: [
+                    Text('Билет', style: TextStyle(height: 1, fontSize: 16)),
+                    Text(
+                      'в ЭтноМир',
+                      style: TextStyle(height: 1, fontSize: 16),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -73,7 +79,13 @@ class TicketAndCalendarWidgets extends StatelessWidget {
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text('Календарь'), Text('событий')],
+                  children: [
+                    Text(
+                      'Календарь',
+                      style: TextStyle(height: 1, fontSize: 16),
+                    ),
+                    Text('событий', style: TextStyle(height: 1, fontSize: 16)),
+                  ],
                 ),
               ],
             ),

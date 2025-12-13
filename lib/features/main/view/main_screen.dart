@@ -18,20 +18,20 @@ class MainScreen extends StatelessWidget {
             backgroundColor: Colors.white,
             onTap: (index) => _openPage(index, tabsRouter),
             currentIndex: tabsRouter.activeIndex,
-            selectedItemColor: Color(0xFFF47920),
+            selectedItemColor: Colors.black,
             selectedFontSize: 13,
             unselectedFontSize: 11,
             items: [
               BottomNavigationBarItem(
-                icon: Icon(Icons.home, size: 22),
+                icon: Icon(Icons.home, size: 25),
                 label: 'Главная',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.fastfood, size: 22),
+                icon: Icon(Icons.fastfood, size: 25),
                 label: 'Рестораны',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_sharp, size: 20),
+                icon: Icon(Icons.account_circle_sharp, size: 25),
                 label: 'Профиль',
               ),
             ],
