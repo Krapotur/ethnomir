@@ -16,9 +16,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    Future.delayed(
-      const Duration(seconds: 3),
-      () => AutoRouter.of(context).replace(HomeRoute()),
+    new Future.delayed(
+      const Duration(seconds: 4),
+      () => AutoRouter.of(context).replace(MainRoute()),
     );
   }
 
@@ -34,9 +34,9 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Expanded(flex: 2, child: SizedBox()),
+            Expanded(flex: 3, child: SizedBox()),
             Expanded(
-              flex: 3,
+              flex: 2,
               child: Column(
                 children: [
                   Column(
@@ -51,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
                             'ВЕСЬ МИР ЗА ОДИН ДЕНЬ!',
                             colors: colorizeColors,
                             textStyle: TextStyle(
-                              fontSize: 18.0,
+                              fontSize: 17.0,
                               color: theme.primaryColor,
                             ),
                           ),
@@ -63,19 +63,13 @@ class _SplashScreenState extends State<SplashScreen> {
                 ],
               ),
             ),
-            Expanded(
-              flex: 0,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('created by', style: TextStyle(fontSize: 12)),
-                    Text(
-                      ' Abdullaev G.',
-                      style: TextStyle(color: theme.primaryColor, fontSize: 12),
-                    ),
-                  ],
+            Container(
+              height: MediaQuery.of(context).size.height / 2,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/auth_screen/street.jpg'),
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
