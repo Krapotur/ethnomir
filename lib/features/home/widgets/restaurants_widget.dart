@@ -26,7 +26,7 @@ class RestaurantsWidget extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 23),
             ),
             GestureDetector(
-              onTap: () => AutoRouter.of(context).push(RestaurantsRoute()),
+              onTap: () => AutoRouter.of(context).replaceAll([RestaurantsRoute()]),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [Text('Все'), Icon(Icons.keyboard_arrow_right)],

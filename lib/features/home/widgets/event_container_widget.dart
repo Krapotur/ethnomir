@@ -30,7 +30,7 @@ class EventContainerWidget extends StatelessWidget {
             children: [
               Container(
                 width: double.infinity,
-                height: imgTitle == 'zoo' ? 75 : 120,
+                height: imgTitle == 'zoo' ? 80 : 120,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
@@ -55,6 +55,7 @@ class EventContainerWidget extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
+                      height: 1,
                       fontWeight: FontWeight.bold,
                       color: isTextColorWhite != true
                           ? Colors.black

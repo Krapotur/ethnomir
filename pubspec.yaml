@@ -48,11 +48,12 @@ flutter:
       fonts:
         - asset: fonts/Comfortaa-Regular.ttf
         - asset: fonts/Comfortaa-Bold.ttf
-          weight: 700
+          weight: 500
     - family: Gilroy
       fonts:
         - asset: fonts/Gilroy/Gilroy-Light.otf
-        - asset: fonts/Gilroy/Gilroy-ExtraBold.otf
+        - asset: fonts/Gilroy/Gilroy-Medium.ttf
+        - asset: fonts/Gilroy/Gilroy-SemiBold.ttf
   
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
