@@ -14,7 +14,7 @@ class CardWidget extends StatelessWidget {
       offset: Offset(1, 1),
     );
     return Container(
-      padding: EdgeInsets.only(left: 5, right: 20),
+      padding: EdgeInsets.only(left: 5, right: 15),
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 252, 252, 252),
         borderRadius: BorderRadius.circular(10),

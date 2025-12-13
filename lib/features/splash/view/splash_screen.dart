@@ -48,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       AnimatedTextKit(
                         animatedTexts: [
                           ColorizeAnimatedText(
-                            'ВЕСЬ МИР ЗА ОДИН ДЕНЬ!',
+                            'ВЕСЬ МИР ЗА ОДИН ДЕНЬ',
                             colors: colorizeColors,
                             textStyle: TextStyle(
                               fontSize: 17.0,
