@@ -23,16 +23,16 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 15.0),
+        padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 15.0),
         child: Column(
           children: [
             TicketAndCalendarWidgets(),
-            SizedBox(height: 20),
+            SizedBox(height: 15),
             NewsFeedWidget(),
-            SizedBox(height: 25),
+            SizedBox(height: 20),
             EventsWidget(),
-            SizedBox(height: 25),
-            RestaurantsWidget()
+            SizedBox(height: 20),
+            RestaurantsWidget(),
           ],
         ),
       ),
