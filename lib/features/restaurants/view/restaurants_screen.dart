@@ -43,20 +43,24 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
         centerTitle: true,
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(40),
-          child: SizedBox(
-            height: 35,
-            child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              scrollDirection: Axis.horizontal,
-              children: [
-                KitchenBtnContainerWidget(
-                  title: 'Мексиканская',
-                  isSelect: true,
-                ),
-                KitchenBtnContainerWidget(title: 'Русская'),
-                KitchenBtnContainerWidget(title: 'Итальянская'),
-                KitchenBtnContainerWidget(title: 'Грузинская'),
-              ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 10
+            ),
+            child: SizedBox(
+              height: 35,
+              child: ListView(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                scrollDirection: Axis.horizontal,
+                children: [
+                  KitchenBtnContainerWidget(
+                    title: 'Мексиканская',
+                    isSelect: true,
+                  ),
+                  KitchenBtnContainerWidget(title: 'Русская'),
+                  KitchenBtnContainerWidget(title: 'Итальянская'),
+                  KitchenBtnContainerWidget(title: 'Грузинская'),
+                ],
+              ),
             ),
           ),
         ),
