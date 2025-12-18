@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:ethnomir/features/restaurants/widgets/widgets.dart';
+import 'package:ethnomir/repositories/models.dart';
+import 'package:ethnomir/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
@@ -13,24 +15,30 @@ class RestaurantsScreen extends StatefulWidget {
 class _RestaurantsScreenState extends State<RestaurantsScreen> {
   @override
   Widget build(BuildContext context) {
-    final List<ContentCardRestoranWidget> restaurantsList = [
-      ContentCardRestoranWidget(
+    final List<Restaurant> restaurantsList = [
+      Restaurant(
+        title: 'Кафе "Мудрый кочевник"',
+        kitchen: 'Восточная кухня',
+        raiting: '5.0',
+        delivery: 'Бесплатная',
+        price: '470',
+        imgTitle: 'kochevnik',
+      ),
+      Restaurant(
         title: 'Кафе "Борщ"',
         kitchen: 'Русская кухня',
+        raiting: '4.7',
+        delivery: 'от 900р',
         price: '500',
         imgTitle: 'borsh',
       ),
-      ContentCardRestoranWidget(
+      Restaurant(
         title: 'Ресторан "Чайхана"',
         kitchen: 'Восточная кухня',
+        delivery: 'от 1200р',
         price: '650',
+        raiting: '4.9',
         imgTitle: 'chai',
-      ),
-      ContentCardRestoranWidget(
-        title: 'Кафе "Мудрый кочевник"',
-        kitchen: 'Восточная кухня',
-        price: '470',
-        imgTitle: 'kochevnik',
       ),
     ];
 
@@ -44,8 +52,7 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(40),
           child: Padding(
-            padding: const EdgeInsets.only(bottom: 10
-            ),
+            padding: const EdgeInsets.only(bottom: 10),
             child: SizedBox(
               height: 35,
               child: ListView(
@@ -68,8 +75,12 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
       body: ListView.separated(
         padding: EdgeInsets.all(15),
         itemCount: restaurantsList.length,
-        itemBuilder: (context, index) =>
-            CardRestoranWidget(restaurant: restaurantsList[index]),
+        itemBuilder: (context, index) => GestureDetector(
+          onTap: () => AutoRouter.of(
+            context,
+          ).push(RestaurantRoute(restaurant: restaurantsList[index])),
+          child: CardRestaurantWidget(restaurant: restaurantsList[index]),
+        ),
         separatorBuilder: (context, index) => SizedBox(height: 15),
       ),
     );

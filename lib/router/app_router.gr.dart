@@ -9,23 +9,27 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i6;
+import 'package:auto_route/auto_route.dart' as _i7;
 import 'package:ethnomir/features/home/view/home_screen.dart' as _i1;
 import 'package:ethnomir/features/main/view/main_screen.dart' as _i2;
 import 'package:ethnomir/features/profile/view/profile_screen.dart' as _i3;
-import 'package:ethnomir/features/restaurants/view/restaurants_screen.dart'
+import 'package:ethnomir/features/restaurant/view/restaurant_screen.dart'
     as _i4;
-import 'package:ethnomir/features/splash/view/splash_screen.dart' as _i5;
+import 'package:ethnomir/features/restaurants/view/restaurants_screen.dart'
+    as _i5;
+import 'package:ethnomir/features/splash/view/splash_screen.dart' as _i6;
+import 'package:ethnomir/repositories/models.dart' as _i9;
+import 'package:flutter/material.dart' as _i8;
 
 /// generated route for
 /// [_i1.HomeScreen]
-class HomeRoute extends _i6.PageRouteInfo<void> {
-  const HomeRoute({List<_i6.PageRouteInfo>? children})
+class HomeRoute extends _i7.PageRouteInfo<void> {
+  const HomeRoute({List<_i7.PageRouteInfo>? children})
     : super(HomeRoute.name, initialChildren: children);
 
   static const String name = 'HomeRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
       return const _i1.HomeScreen();
@@ -35,13 +39,13 @@ class HomeRoute extends _i6.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.MainScreen]
-class MainRoute extends _i6.PageRouteInfo<void> {
-  const MainRoute({List<_i6.PageRouteInfo>? children})
+class MainRoute extends _i7.PageRouteInfo<void> {
+  const MainRoute({List<_i7.PageRouteInfo>? children})
     : super(MainRoute.name, initialChildren: children);
 
   static const String name = 'MainRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
       return const _i2.MainScreen();
@@ -51,13 +55,13 @@ class MainRoute extends _i6.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.ProfileScreen]
-class ProfileRoute extends _i6.PageRouteInfo<void> {
-  const ProfileRoute({List<_i6.PageRouteInfo>? children})
+class ProfileRoute extends _i7.PageRouteInfo<void> {
+  const ProfileRoute({List<_i7.PageRouteInfo>? children})
     : super(ProfileRoute.name, initialChildren: children);
 
   static const String name = 'ProfileRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
       return const _i3.ProfileScreen();
@@ -66,33 +70,80 @@ class ProfileRoute extends _i6.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.RestaurantsScreen]
-class RestaurantsRoute extends _i6.PageRouteInfo<void> {
-  const RestaurantsRoute({List<_i6.PageRouteInfo>? children})
+/// [_i4.RestaurantScreen]
+class RestaurantRoute extends _i7.PageRouteInfo<RestaurantRouteArgs> {
+  RestaurantRoute({
+    _i8.Key? key,
+    required _i9.Restaurant restaurant,
+    List<_i7.PageRouteInfo>? children,
+  }) : super(
+         RestaurantRoute.name,
+         args: RestaurantRouteArgs(key: key, restaurant: restaurant),
+         initialChildren: children,
+       );
+
+  static const String name = 'RestaurantRoute';
+
+  static _i7.PageInfo page = _i7.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<RestaurantRouteArgs>();
+      return _i4.RestaurantScreen(key: args.key, restaurant: args.restaurant);
+    },
+  );
+}
+
+class RestaurantRouteArgs {
+  const RestaurantRouteArgs({this.key, required this.restaurant});
+
+  final _i8.Key? key;
+
+  final _i9.Restaurant restaurant;
+
+  @override
+  String toString() {
+    return 'RestaurantRouteArgs{key: $key, restaurant: $restaurant}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! RestaurantRouteArgs) return false;
+    return key == other.key && restaurant == other.restaurant;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ restaurant.hashCode;
+}
+
+/// generated route for
+/// [_i5.RestaurantsScreen]
+class RestaurantsRoute extends _i7.PageRouteInfo<void> {
+  const RestaurantsRoute({List<_i7.PageRouteInfo>? children})
     : super(RestaurantsRoute.name, initialChildren: children);
 
   static const String name = 'RestaurantsRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
-      return const _i4.RestaurantsScreen();
+      return const _i5.RestaurantsScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i5.SplashScreen]
-class SplashRoute extends _i6.PageRouteInfo<void> {
-  const SplashRoute({List<_i6.PageRouteInfo>? children})
+/// [_i6.SplashScreen]
+class SplashRoute extends _i7.PageRouteInfo<void> {
+  const SplashRoute({List<_i7.PageRouteInfo>? children})
     : super(SplashRoute.name, initialChildren: children);
 
   static const String name = 'SplashRoute';
 
-  static _i6.PageInfo page = _i6.PageInfo(
+  static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
-      return const _i5.SplashScreen();
+      return const _i6.SplashScreen();
     },
   );
 }

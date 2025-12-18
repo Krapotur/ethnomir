@@ -1,9 +1,10 @@
-import 'package:ethnomir/features/restaurants/widgets/widgets.dart';
+import 'package:ethnomir/features/restaurants/widgets/content_card_restaurant_widget.dart';
+import 'package:ethnomir/repositories/restaurant/model/restaurant.dart';
 import 'package:flutter/material.dart';
 
-class CardRestoranWidget extends StatelessWidget {
-  final ContentCardRestoranWidget restaurant;
-  const CardRestoranWidget({super.key, required this.restaurant});
+class CardRestaurantWidget extends StatelessWidget {
+  final Restaurant restaurant;
+  const CardRestaurantWidget({super.key, required this.restaurant});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,7 @@ class CardRestoranWidget extends StatelessWidget {
               ),
             ),
           ),
-          restaurant,
+          ContentCardRestaurantWidget(restaurant: restaurant),
         ],
       ),
     );

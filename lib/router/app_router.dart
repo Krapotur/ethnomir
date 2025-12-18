@@ -15,5 +15,6 @@ class AppRouter extends RootStackRouter {
         AutoRoute(path: 'profile', page: ProfileRoute.page),
       ],
     ),
+    AutoRoute(path: '/restaurant', page: RestaurantRoute.page),
   ];
 }

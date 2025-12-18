@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:ethnomir/repositories/models.dart';
 import 'package:ethnomir/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 
@@ -16,9 +17,21 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    new Future.delayed(
+    Future.delayed(
       const Duration(seconds: 3),
-      () => AutoRouter.of(context).replace(MainRoute()),
+      () => AutoRouter.of(context).replace(
+        RestaurantsRoute()
+        // RestaurantRoute(
+        //   restaurant: Restaurant(
+        //     title: 'Ресторан "Чайхана"',
+        //     kitchen: 'Восточная кухня',
+        //     delivery: 'от 1200р',
+        //     price: '650',
+        //     raiting: '4.9',
+        //     imgTitle: 'chai',
+        //   ),
+        // ),
+      ),
     );
   }
 
