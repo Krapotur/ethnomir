@@ -57,7 +57,7 @@ class RestaurantScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                '"${restaurant.title}"',
+                                '${restaurant.title}',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,

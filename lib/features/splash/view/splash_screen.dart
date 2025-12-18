@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(
       const Duration(seconds: 3),
       () => AutoRouter.of(context).replace(
-        RestaurantsRoute()
+        HomeRoute(),
         // RestaurantRoute(
         //   restaurant: Restaurant(
         //     title: 'Ресторан "Чайхана"',

@@ -12,6 +12,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 245, 245, 245),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 245, 245, 245),
+        surfaceTintColor: const Color.fromARGB(255, 245, 245, 245),
         centerTitle: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -23,15 +24,15 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 15.0),
-        child: Column(
+        padding: const EdgeInsets.only(top: 15, left: 15.0, right: 15),
+        child: ListView(
           children: [
             TicketAndCalendarWidgets(),
-            SizedBox(height: 15),
+            SizedBox(height: 5),
             NewsFeedWidget(),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             EventsWidget(),
-            SizedBox(height: 20),
+            SizedBox(height: 15),
             RestaurantsWidget(),
           ],
         ),

@@ -3,7 +3,14 @@ import 'package:flutter/material.dart';
 class CardWidget extends StatelessWidget {
   final Widget child;
   final bool? isSelected;
-  const CardWidget({this.isSelected = false, required this.child, super.key});
+  final bool? isBasicPadding;
+
+  const CardWidget({
+    this.isSelected = false,
+    this.isBasicPadding = true,
+    required this.child,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +21,9 @@ class CardWidget extends StatelessWidget {
       offset: Offset(1, 1),
     );
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: isBasicPadding != true
+          ? EdgeInsets.symmetric(horizontal: 10, vertical: 5)
+          : EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 252, 252, 252),
         borderRadius: BorderRadius.circular(10),

@@ -35,7 +35,7 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
         imgTitle: 'borsh',
       ),
       Restaurant(
-        title: 'Ресторан "Чайхана',
+        title: 'Чайхана',
         kitchen: 'Восточная кухня',
         delivery: 'от 1200р',
         raiting: '4.9',
