@@ -14,27 +14,33 @@ class MainScreen extends StatelessWidget {
         final tabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
           body: child,
-          bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Colors.white,
-            onTap: (index) => _openPage(index, tabsRouter),
-            currentIndex: tabsRouter.activeIndex,
-            selectedItemColor: Colors.black,
-            selectedFontSize: 13,
-            unselectedFontSize: 11,
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home, size: 25),
-                label: 'Главная',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.fastfood, size: 25),
-                label: 'Рестораны',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_sharp, size: 25),
-                label: 'Профиль',
-              ),
-            ],
+          bottomNavigationBar: Theme(
+            data: ThemeData(
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+            ),
+            child: BottomNavigationBar(
+              backgroundColor: Colors.white,
+              onTap: (index) => _openPage(index, tabsRouter),
+              currentIndex: tabsRouter.activeIndex,
+              selectedItemColor: Colors.black,
+              selectedFontSize: 13,
+              unselectedFontSize: 11,
+              items: [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home, size: 25),
+                  label: 'Главная',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.fastfood, size: 25),
+                  label: 'Рестораны',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.account_circle_sharp, size: 25),
+                  label: 'Профиль',
+                ),
+              ],
+            ),
           ),
         );
       },
