@@ -13,8 +13,32 @@ class RestaurantsScreen extends StatefulWidget {
 class _RestaurantsScreenState extends State<RestaurantsScreen> {
   @override
   Widget build(BuildContext context) {
+    final List<ContentCardRestoranWidget> restaurantsList = [
+      ContentCardRestoranWidget(
+        title: 'Кафе "Борщ"',
+        kitchen: 'Русская кухня',
+        price: '500',
+        imgTitle: 'borsh',
+      ),
+      ContentCardRestoranWidget(
+        title: 'Ресторан "Чайхана"',
+        kitchen: 'Восточная кухня',
+        price: '650',
+        imgTitle: 'chai',
+      ),
+      ContentCardRestoranWidget(
+        title: 'Кафе "Мудрый кочевник"',
+        kitchen: 'Восточная кухня',
+        price: '470',
+        imgTitle: 'kochevnik',
+      ),
+    ];
+
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        surfaceTintColor: Colors.white,
+        backgroundColor: Colors.white,
         title: Text('Рестораны'),
         centerTitle: true,
         bottom: PreferredSize(
@@ -37,7 +61,13 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
           ),
         ),
       ),
-      body: Column(children: []),
+      body: ListView.separated(
+        padding: EdgeInsets.all(15),
+        itemCount: restaurantsList.length,
+        itemBuilder: (context, index) =>
+            CardRestoranWidget(restaurant: restaurantsList[index]),
+        separatorBuilder: (context, index) => SizedBox(height: 15),
+      ),
     );
   }
 }
