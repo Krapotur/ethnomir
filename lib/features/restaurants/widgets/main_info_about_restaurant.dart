@@ -2,10 +2,7 @@ import 'package:ethnomir/repositories/models.dart';
 import 'package:flutter/material.dart';
 
 class MainInfoAboutRestaurant extends StatelessWidget {
-  const MainInfoAboutRestaurant({
-    super.key,
-    required this.restaurant,
-  });
+  const MainInfoAboutRestaurant({super.key, required this.restaurant});
 
   final Restaurant restaurant;
 
@@ -19,7 +16,9 @@ class MainInfoAboutRestaurant extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              restaurant.title,
+              restaurant.isRestaurnt
+                  ? 'Ресторан "${restaurant.title}"'
+                  : 'Кафе "${restaurant.title}"',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -44,5 +43,3 @@ class MainInfoAboutRestaurant extends StatelessWidget {
     );
   }
 }
-
-

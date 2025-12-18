@@ -17,27 +17,30 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
   Widget build(BuildContext context) {
     final List<Restaurant> restaurantsList = [
       Restaurant(
-        title: 'Кафе "Мудрый кочевник"',
+        title: 'Мудрый кочевник',
         kitchen: 'Восточная кухня',
         raiting: '5.0',
+        isRestaurnt: false,
         delivery: 'Бесплатная',
         price: '470',
         imgTitle: 'kochevnik',
       ),
       Restaurant(
-        title: 'Кафе "Борщ"',
+        title: 'Борщ',
         kitchen: 'Русская кухня',
         raiting: '4.7',
+        isRestaurnt: false,
         delivery: 'от 900р',
         price: '500',
         imgTitle: 'borsh',
       ),
       Restaurant(
-        title: 'Ресторан "Чайхана"',
+        title: 'Ресторан "Чайхана',
         kitchen: 'Восточная кухня',
         delivery: 'от 1200р',
-        price: '650',
         raiting: '4.9',
+        isRestaurnt: true,
+        price: '650',
         imgTitle: 'chai',
       ),
     ];

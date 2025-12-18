@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ethnomir/core/widgets/widgets.dart';
 import 'package:ethnomir/repositories/models.dart';
 import 'package:flutter/material.dart';
 
@@ -30,26 +31,7 @@ class RestaurantScreen extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: 150),
-                Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color.fromARGB(
-                          255,
-                          145,
-                          145,
-                          145,
-                        ).withValues(alpha: 0.5),
-                        spreadRadius: 1,
-                        blurRadius: 2,
-                        offset: Offset(0, 1),
-                      ),
-                    ],
-                  ),
+                CardWidget(
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -75,26 +57,26 @@ class RestaurantScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                restaurant.title,
+                                '"${restaurant.title}"',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20,
+                                  fontSize: 18,
                                   height: 1,
                                 ),
                               ),
                               Text(
                                 restaurant.kitchen,
-                                style: TextStyle(fontSize: 14),
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.grey,
+                                ),
                               ),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.access_time_outlined, size: 16),
-                                  Text(
-                                    '10:00 - 22:00',
-                                    style: TextStyle(fontSize: 14),
-                                  ),
-                                ],
+                              Text(
+                                'Часы работы: 10:00 - 22:00',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.grey,
+                                ),
                               ),
                             ],
                           ),
@@ -124,7 +106,7 @@ class RestaurantScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xFFF47920),
         onPressed: () => AutoRouter.of(context).back(),
-        child: Icon(Icons.chevron_left, color: Colors.white,),
+        child: Icon(Icons.chevron_left, color: Colors.white),
       ),
     );
   }
