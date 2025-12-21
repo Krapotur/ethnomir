@@ -1,0 +1,9 @@
+export './btn_to_back_widget.dart';
+export './info_about_restaurant_widget.dart';
+export './img_restaurant_container_widget.dart';
+export './badge_label_widget.dart';
+export './card_info_about_restaurant_widget.dart';
+export './background_img_scaffold_widget.dart';
+export './category_btn_container_widget.dart';
+export './categories_listview_widget.dart';
+export './category_title_widget.dart';

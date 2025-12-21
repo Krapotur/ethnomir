@@ -43,6 +43,7 @@ flutter:
     - assets/images/
     - assets/images/auth_screen/
     - assets/images/rest/
+    - assets/images/menu/
 
   fonts:
     - family: Gilroy

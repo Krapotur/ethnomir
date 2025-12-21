@@ -16,7 +16,7 @@ class MainInfoAboutRestaurant extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              restaurant.isRestaurnt
+              restaurant.isRestaurant
                   ? 'Ресторан "${restaurant.title}"'
                   : 'Кафе "${restaurant.title}"',
               style: TextStyle(

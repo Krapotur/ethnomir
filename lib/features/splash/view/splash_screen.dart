@@ -23,9 +23,10 @@ class _SplashScreenState extends State<SplashScreen> {
         HomeRoute(),
         // RestaurantRoute(
         //   restaurant: Restaurant(
-        //     title: 'Ресторан "Чайхана"',
+        //     title: 'Кафе "Мудрый кочевник"',
         //     kitchen: 'Восточная кухня',
         //     delivery: 'от 1200р',
+        //     isRestaurant: true,
         //     price: '650',
         //     raiting: '4.9',
         //     imgTitle: 'chai',
