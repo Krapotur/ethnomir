@@ -14,119 +14,40 @@ class RestaurantScreen extends StatelessWidget {
     bool isClose = true;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          BackgroundImgScaffoldWidget(imgTitle: restaurant.imgTitle),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 70),
-              BtnToBackScreenWidget(),
-              SizedBox(height: 70),
-              CardInfoAboutRestaurantWidget(
-                isClose: isClose,
-                restaurant: restaurant,
-              ),
-              SizedBox(height: 10),
-              CategoriesListviewWidget(),
-              SizedBox(height: 10),
-              CategoryTitleWidget(),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 2,
-                child: ListView.separated(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  scrollDirection: Axis.vertical,
-                  itemBuilder: (context, index) => Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 100,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            image: DecorationImage(
-                              image: AssetImage(
-                                'assets/images/menu/shorpa.jpg',
-                              ),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 20),
-                        Container(
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Шорпа с бараниной',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                ),
-                              ),
-                              Text(
-                                '360 г * 750 ккал',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                              SizedBox(height: 10),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(3),
-                                      color: const Color.fromARGB(
-                                        255,
-                                        232,
-                                        232,
-                                        232,
-                                      ),
-                                    ),
-                                    child: Icon(
-                                      Icons.add,
-                                      size: 25,
-                                      color: const Color.fromARGB(
-                                        255,
-                                        96,
-                                        96,
-                                        96,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(width: 10),
-                                  Text(
-                                    '550 р.',
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  separatorBuilder: (context, index) => SizedBox(height: 10),
-                  itemCount: 5,
-                ),
-              ),
-            ],
-          ),
-        ],
+      body: CustomScrollView(
+        slivers: [SliverAppBar.large(title: Text(restaurant.title))],
       ),
+
+      // Stack(
+      //   children: [
+      //     BackgroundImgScaffoldWidget(imgTitle: restaurant.imgTitle),
+      //     Column(
+      //       crossAxisAlignment: CrossAxisAlignment.start,
+      //       children: [
+      //         SizedBox(height: 70),
+      //         BtnToBackScreenWidget(),
+      //         SizedBox(height: 70),
+      //         CardInfoAboutRestaurantWidget(
+      //           isClose: isClose,
+      //           restaurant: restaurant,
+      //         ),
+      //         SizedBox(height: 10),
+      //         CategoriesListviewWidget(),
+      //         SizedBox(height: 10),
+      //         CategoryTitleWidget(),
+      //         Expanded(
+      //           child: ListView.separated(
+      //             padding: EdgeInsets.only(top: 10, left: 10, right: 10),
+      //             scrollDirection: Axis.vertical,
+      //             itemBuilder: (context, index) => CardPositionWidget(),
+      //             separatorBuilder: (context, index) => SizedBox(height: 10),
+      //             itemCount: 5,
+      //           ),
+      //         ),
+      //       ],
+      //     ),
+      //   ],
+      // ),
     );
   }
 }

@@ -7,3 +7,4 @@ export './background_img_scaffold_widget.dart';
 export './category_btn_container_widget.dart';
 export './categories_listview_widget.dart';
 export './category_title_widget.dart';
+export './card_position_widget.dart';
