@@ -2,8 +2,15 @@ import 'package:auto_route/auto_route.dart';
 import 'package:ethnomir/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 
-class AppbarAvatarWidget extends StatelessWidget {
-  const AppbarAvatarWidget({super.key});
+class AvatarWidget extends StatelessWidget {
+  final double height;
+  final double width;
+
+  const AvatarWidget({
+    super.key,
+    required this.height,
+    required this.width,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +36,8 @@ class AppbarAvatarWidget extends StatelessWidget {
           ],
         ),
         child: Container(
-          height: 50,
-          width: 50,
+          height: height,
+          width: width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
             image: DecorationImage(

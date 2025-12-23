@@ -15,7 +15,59 @@ class RestaurantScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: CustomScrollView(
-        slivers: [SliverAppBar.large(title: Text(restaurant.title))],
+        slivers: [
+          SliverAppBar(
+            backgroundColor: Colors.white,
+            surfaceTintColor: Colors.white,
+            leading: BtnToBackScreenWidget(),
+            // automaticallyImplyLeading: false,
+            iconTheme: IconThemeData(color: Colors.white),
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(50),
+              child: CardInfoAboutRestaurantWidget(
+                isClose: isClose,
+                restaurant: restaurant,
+              ),
+            ),
+            pinned: true,
+            expandedHeight: MediaQuery.of(context).size.height * 0.2,
+            flexibleSpace: Container(
+              height: 200,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                ),
+                image: DecorationImage(
+                  image: AssetImage(
+                    'assets/images/rest/${restaurant.imgTitle}.png',
+                  ),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          ),
+          SliverAppBar(
+            primary: false,
+            pinned: true,
+            backgroundColor: Colors.white,
+            surfaceTintColor: Colors.white,
+            // title: Text(restaurant.title),
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(10),
+              child: CategoriesListviewWidget(),
+            ),
+          ),
+          SliverToBoxAdapter(child: CategoryTitleWidget()),
+          SliverPadding(
+            padding: EdgeInsets.all(10),
+            sliver: SliverList.separated(
+              itemCount: 10,
+              itemBuilder: (context, index) => CardPositionWidget(),
+              separatorBuilder: (context, index) => SizedBox(height: 10),
+            ),
+          ),
+        ],
       ),
 
       // Stack(

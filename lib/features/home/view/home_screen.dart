@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            AppbarAvatarWidget(),
+            AvatarWidget(height: 50, width: 50),
             AppbarTitleWidget(),
             SizedBox(width: 50),
           ],

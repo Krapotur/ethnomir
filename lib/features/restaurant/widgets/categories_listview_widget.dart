@@ -7,9 +7,9 @@ class CategoriesListviewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 45,
+      height: 50,
       child: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+        padding: EdgeInsets.only(right: 10, left: 10, bottom: 15),
         scrollDirection: Axis.horizontal,
         children: [
           CategoryBtnContainerWidget(title: 'Популярное', isSelect: true),

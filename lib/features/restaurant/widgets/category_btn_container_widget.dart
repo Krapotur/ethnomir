@@ -25,21 +25,8 @@ class CategoryBtnContainerWidget extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: 5),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: isSelect == true ? null : Color(0xFFD4D4D4),
+          color: isSelect == true ? null : Color.fromARGB(255, 202, 202, 202),
           gradient: isSelect == true ? linearGradient : null,
-          boxShadow: [
-            BoxShadow(
-              color: const Color.fromARGB(
-                255,
-                197,
-                197,
-                197,
-              ).withValues(alpha: 0.5),
-              spreadRadius: 1,
-              blurRadius: 2,
-              offset: Offset(1, 1),
-            ),
-          ],
         ),
         child: Text(title, style: TextStyle(color: Colors.white)),
       ),

@@ -18,20 +18,21 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Future.delayed(
-      const Duration(milliseconds: 3),
+      const Duration(seconds: 3),
       () => AutoRouter.of(context).replace(
-        // HomeRoute(),
-        RestaurantRoute(
-          restaurant: Restaurant(
-            title: 'Кафе "Мудрый кочевник"',
-            kitchen: 'Восточная кухня',
-            delivery: 'от 1200р',
-            isRestaurant: true,
-            price: '650',
-            raiting: '4.9',
-            imgTitle: 'chai',
-          ),
-        ),
+        // ProfileRoute()
+        HomeRoute(),
+        // RestaurantRoute(
+        //   restaurant: Restaurant(
+        //     title: 'Кафе "Мудрый кочевник"',
+        //     kitchen: 'Восточная кухня',
+        //     delivery: 'от 1200р',
+        //     isRestaurant: true,
+        //     price: '650',
+        //     raiting: '4.9',
+        //     imgTitle: 'chai',
+        //   ),
+        // ),
       ),
     );
   }

@@ -14,15 +14,15 @@ class BtnToBackScreenWidget extends StatelessWidget {
           GestureDetector(
             onTap: () => AutoRouter.of(context).back(),
             child: Container(
-              height: 50,
-              width: 50,
+              height: 40,
+              width: 40,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Colors.white.withAlpha(50),
                 borderRadius: BorderRadius.circular(50),
               ),
               child: Icon(
                 Icons.chevron_left,
-                color: const Color.fromARGB(255, 78, 77, 77),
+                color: const Color.fromARGB(255, 255, 255, 255),
                 size: 35,
               ),
             ),
