@@ -12,7 +12,7 @@ class RestaurantsWidget extends StatelessWidget {
         RestaurantContainerWidget(title: 'Фастфуд', imgTitle: 'fastfood', color: Color(0xFFC8F8FF)),
         RestaurantContainerWidget(title: 'Русская', imgTitle: 'rus_kitchen', color: Color(0xFFFF7272)),
         RestaurantContainerWidget(title: 'Итальянская', imgTitle: 'italy_kitchen', color: Color(0xFFE5FFAE)),
-        RestaurantContainerWidget(title: 'Мексиканская', imgTitle: 'mexico_kitchen', color: Color(0xFFEDC8FF)),
+        RestaurantContainerWidget(title: 'Восточная', imgTitle: 'mexico_kitchen', color: Color(0xFFEDC8FF)),
     ];
 
     return Column(
@@ -42,7 +42,7 @@ class RestaurantsWidget extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: restaurantsList.length,
             itemBuilder: (context, index) => GestureDetector(
-              onTap: () => AutoRouter.of(context).replaceAll([RestaurantsRoute()]),
+              onTap: () => AutoRouter.of(context).replaceAll([RestaurantsRoute(kitchen: restaurantsList[index].title)]),
               child: restaurantsList[index]),
             separatorBuilder: (context, index) => SizedBox(width: 15),
           ),

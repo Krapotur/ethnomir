@@ -6,45 +6,46 @@ import 'package:flutter/material.dart';
 
 @RoutePage()
 class RestaurantsScreen extends StatefulWidget {
-  const RestaurantsScreen({super.key});
+  final String? kitchen;
+  const RestaurantsScreen({super.key, this.kitchen});
 
   @override
   State<RestaurantsScreen> createState() => _RestaurantsScreenState();
 }
 
 class _RestaurantsScreenState extends State<RestaurantsScreen> {
+  List<Restaurant> restaurantsList = [
+    Restaurant(
+      title: 'Мудрый кочевник',
+      kitchen: 'Восточная',
+      raiting: '5.0',
+      isRestaurant: false,
+      delivery: 'Бесплатная',
+      price: '470',
+      imgTitle: 'kochevnik',
+    ),
+    Restaurant(
+      title: 'Борщ',
+      kitchen: 'Русская',
+      raiting: '4.7',
+      isRestaurant: false,
+      delivery: 'от 900р',
+      price: '500',
+      imgTitle: 'borsh',
+    ),
+    Restaurant(
+      title: 'Чайхана',
+      kitchen: 'Восточная',
+      delivery: 'от 1200р',
+      raiting: '4.9',
+      isRestaurant: true,
+      price: '650',
+      imgTitle: 'chai',
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    final List<Restaurant> restaurantsList = [
-      Restaurant(
-        title: 'Мудрый кочевник',
-        kitchen: 'Восточная',
-        raiting: '5.0',
-        isRestaurant: false,
-        delivery: 'Бесплатная',
-        price: '470',
-        imgTitle: 'kochevnik',
-      ),
-      Restaurant(
-        title: 'Борщ',
-        kitchen: 'Русская',
-        raiting: '4.7',
-        isRestaurant: false,
-        delivery: 'от 900р',
-        price: '500',
-        imgTitle: 'borsh',
-      ),
-      Restaurant(
-        title: 'Чайхана',
-        kitchen: 'Восточная',
-        delivery: 'от 1200р',
-        raiting: '4.9',
-        isRestaurant: true,
-        price: '650',
-        imgTitle: 'chai',
-      ),
-    ];
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -63,12 +64,21 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
                 scrollDirection: Axis.horizontal,
                 children: [
                   KitchenBtnContainerWidget(
-                    title: 'Мексиканская',
-                    isSelect: true,
+                    title: 'Восточная',
+                    isSelect: 'Восточная' == widget.kitchen,
                   ),
-                  KitchenBtnContainerWidget(title: 'Русская'),
-                  KitchenBtnContainerWidget(title: 'Итальянская'),
-                  KitchenBtnContainerWidget(title: 'Грузинская'),
+                  KitchenBtnContainerWidget(
+                    title: 'Русская',
+                    isSelect: 'Русская' == widget.kitchen,
+                  ),
+                  KitchenBtnContainerWidget(
+                    title: 'Итальянская',
+                    isSelect: 'Итальянская' == widget.kitchen,
+                  ),
+                  KitchenBtnContainerWidget(
+                    title: 'Грузинская',
+                    isSelect: 'Грузинская' == widget.kitchen,
+                  ),
                 ],
               ),
             ),
@@ -87,5 +97,18 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
         separatorBuilder: (context, index) => SizedBox(height: 15),
       ),
     );
+  }
+
+  void getKitchenList(String kitchen) {
+    List<Restaurant> newList = [];
+
+    for (var rest in restaurantsList) {
+      if (rest.kitchen == kitchen) {
+        newList.add(rest);
+      }
+    }
+    setState(() {
+      restaurantsList = newList;
+    });
   }
 }

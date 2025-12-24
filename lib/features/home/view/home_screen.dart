@@ -14,14 +14,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 245, 245, 245),
         surfaceTintColor: const Color.fromARGB(255, 245, 245, 245),
         centerTitle: true,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            AvatarWidget(height: 50, width: 50),
-            AppbarTitleWidget(),
-            SizedBox(width: 50),
-          ],
-        ),
+        title: AppbarTitleWidget(),
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 15, left: 15.0, right: 15),

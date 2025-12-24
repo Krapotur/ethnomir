@@ -118,18 +118,51 @@ class RestaurantRouteArgs {
 
 /// generated route for
 /// [_i5.RestaurantsScreen]
-class RestaurantsRoute extends _i7.PageRouteInfo<void> {
-  const RestaurantsRoute({List<_i7.PageRouteInfo>? children})
-    : super(RestaurantsRoute.name, initialChildren: children);
+class RestaurantsRoute extends _i7.PageRouteInfo<RestaurantsRouteArgs> {
+  RestaurantsRoute({
+    _i8.Key? key,
+    String? kitchen,
+    List<_i7.PageRouteInfo>? children,
+  }) : super(
+         RestaurantsRoute.name,
+         args: RestaurantsRouteArgs(key: key, kitchen: kitchen),
+         initialChildren: children,
+       );
 
   static const String name = 'RestaurantsRoute';
 
   static _i7.PageInfo page = _i7.PageInfo(
     name,
     builder: (data) {
-      return const _i5.RestaurantsScreen();
+      final args = data.argsAs<RestaurantsRouteArgs>(
+        orElse: () => const RestaurantsRouteArgs(),
+      );
+      return _i5.RestaurantsScreen(key: args.key, kitchen: args.kitchen);
     },
   );
+}
+
+class RestaurantsRouteArgs {
+  const RestaurantsRouteArgs({this.key, this.kitchen});
+
+  final _i8.Key? key;
+
+  final String? kitchen;
+
+  @override
+  String toString() {
+    return 'RestaurantsRouteArgs{key: $key, kitchen: $kitchen}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! RestaurantsRouteArgs) return false;
+    return key == other.key && kitchen == other.kitchen;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ kitchen.hashCode;
 }
 
 /// generated route for
