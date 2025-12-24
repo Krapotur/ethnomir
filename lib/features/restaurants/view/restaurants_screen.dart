@@ -18,7 +18,7 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
     final List<Restaurant> restaurantsList = [
       Restaurant(
         title: 'Мудрый кочевник',
-        kitchen: 'Восточная кухня',
+        kitchen: 'Восточная',
         raiting: '5.0',
         isRestaurant: false,
         delivery: 'Бесплатная',
@@ -27,7 +27,7 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
       ),
       Restaurant(
         title: 'Борщ',
-        kitchen: 'Русская кухня',
+        kitchen: 'Русская',
         raiting: '4.7',
         isRestaurant: false,
         delivery: 'от 900р',
@@ -36,7 +36,7 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
       ),
       Restaurant(
         title: 'Чайхана',
-        kitchen: 'Восточная кухня',
+        kitchen: 'Восточная',
         delivery: 'от 1200р',
         raiting: '4.9',
         isRestaurant: true,

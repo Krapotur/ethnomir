@@ -44,7 +44,7 @@ class InfoAboutRestaurantWidget extends StatelessWidget {
             ],
           ),
           Text(
-            restaurant.kitchen,
+           '${restaurant.kitchen} кухня',
             style: TextStyle(fontSize: 13, color: Colors.grey),
           ),
           Text(

@@ -11,15 +11,9 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.white,
-        title: Text('Профиль'),
-        centerTitle: true,
-      ),
       body: Container(
         width: double.infinity,
-        padding: EdgeInsets.only(top: 10),
+        padding: EdgeInsets.only(top: 70),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -56,9 +50,8 @@ class ProfileScreen extends StatelessWidget {
                   CardButtonWidget(
                     title: 'Заказ еды',
                     subTitle: 'История заказов',
+                    imgTitle: '1',
                   ),
-                  const SizedBox(height: 10),
-                  CardButtonWidget(title: 'Мой отель', subTitle: 'Информация'),
                   const SizedBox(height: 10),
                   Row(
                     children: [
@@ -131,7 +124,8 @@ class ProfileScreen extends StatelessWidget {
                           children: [
                             Flexible(
                               flex: 2,
-                              child: SupportBtnContainerWidget()),
+                              child: SupportBtnContainerWidget(),
+                            ),
                             SizedBox(width: 10),
                             Flexible(
                               flex: 1,

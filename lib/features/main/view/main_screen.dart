@@ -23,7 +23,7 @@ class MainScreen extends StatelessWidget {
               backgroundColor: Colors.white,
               onTap: (index) => _openPage(index, tabsRouter),
               currentIndex: tabsRouter.activeIndex,
-              selectedItemColor: Colors.black,
+              selectedItemColor: Color(0xFFF47920),
               selectedFontSize: 13,
               unselectedFontSize: 11,
               items: [

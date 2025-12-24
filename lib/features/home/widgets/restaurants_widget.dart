@@ -41,7 +41,9 @@ class RestaurantsWidget extends StatelessWidget {
             clipBehavior: Clip.hardEdge,
             scrollDirection: Axis.horizontal,
             itemCount: restaurantsList.length,
-            itemBuilder: (context, index) => restaurantsList[index],
+            itemBuilder: (context, index) => GestureDetector(
+              onTap: () => AutoRouter.of(context).replaceAll([RestaurantsRoute()]),
+              child: restaurantsList[index]),
             separatorBuilder: (context, index) => SizedBox(width: 15),
           ),
         ),

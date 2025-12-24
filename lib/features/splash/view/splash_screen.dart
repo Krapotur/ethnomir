@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Future.delayed(
-      const Duration(seconds: 3),
+      const Duration(seconds: 2),
       () => AutoRouter.of(context).replace(
         // ProfileRoute()
         HomeRoute(),
@@ -65,6 +65,7 @@ class _SplashScreenState extends State<SplashScreen> {
                           ColorizeAnimatedText(
                             'ВЕСЬ МИР ЗА ОДИН ДЕНЬ',
                             colors: colorizeColors,
+                            speed: Duration(milliseconds: 90),
                             textStyle: TextStyle(
                               fontSize: 17.0,
                               color: theme.primaryColor,

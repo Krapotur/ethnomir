@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:ethnomir/core/widgets/card_widget.dart';
 import 'package:ethnomir/features/restaurant/widgets/widgets.dart';
 import 'package:ethnomir/repositories/models.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +19,6 @@ class RestaurantScreen extends StatelessWidget {
             backgroundColor: Colors.white,
             surfaceTintColor: Colors.white,
             leading: BtnToBackScreenWidget(),
-            // automaticallyImplyLeading: false,
             iconTheme: IconThemeData(color: Colors.white),
             bottom: PreferredSize(
               preferredSize: Size.fromHeight(50),
@@ -50,9 +48,9 @@ class RestaurantScreen extends StatelessWidget {
           SliverAppBar(
             primary: false,
             pinned: true,
+            automaticallyImplyLeading: false,
             backgroundColor: Colors.white,
             surfaceTintColor: Colors.white,
-            // title: Text(restaurant.title),
             bottom: PreferredSize(
               preferredSize: Size.fromHeight(10),
               child: CategoriesListviewWidget(),
