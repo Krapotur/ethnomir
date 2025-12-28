@@ -7,7 +7,7 @@ class AppRouter extends RootStackRouter {
   List<AutoRoute> get routes => [
     AutoRoute(path: '/', page: SplashRoute.page),
     AutoRoute(
-      path: '/main',
+      path: '/main-screen',
       page: MainRoute.page,
       children: [
         AutoRoute(path: 'home', page: HomeRoute.page),
