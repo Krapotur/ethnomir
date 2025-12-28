@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
       const Duration(seconds: 2),
       () => AutoRouter.of(context).replace(
         // ProfileRoute()
-        HomeRoute(),
+        HomeRoute()
         // RestaurantRoute(
         //   restaurant: Restaurant(
         //     title: 'Кафе "Мудрый кочевник"',
