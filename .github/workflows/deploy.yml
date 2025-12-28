@@ -4,12 +4,13 @@ on:
   push:
     branches:
       - main  # Запускать при пуше в ветку main
-
+permissions:
+  contents: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
