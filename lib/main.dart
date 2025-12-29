@@ -1,3 +1,4 @@
+import 'package:ethnomir/core/theme/theme.dart';
 import 'package:ethnomir/router/app_router.dart';
 import 'package:flutter/material.dart';
 
@@ -13,10 +14,7 @@ class MyApp extends StatelessWidget {
     final appRouter = AppRouter();
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.white),
-        fontFamily: 'Gilroy',
-      ),
+      theme: primaryTheme,
       routerConfig: appRouter.config(),
     );
   }

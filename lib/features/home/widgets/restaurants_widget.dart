@@ -8,11 +8,28 @@ class RestaurantsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     List<RestaurantContainerWidget> restaurantsList = [
-        RestaurantContainerWidget(title: 'Фастфуд', imgTitle: 'fastfood', color: Color(0xFFC8F8FF)),
-        RestaurantContainerWidget(title: 'Русская', imgTitle: 'rus_kitchen', color: Color(0xFFFF7272)),
-        RestaurantContainerWidget(title: 'Итальянская', imgTitle: 'italy_kitchen', color: Color(0xFFE5FFAE)),
-        RestaurantContainerWidget(title: 'Восточная', imgTitle: 'mexico_kitchen', color: Color(0xFFEDC8FF)),
+      RestaurantContainerWidget(
+        title: 'Фастфуд',
+        imgTitle: 'fastfood',
+        color: Color(0xFFC8F8FF),
+      ),
+      RestaurantContainerWidget(
+        title: 'Русская',
+        imgTitle: 'rus_kitchen',
+        color: Color(0xFFFF7272),
+      ),
+      RestaurantContainerWidget(
+        title: 'Итальянская',
+        imgTitle: 'italy_kitchen',
+        color: Color(0xFFE5FFAE),
+      ),
+      RestaurantContainerWidget(
+        title: 'Восточная',
+        imgTitle: 'mexico_kitchen',
+        color: Color(0xFFEDC8FF),
+      ),
     ];
 
     return Column(
@@ -21,15 +38,16 @@ class RestaurantsWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'Рестораны',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 25),
-            ),
+            Text('Рестораны', style: theme.textTheme.titleLarge),
             GestureDetector(
-              onTap: () => AutoRouter.of(context).replaceAll([RestaurantsRoute()]),
+              onTap: () =>
+                  AutoRouter.of(context).replaceAll([RestaurantsRoute()]),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [Text('Все'), Icon(Icons.keyboard_arrow_right)],
+                children: [
+                  Text('Все', style: theme.textTheme.bodyMedium),
+                  Icon(Icons.keyboard_arrow_right),
+                ],
               ),
             ),
           ],
@@ -42,8 +60,11 @@ class RestaurantsWidget extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: restaurantsList.length,
             itemBuilder: (context, index) => GestureDetector(
-              onTap: () => AutoRouter.of(context).replaceAll([RestaurantsRoute(kitchen: restaurantsList[index].title)]),
-              child: restaurantsList[index]),
+              onTap: () => AutoRouter.of(context).replaceAll([
+                RestaurantsRoute(kitchen: restaurantsList[index].title),
+              ]),
+              child: restaurantsList[index],
+            ),
             separatorBuilder: (context, index) => SizedBox(width: 15),
           ),
         ),

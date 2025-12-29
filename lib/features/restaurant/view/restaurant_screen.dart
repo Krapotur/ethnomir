@@ -21,14 +21,14 @@ class RestaurantScreen extends StatelessWidget {
             leading: BtnToBackScreenWidget(),
             iconTheme: IconThemeData(color: Colors.white),
             bottom: PreferredSize(
-              preferredSize: Size.fromHeight(50),
+              preferredSize: Size.fromHeight(0),
               child: CardInfoAboutRestaurantWidget(
                 isClose: isClose,
                 restaurant: restaurant,
               ),
             ),
             pinned: true,
-            expandedHeight: MediaQuery.of(context).size.height * 0.2,
+            expandedHeight: MediaQuery.of(context).size.height * 0.25,
             flexibleSpace: Container(
               height: 200,
               decoration: BoxDecoration(

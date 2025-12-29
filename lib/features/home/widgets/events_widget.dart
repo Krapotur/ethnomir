@@ -6,6 +6,8 @@ class EventsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+
     List<EventContainerWidget> eventsList = [
       EventContainerWidget(
         color: Color(0xFFE5FFAE),
@@ -31,10 +33,7 @@ class EventsWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'Активности',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-            ),
+            Text('Активности', style: theme.textTheme.titleLarge),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [Text('Все'), Icon(Icons.keyboard_arrow_right)],
