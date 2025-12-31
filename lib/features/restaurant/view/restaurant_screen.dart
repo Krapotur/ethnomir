@@ -15,38 +15,13 @@ class RestaurantScreen extends StatefulWidget {
 }
 
 class _RestaurantScreenState extends State<RestaurantScreen> {
-  double expandedHeight = 200;
+  double expandedHeight = 210;
   double toolbarHeight = 50;
-  ScrollController scrollController = ScrollController();
-  bool isCollapsed = false;
-
-  Future scrollListener() async {
-    debugPrint(scrollController.offset.toString());
-        if (scrollController.offset > expandedHeight - toolbarHeight) {
-      if (!isCollapsed) {
-        await Future.delayed(Duration(milliseconds: 125));
-        setState(() {
-          isCollapsed = true;
-        });
-      }
-    } else if (scrollController.offset < expandedHeight - toolbarHeight) {
-      if (isCollapsed) {
-        setState(() {
-          isCollapsed = false;
-        });
-      }
-    }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    scrollController.addListener(scrollListener);
-  }
 
   @override
   Widget build(BuildContext context) {
     bool isClose = true;
+    ThemeData theme = Theme.of(context);
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 233, 233, 233),
       body: CustomScrollView(
@@ -82,21 +57,30 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
           //   ),
           // ),
           SliverAppBar(
-            backgroundColor: Colors.white,
+            backgroundColor:Colors.white,
             surfaceTintColor: Colors.white,
             toolbarHeight: toolbarHeight,
             expandedHeight: expandedHeight,
             pinned: true,
             leading: BtnToBackScreenWidget(),
-            title: Text(isCollapsed ? widget.restaurant.title : ''),
+            centerTitle: true,
+            title: Container(
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 252, 252, 252),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text(widget.restaurant.title, style: theme.textTheme.titleLarge,),
+            ),
             flexibleSpace: FlexibleSpaceBar(
               background: Image(
                 image: AssetImage(
                   'assets/images/rest/${widget.restaurant.imgTitle}.png',
                 ),
+                fit: BoxFit.cover,
               ),
             ),
-            systemOverlayStyle: isCollapsed ? null : SystemUiOverlayStyle.light,
+            systemOverlayStyle:  SystemUiOverlayStyle.light,
           ),
 
           SliverAppBar(

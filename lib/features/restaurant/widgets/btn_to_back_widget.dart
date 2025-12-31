@@ -17,12 +17,12 @@ class BtnToBackScreenWidget extends StatelessWidget {
               height: 40,
               width: 40,
               decoration: BoxDecoration(
-                color: Colors.white.withAlpha(50),
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(50),
               ),
               child: Icon(
                 Icons.chevron_left,
-                color: const Color.fromARGB(255, 255, 255, 255),
+                color: const Color.fromARGB(255, 39, 39, 39),
                 size: 35,
               ),
             ),
