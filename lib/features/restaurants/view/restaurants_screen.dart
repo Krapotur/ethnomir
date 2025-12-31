@@ -89,9 +89,11 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
         padding: EdgeInsets.all(15),
         itemCount: restaurantsList.length,
         itemBuilder: (context, index) => GestureDetector(
-          onTap: () => AutoRouter.of(
-            context,
-          ).push(RestaurantRoute(restaurant: restaurantsList[index])),
+          onTap: () => AutoRouter.of(context).push(
+            RestaurantRoute(
+              restaurant: restaurantsList[index],
+            ),
+          ),
           child: CardRestaurantWidget(restaurant: restaurantsList[index]),
         ),
         separatorBuilder: (context, index) => SizedBox(height: 15),

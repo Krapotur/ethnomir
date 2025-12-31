@@ -23,6 +23,7 @@ class CardInfoAboutRestaurantWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: CardWidget(
+          isDefaultSize: false,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

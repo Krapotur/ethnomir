@@ -40,10 +40,7 @@ class TicketAndCalendarWidgets extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Билет', style: TextStyle(height: 1, fontSize: 16)),
-                    Text(
-                      'в ЭтноМир',
-                      style: TextStyle(height: 1, fontSize: 16),
-                    ),
+                    Text('в ЭтноМир', style: TextStyle(height: 1, fontSize: 16)),
                   ],
                 ),
               ],

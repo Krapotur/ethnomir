@@ -4,10 +4,12 @@ class CardWidget extends StatelessWidget {
   final Widget child;
   final bool? isSelected;
   final bool? isBasicPadding;
+  final bool? isDefaultSize;
 
   const CardWidget({
     this.isSelected = false,
     this.isBasicPadding = true,
+    this.isDefaultSize = true,
     required this.child,
     super.key,
   });
@@ -21,6 +23,7 @@ class CardWidget extends StatelessWidget {
       offset: Offset(1, 1),
     );
     return Container(
+      width: isDefaultSize == false ? null : 180,
       padding: isBasicPadding != true
           ? EdgeInsets.symmetric(horizontal: 10, vertical: 5)
           : EdgeInsets.all(15),

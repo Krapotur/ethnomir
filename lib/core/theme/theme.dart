@@ -45,12 +45,12 @@ final primaryTheme = ThemeData(
       fontSize: 17,
       color: Color.fromARGB(255, 37, 37, 37),
     ),
-    titleSmall: TextStyle(fontSize: 15, color: Colors.white),
+    titleSmall: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 37, 37, 37)),
     labelMedium: TextStyle(
       fontSize: 15,
       color: Color.fromARGB(255, 37, 37, 37),
     ),
-    labelSmall: TextStyle(color: Color.fromARGB(255, 98, 98, 98), fontSize: 14),
+    labelSmall: TextStyle(color: Color.fromARGB(255, 98, 98, 98), fontSize: 13),
   ),
 );
 
