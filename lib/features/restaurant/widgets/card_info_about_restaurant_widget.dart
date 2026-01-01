@@ -15,26 +15,65 @@ class CardInfoAboutRestaurantWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Badge(
-      largeSize: 50,
-      alignment: Alignment.topCenter,
-      backgroundColor: Colors.transparent,
-      label: isClose == true ? BadgeLabelWidget() : SizedBox.shrink(),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-        child: CardWidget(
-          isDefaultSize: false,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ImgRestaurantContainerWidget(imgTitle: restaurant.imgTitle),
-              SizedBox(width: 10),
-              InfoAboutRestaurantWidget(
-                isClose: isClose,
-                restaurant: restaurant,
+    return Padding(
+      padding: const EdgeInsets.only(left: 10.0, top: 10, right: 10.0),
+      child: SizedBox(
+        height: 95,
+        child: Stack(
+          alignment: .bottomRight,
+          children: [
+            CardWidget(
+              isDefaultSize: false,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ImgRestaurantContainerWidget(imgTitle: restaurant.imgTitle),
+                  SizedBox(width: 10),
+                  InfoAboutRestaurantWidget(
+                    isClose: isClose,
+                    restaurant: restaurant,
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+            Align(
+              alignment: .bottomRight,
+              child: restaurant.isClosed
+                  ? Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 3,
+                      ),
+                      decoration: const BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        ),
+                      ),
+                      child: const Text(
+                        "Скоро закроется",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    )
+                  : SizedBox.shrink(),
+            ),
+            Align(
+              alignment: .topRight,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.star, size: 16, color: Color(0xFFF47920)),
+                    Text(restaurant.raiting),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

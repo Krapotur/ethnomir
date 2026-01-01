@@ -16,7 +16,13 @@ class _CardPositionWidgetState extends State<CardPositionWidget> {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(17),
+        border: Border.all(
+          width: 0.5,
+          color: const Color.fromARGB(255, 230, 230, 230),
+          style: BorderStyle.solid,
+        ),
+
+        borderRadius: BorderRadius.circular(18),
       ),
       child: Column(
         children: [

@@ -8,3 +8,8 @@ export './category_btn_container_widget.dart';
 export './categories_listview_widget.dart';
 export './category_title_widget.dart';
 export './card_position_widget.dart';
+export './sliver_appbar_widget.dart';
+export './appbar_title_widget.dart';
+export './sliver_info_restaurant_widget.dart';
+export './sliver_categories_widget.dart';
+export './sliver_grid_positions_widget.dart';

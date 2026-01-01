@@ -18,30 +18,16 @@ class InfoAboutRestaurantWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                restaurant.title,
-                overflow: TextOverflow.ellipsis,
-                softWrap: true,
-                maxLines: 1,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  height: 1,
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(Icons.star, size: 16, color: Color(0xFFF47920)),
-                  Text(restaurant.raiting),
-                ],
-              ),
-            ],
+          Text(
+            restaurant.title,
+            overflow: TextOverflow.ellipsis,
+            softWrap: true,
+            maxLines: 1,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              height: 1,
+            ),
           ),
           Text(
            '${restaurant.kitchen} кухня',

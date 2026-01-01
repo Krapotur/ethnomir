@@ -1,11 +1,11 @@
 {
     "name": "ethnomir",
-    "short_name": "ethnomir",
+    "short_name": "Этномир",
     "start_url": ".",
     "display": "fullscreen",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Закажи еду в номер",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

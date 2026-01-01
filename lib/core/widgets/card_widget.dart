@@ -41,7 +41,7 @@ class CardWidget extends StatelessWidget {
                   ).withValues(alpha: 0.5),
                   spreadRadius: 1,
                   blurRadius: 3,
-                  offset: Offset(0, 3),
+                  offset: Offset(1, 1),
                 )
               : boxShadowGreen,
         ],

@@ -42,7 +42,7 @@ final primaryTheme = ThemeData(
       color: Color.fromARGB(255, 37, 37, 37),
     ),
     titleMedium: TextStyle(
-      fontSize: 17,
+      fontSize: 16,
       color: Color.fromARGB(255, 37, 37, 37),
     ),
     titleSmall: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 37, 37, 37)),
