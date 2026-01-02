@@ -29,7 +29,7 @@ class CardWidget extends StatelessWidget {
       height: MediaQuery.of(context).size.height / 9,
       padding: isBasicPadding != true
           ? EdgeInsets.symmetric(horizontal: 10, vertical: 5)
-          : EdgeInsets.only(top: 20, left: 20, right: 20),
+          : EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 10),
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 252, 252, 252),
         borderRadius: BorderRadius.circular(10),

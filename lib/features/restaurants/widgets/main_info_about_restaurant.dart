@@ -1,3 +1,4 @@
+import 'package:ethnomir/core/widgets/widgets.dart';
 import 'package:ethnomir/repositories/models.dart';
 import 'package:flutter/material.dart';
 
@@ -31,14 +32,7 @@ class MainInfoAboutRestaurant extends StatelessWidget {
             ),
           ],
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Icon(Icons.star, size: 16, color: Color(0xFFF47920)),
-            Text(restaurant.raiting),
-          ],
-        ),
+        RaitingWidget(raiting: restaurant.raiting),
       ],
     );
   }
