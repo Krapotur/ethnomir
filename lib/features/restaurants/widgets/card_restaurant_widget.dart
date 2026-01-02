@@ -32,7 +32,7 @@ class CardRestaurantWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            height: 130,
+            height: MediaQuery.of(context).size.height / 6,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10),
@@ -42,7 +42,7 @@ class CardRestaurantWidget extends StatelessWidget {
                 image: AssetImage(
                   'assets/images/rest/${restaurant.imgTitle}.png',
                 ),
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
               ),
             ),
           ),

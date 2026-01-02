@@ -7,12 +7,12 @@ class NewsFeedWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 150,
+      height: MediaQuery.of(context).size.height / 7,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         image: DecorationImage(
           image: AssetImage("assets/images/news_feed.png"),
-          fit: BoxFit.contain,
+          fit: BoxFit.fill,
         ),
       ),
     );

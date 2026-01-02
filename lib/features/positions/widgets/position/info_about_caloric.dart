@@ -25,7 +25,7 @@ class InfoAboutCaloric extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('200г',
+              Text('200',
                   style: theme.textTheme.labelSmall),
               Text('ккал', style: theme.textTheme.labelSmall),
             ],

@@ -10,84 +10,88 @@ class TicketAndCalendarWidgets extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       mainAxisSize: MainAxisSize.min,
       children: [
-        InkWell(
-          onTap: () {},
-          child: CardWidget(
-            isBasicPadding: false,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  height: 55,
-                  width: 55,
-                  margin: EdgeInsets.only(
-                    left: 5,
-                    top: 10,
-                    bottom: 10,
-                    right: 10,
-                  ),
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 255, 178, 176),
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage("assets/images/ticket.png"),
-                      fit: BoxFit.cover,
+        Flexible(
+          flex: 1,
+          child: InkWell(
+            onTap: () {},
+            child: CardWidget(
+              isBasicPadding: false,
+              child: Row(
+                children: [
+                  Flexible(
+                    flex: 1,
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 255, 178, 176),
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/ticket.png"),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                   ),
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Билет', style: TextStyle(height: 1, fontSize: 16)),
-                    Text('в ЭтноМир', style: TextStyle(height: 1, fontSize: 16)),
-                  ],
-                ),
-              ],
+                  Flexible(
+                    flex: 2,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Flexible(
+                          child: Text('Билет', style: TextStyle(height: 1)),
+                        ),
+                        Flexible(
+                          child: Text('в ЭтноМир', style: TextStyle(height: 1)),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
         SizedBox(width: 10),
-        InkWell(
-          onTap: () {},
-          child: CardWidget(
-            isBasicPadding: false,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  height: 55,
-                  width: 55,
-                  clipBehavior: Clip.hardEdge,
-                  margin: EdgeInsets.only(
-                    left: 5,
-                    top: 10,
-                    bottom: 10,
-                    right: 10,
-                  ),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFFFBAB6),
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage("assets/images/calendar.png"),
-                      fit: BoxFit.contain,
+        Flexible(
+          flex: 1,
+          child: InkWell(
+            onTap: () {},
+            child: CardWidget(
+              isBasicPadding: false,
+              child: Row(
+                children: [
+                  Flexible(
+                    flex: 1,
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 255, 178, 176),
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/calendar.png"),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                   ),
-                ),
-
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Календарь',
-                      style: TextStyle(height: 1, fontSize: 16),
+                  Flexible(
+                    flex: 2,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Flexible(
+                          child: Text('Календарь', style: TextStyle(height: 1)),
+                        ),
+                        Flexible(
+                          child: Text('событий', style: TextStyle(height: 1)),
+                        ),
+                      ],
                     ),
-                    Text('событий', style: TextStyle(height: 1, fontSize: 16)),
-                  ],
-                ),
-              ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

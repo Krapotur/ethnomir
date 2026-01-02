@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
       const Duration(seconds: 2),
       () => AutoRouter.of(context).replace(
         // ProfileRoute()
-        HomeRoute()
+        HomeRoute(),
         // RestaurantsRoute()
         // RestaurantRoute(
         //   restaurant: Restaurant(
@@ -62,6 +62,13 @@ class _SplashScreenState extends State<SplashScreen> {
                         'assets/images/auth_screen/logo.jpg',
                         width: 270,
                       ),
+                      // Text(
+                      //   'ВЕСЬ МИР ЗА ОДИН ДЕНЬ',
+                      //   style: TextStyle(
+                      //     fontSize: 17.0,
+                      //     color: theme.primaryColor,
+                      //   ),
+                      // ),
                       AnimatedTextKit(
                         animatedTexts: [
                           ColorizeAnimatedText(
