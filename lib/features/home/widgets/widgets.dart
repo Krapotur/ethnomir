@@ -7,4 +7,5 @@ export './event_container_widget.dart';
 export './restaurants_widget.dart';
 export './under_line_widget.dart';
 export './restaurant_container_widget.dart';
-
+export './ticket_widget.dart';
+export './calendar_widget.dart';

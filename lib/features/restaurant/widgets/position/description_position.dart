@@ -1,11 +1,8 @@
 import 'package:ethnomir/features/positions/widgets/position/info_about_caloric.dart';
-import 'package:ethnomir/features/restaurant/widgets/card_position_widget.dart';
 import 'package:flutter/material.dart';
 
 class DescriptionPosition extends StatelessWidget {
-  const DescriptionPosition({super.key, required this.widget});
-
-  final CardPositionWidget widget;
+  const DescriptionPosition({super.key});
 
   @override
   Widget build(BuildContext context) {

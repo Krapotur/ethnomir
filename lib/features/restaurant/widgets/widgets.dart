@@ -13,3 +13,8 @@ export './appbar_title_widget.dart';
 export './sliver_info_restaurant_widget.dart';
 export './sliver_categories_widget.dart';
 export './sliver_grid_positions_widget.dart';
+export './image_position_widget.dart';
+export './position_content_widget.dart';
+export './position/info_about_position_widget.dart';
+export './position/description_position.dart';
+export './position/info_about_caloric.dart';

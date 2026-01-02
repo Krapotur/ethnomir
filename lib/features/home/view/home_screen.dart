@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           children: [
             TicketAndCalendarWidgets(),
-            SizedBox(height: 5),
+            SizedBox(height: 10),
             NewsFeedWidget(),
             SizedBox(height: 10),
             EventsWidget(),
