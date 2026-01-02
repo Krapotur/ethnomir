@@ -50,8 +50,8 @@ class _SliverAppbarWidgetState extends State<SliverAppbarWidget> {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: !isCollapsed ? Colors.transparent : Colors.white,
-      surfaceTintColor: !isCollapsed ? Colors.transparent : Colors.white,
+      backgroundColor: Colors.white,
+      surfaceTintColor: Colors.white,
       toolbarHeight: toolbarHeight,
       expandedHeight: expandedHeight,
       pinned: true,
@@ -61,7 +61,7 @@ class _SliverAppbarWidgetState extends State<SliverAppbarWidget> {
           ? AppbarTitleWidget(restaurant: widget.restaurant)
           : null,
       actions: [
-        isCollapsed &&  widget.restaurant.isClosed
+        isCollapsed && widget.restaurant.isClosed
             ? Padding(
                 padding: const EdgeInsets.only(right: 20.0),
                 child: Icon(Icons.access_time, color: Colors.red),

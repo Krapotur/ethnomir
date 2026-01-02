@@ -14,9 +14,6 @@ class RestaurantScreen extends StatefulWidget {
 }
 
 class _RestaurantScreenState extends State<RestaurantScreen> {
-  double expandedHeight = 210;
-  double toolbarHeight = 50;
-
   @override
   Widget build(BuildContext context) {
     ScrollController scrollController = ScrollController();
