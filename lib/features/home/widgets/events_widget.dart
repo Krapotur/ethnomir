@@ -9,18 +9,18 @@ class EventsWidget extends StatelessWidget {
     ThemeData theme = Theme.of(context);
 
     List<EventContainerWidget> eventsList = [
-      EventContainerWidget(
+      const EventContainerWidget(
         color: Color(0xFFE5FFAE),
         title: 'Анимация',
         imgTitle: 'animations',
       ),
-      EventContainerWidget(
+      const EventContainerWidget(
         color: Color(0xFFFF7272),
         title: 'Мастер - классы',
         isTextColorWhite: true,
         imgTitle: 'masters',
       ),
-      EventContainerWidget(
+      const EventContainerWidget(
         color: Color(0xFFC8F8FF),
         title: 'Зоопарки и питомники',
         imgTitle: 'zoo',
@@ -30,17 +30,17 @@ class EventsWidget extends StatelessWidget {
     return Column(
       children: [
         Row(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: .end,
+          mainAxisAlignment: .spaceBetween,
           children: [
             Text('Активности', style: theme.textTheme.titleLarge),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: .center,
               children: [Text('Все'), Icon(Icons.keyboard_arrow_right)],
             ),
           ],
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         SizedBox(
           height: 120,
           child: ListView.separated(
@@ -48,11 +48,11 @@ class EventsWidget extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: eventsList.length,
             itemBuilder: (context, index) => eventsList[index],
-            separatorBuilder: (context, index) => SizedBox(width: 15),
+            separatorBuilder: (context, index) => const SizedBox(width: 15),
           ),
         ),
-        SizedBox(height: 5),
-        Row(
+        const SizedBox(height: 5),
+        const Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             UnderLineWidget(),

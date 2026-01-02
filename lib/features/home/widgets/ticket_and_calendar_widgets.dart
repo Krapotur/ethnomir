@@ -6,9 +6,9 @@ class TicketAndCalendarWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      mainAxisSize: MainAxisSize.min,
+    return const Row(
+      mainAxisAlignment: .spaceEvenly,
+      mainAxisSize: .min,
       children: [TicketWidget(), SizedBox(width: 10), CalendarWidget()],
     );
   }

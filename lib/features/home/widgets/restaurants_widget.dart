@@ -10,22 +10,22 @@ class RestaurantsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     List<RestaurantContainerWidget> restaurantsList = [
-      RestaurantContainerWidget(
+      const RestaurantContainerWidget(
         title: 'Фастфуд',
         imgTitle: 'fastfood',
         color: Color(0xFFC8F8FF),
       ),
-      RestaurantContainerWidget(
+      const RestaurantContainerWidget(
         title: 'Русская',
         imgTitle: 'rus_kitchen',
         color: Color(0xFFFF7272),
       ),
-      RestaurantContainerWidget(
+      const RestaurantContainerWidget(
         title: 'Итальянская',
         imgTitle: 'italy_kitchen',
         color: Color(0xFFE5FFAE),
       ),
-      RestaurantContainerWidget(
+      const RestaurantContainerWidget(
         title: 'Восточная',
         imgTitle: 'mexico_kitchen',
         color: Color(0xFFEDC8FF),
@@ -35,15 +35,15 @@ class RestaurantsWidget extends StatelessWidget {
     return Column(
       children: [
         Row(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: .end,
+          mainAxisAlignment: .spaceBetween,
           children: [
             Text('Рестораны', style: theme.textTheme.titleLarge),
             GestureDetector(
               onTap: () =>
                   AutoRouter.of(context).replaceAll([RestaurantsRoute()]),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: .center,
                 children: [
                   Text('Все', style: theme.textTheme.bodyMedium),
                   Icon(Icons.keyboard_arrow_right),
@@ -52,7 +52,7 @@ class RestaurantsWidget extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         SizedBox(
           height: 120,
           child: ListView.separated(
@@ -68,8 +68,8 @@ class RestaurantsWidget extends StatelessWidget {
             separatorBuilder: (context, index) => SizedBox(width: 15),
           ),
         ),
-        SizedBox(height: 5),
-        Row(
+        const SizedBox(height: 5),
+        const Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             UnderLineWidget(),

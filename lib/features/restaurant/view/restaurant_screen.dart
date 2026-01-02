@@ -31,11 +31,10 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
             restaurant: widget.restaurant,
           ),
           SliverInfoRestaurantWidget(restaurant: widget.restaurant),
-          SliverCategoriesWidget(),
-          SliverGridPositionsWidget(),
+          const SliverCategoriesWidget(),
+          const SliverGridPositionsWidget(),
         ],
       ),
     );
   }
 }
-
