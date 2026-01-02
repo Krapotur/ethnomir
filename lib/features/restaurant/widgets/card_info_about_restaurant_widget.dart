@@ -17,65 +17,88 @@ class CardInfoAboutRestaurantWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 10.0, top: 10, right: 10.0),
-      child: SizedBox(
-        height: 95,
-        child: Stack(
-          alignment: .bottomRight,
-          children: [
-            CardWidget(
-              isDefaultSize: false,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+      child: Badge(
+        isLabelVisible: restaurant.isClosed,
+        offset: Offset(-50, -5),
+        backgroundColor: Colors.transparent,
+        alignment: .topCenter,
+        label: Container(
+          color: Colors.red,
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+          child: const Text(
+            "Скоро закроется",
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        child: CardWidget(
+          child: Row(
+            crossAxisAlignment: .start,
+            mainAxisAlignment: .spaceBetween,
+            children: [
+              Row(
                 children: [
                   ImgRestaurantContainerWidget(imgTitle: restaurant.imgTitle),
                   SizedBox(width: 10),
-                  InfoAboutRestaurantWidget(
-                    isClose: isClose,
-                    restaurant: restaurant,
-                  ),
+                  InfoAboutRestaurantWidget(restaurant: restaurant),
                 ],
               ),
-            ),
-            Align(
-              alignment: .bottomRight,
-              child: restaurant.isClosed
-                  ? Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                        vertical: 3,
-                      ),
-                      decoration: const BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10),
-                          bottomRight: Radius.circular(10),
-                        ),
-                      ),
-                      child: const Text(
-                        "Скоро закроется",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    )
-                  : SizedBox.shrink(),
-            ),
-            Align(
-              alignment: .topRight,
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              Flexible(
+                flex: 2,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: .center,
+                  crossAxisAlignment: .start,
+                  mainAxisSize: .min,
                   children: [
                     Icon(Icons.star, size: 16, color: Color(0xFFF47920)),
                     Text(restaurant.raiting),
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
+
+      // Align(
+      //   alignment: .bottomRight,
+      //   child: restaurant.isClosed
+      //       ? Container(
+      //           padding: const EdgeInsets.symmetric(
+      //             horizontal: 10,
+      //             vertical: 3,
+      //           ),
+      //           decoration: const BoxDecoration(
+      //             color: Colors.red,
+      //             borderRadius: BorderRadius.only(
+      //               topLeft: Radius.circular(10),
+      //               bottomRight: Radius.circular(10),
+      //             ),
+      //           ),
+      //           child: const Text(
+      //             "Скоро закроется",
+      //             style: TextStyle(color: Colors.white),
+      //           ),
+      //         )
+      //       : SizedBox.shrink(),
+      // ),
+      // Align(
+      //   alignment: .topRight,
+      //   child: Container(
+      //     padding: const EdgeInsets.symmetric(
+      //       horizontal: 15,
+      //       vertical: 10,
+      //     ),
+      //     child: Row(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       crossAxisAlignment: CrossAxisAlignment.start,
+      //       mainAxisSize: MainAxisSize.min,
+      //       children: [
+      //         Icon(Icons.star, size: 16, color: Color(0xFFF47920)),
+      //         Text(restaurant.raiting),
+      //       ],
+      //     ),
+      //   ),
+      // ),
     );
   }
 }

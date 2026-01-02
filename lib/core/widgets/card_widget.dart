@@ -23,11 +23,13 @@ class CardWidget extends StatelessWidget {
       offset: Offset(1, 1),
     );
     return Container(
-      width: isBasicPadding != true ? MediaQuery.of(context).size.width / 2 : null,
-      height: MediaQuery.of(context).size.height / 9 ,
+      width: isBasicPadding != true
+          ? MediaQuery.of(context).size.width / 2
+          : null,
+      height: MediaQuery.of(context).size.height / 9,
       padding: isBasicPadding != true
           ? EdgeInsets.symmetric(horizontal: 10, vertical: 5)
-          : EdgeInsets.all(10),
+          : EdgeInsets.only(top: 20, left: 20, right: 20),
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 252, 252, 252),
         borderRadius: BorderRadius.circular(10),

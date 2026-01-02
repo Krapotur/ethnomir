@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:ethnomir/repositories/restaurant/model/restaurant.dart';
 import 'package:ethnomir/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Future.delayed(
-      const Duration(seconds: 2),
+      const Duration(milliseconds: 2),
       () => AutoRouter.of(context).replace(
         // ProfileRoute()
         HomeRoute(),
@@ -30,6 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
         //     kitchen: 'Восточная кухня',
         //     delivery: 'от 1200р',
         //     isRestaurant: true,
+        //     isClosed: true,
         //     price: '650',
         //     raiting: '4.9',
         //     imgTitle: 'chai',
