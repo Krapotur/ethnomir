@@ -14,10 +14,10 @@ class TitleRestaurantWidget extends StatelessWidget {
         Row(
           crossAxisAlignment: .center,
           children: [
-            Icon(Icons.coffee_outlined, size: 19),
+            Icon(Icons.coffee_outlined, size: 18),
             Text(
               restaurant.isRestaurant ? 'Ресторан' : 'Кафе',
-              style: TextStyle(fontSize: 19),
+              style: TextStyle(fontSize: 17),
             ),
           ],
         ),

@@ -91,11 +91,11 @@ class ImgRestaurantContainerWidget extends StatelessWidget {
                       Text(
                         '«${restaurant.title}»',
                         style: theme.textTheme.titleLarge!.copyWith(
-                          fontSize: 22,
+                          fontSize: 19,
                         ),
                       ),
                       Text(
-                        '(${restaurant.kitchen} кухня)',
+                        '(${restaurant.kitchen.toLowerCase()} кухня)',
                         style: theme.textTheme.labelSmall,
                       ),
                       const SizedBox(height: 15),

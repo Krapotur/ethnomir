@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ethnomir/features/restaurant/provider/model.dart';
 import 'package:ethnomir/features/restaurant/widgets/widgets.dart';
 import 'package:ethnomir/repositories/models.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 @RoutePage()
 class RestaurantScreen extends StatefulWidget {
@@ -18,19 +20,23 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
   Widget build(BuildContext context) {
     ScrollController scrollController = ScrollController();
 
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      body: CustomScrollView(
-        controller: scrollController,
-        slivers: [
-          SliverAppbarWidget(
-            scrollController: scrollController,
-            restaurant: widget.restaurant,
-          ),
-          SliverInfoRestaurantWidget(restaurant: widget.restaurant),
-          const SliverCategoriesWidget(),
-          const SliverGridPositionsWidget(),
-        ],
+    return ChangeNotifierProvider(
+      create: (context) => RestaurantModel(),
+      lazy: true,
+      child: Scaffold(
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        body: CustomScrollView(
+          controller: scrollController,
+          slivers: [
+            SliverAppbarWidget(
+              scrollController: scrollController,
+              restaurant: widget.restaurant,
+            ),
+            SliverInfoRestaurantWidget(restaurant: widget.restaurant),
+            const SliverCategoriesWidget(),
+            const SliverGridPositionsWidget(),
+          ],
+        ),
       ),
     );
   }

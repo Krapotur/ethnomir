@@ -9,7 +9,7 @@ class SliverGridPositionsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-      padding: EdgeInsetsGeometry.only(left: 10, right: 10, bottom: 15),
+      padding: EdgeInsetsGeometry.only(left: 10, top: 15, right: 10, bottom: 15),
       sliver: SliverGrid(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,

@@ -1,4 +1,6 @@
+import 'package:ethnomir/features/restaurant/provider/model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CategoryBtnContainerWidget extends StatelessWidget {
   final String title;
@@ -11,21 +13,24 @@ class CategoryBtnContainerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // LinearGradient linearGradient = LinearGradient(
-    //   colors: [Color(0xFFF47920), Color(0xFFFF9141)],
-    //   begin: Alignment.topCenter,
-    //   end: Alignment.bottomCenter,
-    // );
 
-    return GestureDetector(
-      onTap: () {},
-      child: Container(
-        padding: EdgeInsets.only(left: 15),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          // gradient: isSelect == true ? linearGradient : null,
+    LinearGradient linearGradient = LinearGradient(
+      colors: [Color(0xFFF47920), Color(0xFFFF9141)],
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+    );
+
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 15),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        gradient: isSelect == true ? linearGradient : null,
+      ),
+      child: Center(
+        child: Text(
+          title,
+          style: TextStyle(color: isSelect ? Colors.white : Colors.black),
         ),
-        child: Text(title, style: TextStyle(color: isSelect ? Color(0xFFF47920) : Colors.black)),
       ),
     );
   }
