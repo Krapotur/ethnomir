@@ -64,13 +64,6 @@ class _SplashScreenState extends State<SplashScreen> {
                         'assets/images/auth_screen/logo.jpg',
                         width: 270,
                       ),
-                      // Text(
-                      //   'ВЕСЬ МИР ЗА ОДИН ДЕНЬ',
-                      //   style: TextStyle(
-                      //     fontSize: 17.0,
-                      //     color: theme.primaryColor,
-                      //   ),
-                      // ),
                       AnimatedTextKit(
                         animatedTexts: [
                           ColorizeAnimatedText(

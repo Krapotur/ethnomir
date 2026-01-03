@@ -9,18 +9,10 @@ class SliverInfoRestaurantWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
-      primary: false,
-      pinned: false,
-      automaticallyImplyLeading: false,
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      surfaceTintColor: const Color.fromARGB(255, 255, 255, 255),
-      bottom: PreferredSize(
-        preferredSize: Size.fromHeight(55),
-        child: CardInfoAboutRestaurantWidget(
-          isClose: restaurant.isClosed,
-          restaurant: restaurant,
-        ),
+    return SliverToBoxAdapter(
+      child: CardInfoAboutRestaurantWidget(
+        isClose: restaurant.isClosed,
+        restaurant: restaurant,
       ),
     );
   }

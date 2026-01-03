@@ -12,6 +12,7 @@ class TicketWidget extends StatelessWidget {
         onTap: () {},
         child: CardWidget(
           isBasicPadding: false,
+          isDefaultSize: false,
           child: Row(
             children: [
               Flexible(

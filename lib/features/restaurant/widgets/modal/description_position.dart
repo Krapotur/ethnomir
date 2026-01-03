@@ -1,4 +1,4 @@
-import 'package:ethnomir/features/positions/widgets/position/info_about_caloric.dart';
+import 'package:ethnomir/features/restaurant/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class DescriptionPosition extends StatelessWidget {
