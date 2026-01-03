@@ -9,6 +9,8 @@ class MainInfoAboutRestaurant extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -20,15 +22,11 @@ class MainInfoAboutRestaurant extends StatelessWidget {
               restaurant.isRestaurant
                   ? 'Ресторан "${restaurant.title}"'
                   : 'Кафе "${restaurant.title}"',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                height: 1.2,
-              ),
+              style: theme.textTheme.titleMedium!.copyWith(height: 1.2),
             ),
             Text(
               '${restaurant.kitchen} кухня',
-              style: TextStyle(fontSize: 15, color: Colors.grey),
+              style:  theme.textTheme.labelSmall,
             ),
           ],
         ),

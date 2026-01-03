@@ -12,8 +12,8 @@ class RaitingWidget extends StatelessWidget {
       crossAxisAlignment: .start,
       mainAxisSize: .min,
       children: [
-        Icon(Icons.star, size: 22, color: Color(0xFFF47920)),
-        Text(raiting, style: TextStyle(fontSize: 17)),
+        Icon(Icons.star, size: 20, color: Color(0xFFF47920)),
+        Text(raiting, style: TextStyle(fontSize: 15)),
       ],
     );
   }
