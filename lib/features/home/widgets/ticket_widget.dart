@@ -56,7 +56,7 @@ class TicketWidget extends StatelessWidget {
                           height: 1,
                           fontSize: themeTextScaler.responsiveFontSize(
                             context,
-                            15,
+                            16,
                           ),
                         ),
                       ),

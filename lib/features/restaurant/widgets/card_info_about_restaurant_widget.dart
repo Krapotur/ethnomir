@@ -1,5 +1,4 @@
 import 'package:ethnomir/core/widgets/card_widget.dart';
-import 'package:ethnomir/core/widgets/raiting_widget.dart';
 import 'package:ethnomir/features/restaurant/widgets/widgets.dart';
 import 'package:ethnomir/repositories/restaurant/model/restaurant.dart';
 import 'package:flutter/material.dart';
@@ -42,10 +41,6 @@ class CardInfoAboutRestaurantWidget extends StatelessWidget {
                   SizedBox(width: 10),
                   InfoAboutRestaurantWidget(restaurant: restaurant),
                 ],
-              ),
-              Flexible(
-                flex: 2,
-                child: RaitingWidget(raiting: restaurant.raiting),
               ),
             ],
           ),

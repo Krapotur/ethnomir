@@ -1,4 +1,3 @@
-import 'package:ethnomir/core/widgets/widgets.dart';
 import 'package:ethnomir/repositories/models.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +29,6 @@ class MainInfoAboutRestaurant extends StatelessWidget {
             ),
           ],
         ),
-        RaitingWidget(raiting: restaurant.raiting),
       ],
     );
   }

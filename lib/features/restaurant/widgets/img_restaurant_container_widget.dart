@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:ethnomir/core/widgets/widgets.dart';
 import 'package:ethnomir/features/restaurant/widgets/widgets.dart';
 import 'package:ethnomir/repositories/models.dart';
 import 'package:flutter/material.dart';
@@ -85,7 +84,6 @@ class ImgRestaurantContainerWidget extends StatelessWidget {
                         mainAxisAlignment: .spaceBetween,
                         children: [
                           TitleRestaurantWidget(restaurant: restaurant),
-                          RaitingWidget(raiting: restaurant.raiting),
                         ],
                       ),
                       Text(

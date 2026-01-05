@@ -56,47 +56,14 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
         backgroundColor: Colors.white,
         title: Text('Рестораны'),
         centerTitle: true,
-        bottom: PreferredSize(
-          preferredSize: Size.fromHeight(40),
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: SizedBox(
-              height: 35,
-              child: ListView(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                scrollDirection: Axis.horizontal,
-                children: [
-                  KitchenBtnContainerWidget(
-                    title: 'Восточная',
-                    isSelect: 'Восточная' == widget.kitchen,
-                  ),
-                  KitchenBtnContainerWidget(
-                    title: 'Русская',
-                    isSelect: 'Русская' == widget.kitchen,
-                  ),
-                  KitchenBtnContainerWidget(
-                    title: 'Итальянская',
-                    isSelect: 'Итальянская' == widget.kitchen,
-                  ),
-                  KitchenBtnContainerWidget(
-                    title: 'Грузинская',
-                    isSelect: 'Грузинская' == widget.kitchen,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
       ),
       body: ListView.separated(
         padding: EdgeInsets.all(15),
         itemCount: restaurantsList.length,
         itemBuilder: (context, index) => GestureDetector(
-          onTap: () => AutoRouter.of(context).push(
-            RestaurantRoute(
-              restaurant: restaurantsList[index],
-            ),
-          ),
+          onTap: () => AutoRouter.of(
+            context,
+          ).push(RestaurantRoute(restaurant: restaurantsList[index])),
           child: CardRestaurantWidget(restaurant: restaurantsList[index]),
         ),
         separatorBuilder: (context, index) => SizedBox(height: 15),

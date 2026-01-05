@@ -37,7 +37,6 @@ class ContentCardRestaurantWidget extends StatelessWidget {
               Spacer(flex: 1),
               DeliveryWidget(linearGradient: linearGradient, delivery: restaurant.delivery),
               Spacer(flex: 4),
-              PriceFoodWidget(linearGradient: linearGradient, price: restaurant.price),
             ],
           ),
         ],

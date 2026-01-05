@@ -1,6 +1,4 @@
-import 'package:ethnomir/features/restaurant/provider/model.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class CategoryBtnContainerWidget extends StatelessWidget {
   final String title;

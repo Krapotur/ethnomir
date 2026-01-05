@@ -121,7 +121,7 @@ class ThemeTextScaler {
     // пример: масштабируем базовый размер по площади экрана
     double scale =
         (mq.size.width * mq.size.height) /
-        (600 * 851); // исходная точка (iPhone 13 Pro как пример)
+        (450 * 851); // исходная точка (iPhone 13 Pro как пример)
     return baseSize * scale.clamp(0.8, 1.8);
   }
 }
