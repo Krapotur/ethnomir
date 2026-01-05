@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ethnomir/core/theme/theme.dart';
 import 'package:ethnomir/features/home/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeTextScaler themeTextScaler = ThemeTextScaler();
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 245, 245, 245),
       appBar: AppBar(
@@ -20,13 +23,13 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.only(top: 15, left: 15.0, right: 15),
         child: ListView(
           children: [
-            const TicketAndCalendarWidgets(),
+            TicketAndCalendarWidgets(themeTextScaler: themeTextScaler),
             const SizedBox(height: 10),
             const NewsFeedWidget(),
             const SizedBox(height: 10),
-            const EventsWidget(),
+            EventsWidget(themeTextScaler: themeTextScaler),
             const SizedBox(height: 15),
-            const RestaurantsWidget(),
+            RestaurantsWidget(themeTextScaler: themeTextScaler),
           ],
         ),
       ),

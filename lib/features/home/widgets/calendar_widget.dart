@@ -1,8 +1,11 @@
+import 'package:ethnomir/core/theme/theme.dart';
 import 'package:ethnomir/core/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class CalendarWidget extends StatelessWidget {
-  const CalendarWidget({super.key});
+  final ThemeTextScaler themeTextScaler;
+
+  const CalendarWidget({super.key, required this.themeTextScaler});
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +39,28 @@ class CalendarWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Flexible(
-                      child: Text('Календарь', style: TextStyle(height: 1)),
+                      child: Text(
+                        'Календарь',
+                        style: TextStyle(
+                          height: 1,
+                          fontSize: themeTextScaler.responsiveFontSize(
+                            context,
+                            15,
+                          ),
+                        ),
+                      ),
                     ),
                     Flexible(
-                      child: Text('событий', style: TextStyle(height: 1)),
+                      child: Text(
+                        'событий',
+                        style: TextStyle(
+                          height: 1,
+                          fontSize: themeTextScaler.responsiveFontSize(
+                            context,
+                            15,
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),

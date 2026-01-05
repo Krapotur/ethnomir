@@ -1,8 +1,10 @@
+import 'package:ethnomir/core/theme/theme.dart';
 import 'package:ethnomir/core/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class TicketWidget extends StatelessWidget {
-  const TicketWidget({super.key});
+  final ThemeTextScaler themeTextScaler;
+  const TicketWidget({super.key, required this.themeTextScaler});
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +37,29 @@ class TicketWidget extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Flexible(child: Text('Билет', style: TextStyle(height: 1))),
                     Flexible(
-                      child: Text('в ЭтноМир', style: TextStyle(height: 1)),
+                      child: Text(
+                        'Билет',
+                        style: TextStyle(
+                          height: 1,
+                          fontSize: themeTextScaler.responsiveFontSize(
+                            context,
+                            15,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      child: Text(
+                        'в ЭтноМир',
+                        style: TextStyle(
+                          height: 1,
+                          fontSize: themeTextScaler.responsiveFontSize(
+                            context,
+                            15,
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),

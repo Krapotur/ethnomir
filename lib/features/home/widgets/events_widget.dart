@@ -1,8 +1,11 @@
+import 'package:ethnomir/core/theme/theme.dart';
 import 'package:ethnomir/features/home/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class EventsWidget extends StatelessWidget {
-  const EventsWidget({super.key});
+  final ThemeTextScaler themeTextScaler;
+
+  const EventsWidget({super.key, required this.themeTextScaler});
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +36,31 @@ class EventsWidget extends StatelessWidget {
           crossAxisAlignment: .end,
           mainAxisAlignment: .spaceBetween,
           children: [
-            Text('Активности', style: theme.textTheme.titleLarge),
+            Text(
+              'Активности',
+              style: theme.textTheme.titleLarge!.copyWith(
+                fontSize: themeTextScaler.responsiveFontSize(
+                  context,
+                  double.parse(theme.textTheme.titleLarge!.fontSize.toString()),
+                ),
+              ),
+            ),
             Row(
               mainAxisAlignment: .center,
-              children: [Text('Все'), Icon(Icons.keyboard_arrow_right)],
+              children: [
+                Text(
+                  'Все',
+                  style: TextStyle(
+                    fontSize: themeTextScaler.responsiveFontSize(
+                      context,
+                      double.parse(
+                        theme.textTheme.bodyMedium!.fontSize.toString(),
+                      ),
+                    ),
+                  ),
+                ),
+                Icon(Icons.keyboard_arrow_right),
+              ],
             ),
           ],
         ),

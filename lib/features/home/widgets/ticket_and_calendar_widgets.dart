@@ -1,15 +1,22 @@
+import 'package:ethnomir/core/theme/theme.dart';
 import 'package:ethnomir/features/home/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class TicketAndCalendarWidgets extends StatelessWidget {
-  const TicketAndCalendarWidgets({super.key});
+  final ThemeTextScaler themeTextScaler;
+
+  const TicketAndCalendarWidgets({super.key, required this.themeTextScaler});
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: .spaceEvenly,
       mainAxisSize: .min,
-      children: [TicketWidget(), SizedBox(width: 10), CalendarWidget()],
+      children: [
+        TicketWidget(themeTextScaler: themeTextScaler),
+        SizedBox(width: 10),
+        CalendarWidget(themeTextScaler: themeTextScaler),
+      ],
     );
   }
 }

@@ -1,10 +1,13 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ethnomir/core/theme/theme.dart';
 import 'package:ethnomir/features/home/widgets/widgets.dart';
 import 'package:ethnomir/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 
 class RestaurantsWidget extends StatelessWidget {
-  const RestaurantsWidget({super.key});
+  final ThemeTextScaler themeTextScaler;
+
+  const RestaurantsWidget({super.key, required this.themeTextScaler});
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +41,32 @@ class RestaurantsWidget extends StatelessWidget {
           crossAxisAlignment: .end,
           mainAxisAlignment: .spaceBetween,
           children: [
-            Text('Рестораны', style: theme.textTheme.titleLarge),
+            Text(
+              'Рестораны',
+              style: theme.textTheme.titleLarge!.copyWith(
+                fontSize: themeTextScaler.responsiveFontSize(
+                  context,
+                  double.parse(theme.textTheme.titleLarge!.fontSize.toString()),
+                ),
+              ),
+            ),
             GestureDetector(
               onTap: () =>
                   AutoRouter.of(context).replaceAll([RestaurantsRoute()]),
               child: Row(
                 mainAxisAlignment: .center,
                 children: [
-                  Text('Все', style: theme.textTheme.bodyMedium),
+                  Text(
+                    'Все',
+                    style: TextStyle(
+                      fontSize: themeTextScaler.responsiveFontSize(
+                        context,
+                        double.parse(
+                          theme.textTheme.bodyMedium!.fontSize.toString(),
+                        ),
+                      ),
+                    ),
+                  ),
                   Icon(Icons.keyboard_arrow_right),
                 ],
               ),

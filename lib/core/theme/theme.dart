@@ -45,7 +45,11 @@ final primaryTheme = ThemeData(
       fontSize: 16,
       color: Color.fromARGB(255, 37, 37, 37),
     ),
-    titleSmall: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 37, 37, 37)),
+    titleSmall: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.bold,
+      color: Color.fromARGB(255, 37, 37, 37),
+    ),
     labelMedium: TextStyle(
       fontSize: 15,
       color: Color.fromARGB(255, 37, 37, 37),
@@ -110,3 +114,14 @@ final darkTheme = ThemeData(
 const progressIndicatorTheme = ProgressIndicatorThemeData(
   color: Color.fromARGB(255, 233, 123, 39),
 );
+
+class ThemeTextScaler {
+  double responsiveFontSize(BuildContext context, double baseSize) {
+    final mq = MediaQuery.of(context);
+    // пример: масштабируем базовый размер по площади экрана
+    double scale =
+        (mq.size.width * mq.size.height) /
+        (600 * 851); // исходная точка (iPhone 13 Pro как пример)
+    return baseSize * scale.clamp(0.8, 1.8);
+  }
+}
