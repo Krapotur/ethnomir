@@ -50,12 +50,13 @@ class _SliverAppbarWidgetState extends State<SliverAppbarWidget> {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      automaticallyImplyLeading: false,
       backgroundColor: Colors.white,
       surfaceTintColor: Colors.white,
       toolbarHeight: toolbarHeight,
       expandedHeight: expandedHeight,
       pinned: true,
-      leading: BtnToBackScreenWidget(),
+      // leading: BtnToBackScreenWidget(),
       centerTitle: true,
       title: isCollapsed
           ? AppbarTitleWidget(restaurant: widget.restaurant)

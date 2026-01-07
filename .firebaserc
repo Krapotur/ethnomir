@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "ethnomir-2025"
-  }
+    "default": "snack-time-718cd",
+    "snack-time": "snack-time-718cd"
+  },
+  "targets": {},
+  "etags": {}
 }

@@ -9,27 +9,28 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i7;
+import 'package:auto_route/auto_route.dart' as _i8;
 import 'package:ethnomir/features/home/view/home_screen.dart' as _i1;
 import 'package:ethnomir/features/main/view/main_screen.dart' as _i2;
 import 'package:ethnomir/features/profile/view/profile_screen.dart' as _i3;
+import 'package:ethnomir/features/qr/qr.dart' as _i4;
 import 'package:ethnomir/features/restaurant/view/restaurant_screen.dart'
-    as _i4;
-import 'package:ethnomir/features/restaurants/view/restaurants_screen.dart'
     as _i5;
-import 'package:ethnomir/features/splash/view/splash_screen.dart' as _i6;
-import 'package:ethnomir/repositories/models.dart' as _i9;
-import 'package:flutter/material.dart' as _i8;
+import 'package:ethnomir/features/restaurants/view/restaurants_screen.dart'
+    as _i6;
+import 'package:ethnomir/features/splash/view/splash_screen.dart' as _i7;
+import 'package:ethnomir/repositories/models.dart' as _i10;
+import 'package:flutter/material.dart' as _i9;
 
 /// generated route for
 /// [_i1.HomeScreen]
-class HomeRoute extends _i7.PageRouteInfo<void> {
-  const HomeRoute({List<_i7.PageRouteInfo>? children})
+class HomeRoute extends _i8.PageRouteInfo<void> {
+  const HomeRoute({List<_i8.PageRouteInfo>? children})
     : super(HomeRoute.name, initialChildren: children);
 
   static const String name = 'HomeRoute';
 
-  static _i7.PageInfo page = _i7.PageInfo(
+  static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
       return const _i1.HomeScreen();
@@ -39,13 +40,13 @@ class HomeRoute extends _i7.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.MainScreen]
-class MainRoute extends _i7.PageRouteInfo<void> {
-  const MainRoute({List<_i7.PageRouteInfo>? children})
+class MainRoute extends _i8.PageRouteInfo<void> {
+  const MainRoute({List<_i8.PageRouteInfo>? children})
     : super(MainRoute.name, initialChildren: children);
 
   static const String name = 'MainRoute';
 
-  static _i7.PageInfo page = _i7.PageInfo(
+  static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
       return const _i2.MainScreen();
@@ -55,13 +56,13 @@ class MainRoute extends _i7.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.ProfileScreen]
-class ProfileRoute extends _i7.PageRouteInfo<void> {
-  const ProfileRoute({List<_i7.PageRouteInfo>? children})
+class ProfileRoute extends _i8.PageRouteInfo<void> {
+  const ProfileRoute({List<_i8.PageRouteInfo>? children})
     : super(ProfileRoute.name, initialChildren: children);
 
   static const String name = 'ProfileRoute';
 
-  static _i7.PageInfo page = _i7.PageInfo(
+  static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
       return const _i3.ProfileScreen();
@@ -70,12 +71,28 @@ class ProfileRoute extends _i7.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.RestaurantScreen]
-class RestaurantRoute extends _i7.PageRouteInfo<RestaurantRouteArgs> {
+/// [_i4.Qr]
+class Qr extends _i8.PageRouteInfo<void> {
+  const Qr({List<_i8.PageRouteInfo>? children})
+    : super(Qr.name, initialChildren: children);
+
+  static const String name = 'Qr';
+
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i4.Qr();
+    },
+  );
+}
+
+/// generated route for
+/// [_i5.RestaurantScreen]
+class RestaurantRoute extends _i8.PageRouteInfo<RestaurantRouteArgs> {
   RestaurantRoute({
-    _i8.Key? key,
-    required _i9.Restaurant restaurant,
-    List<_i7.PageRouteInfo>? children,
+    _i9.Key? key,
+    required _i10.Restaurant restaurant,
+    List<_i8.PageRouteInfo>? children,
   }) : super(
          RestaurantRoute.name,
          args: RestaurantRouteArgs(key: key, restaurant: restaurant),
@@ -84,11 +101,11 @@ class RestaurantRoute extends _i7.PageRouteInfo<RestaurantRouteArgs> {
 
   static const String name = 'RestaurantRoute';
 
-  static _i7.PageInfo page = _i7.PageInfo(
+  static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
       final args = data.argsAs<RestaurantRouteArgs>();
-      return _i4.RestaurantScreen(key: args.key, restaurant: args.restaurant);
+      return _i5.RestaurantScreen(key: args.key, restaurant: args.restaurant);
     },
   );
 }
@@ -96,9 +113,9 @@ class RestaurantRoute extends _i7.PageRouteInfo<RestaurantRouteArgs> {
 class RestaurantRouteArgs {
   const RestaurantRouteArgs({this.key, required this.restaurant});
 
-  final _i8.Key? key;
+  final _i9.Key? key;
 
-  final _i9.Restaurant restaurant;
+  final _i10.Restaurant restaurant;
 
   @override
   String toString() {
@@ -117,12 +134,12 @@ class RestaurantRouteArgs {
 }
 
 /// generated route for
-/// [_i5.RestaurantsScreen]
-class RestaurantsRoute extends _i7.PageRouteInfo<RestaurantsRouteArgs> {
+/// [_i6.RestaurantsScreen]
+class RestaurantsRoute extends _i8.PageRouteInfo<RestaurantsRouteArgs> {
   RestaurantsRoute({
-    _i8.Key? key,
+    _i9.Key? key,
     String? kitchen,
-    List<_i7.PageRouteInfo>? children,
+    List<_i8.PageRouteInfo>? children,
   }) : super(
          RestaurantsRoute.name,
          args: RestaurantsRouteArgs(key: key, kitchen: kitchen),
@@ -131,13 +148,13 @@ class RestaurantsRoute extends _i7.PageRouteInfo<RestaurantsRouteArgs> {
 
   static const String name = 'RestaurantsRoute';
 
-  static _i7.PageInfo page = _i7.PageInfo(
+  static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
       final args = data.argsAs<RestaurantsRouteArgs>(
         orElse: () => const RestaurantsRouteArgs(),
       );
-      return _i5.RestaurantsScreen(key: args.key, kitchen: args.kitchen);
+      return _i6.RestaurantsScreen(key: args.key, kitchen: args.kitchen);
     },
   );
 }
@@ -145,7 +162,7 @@ class RestaurantsRoute extends _i7.PageRouteInfo<RestaurantsRouteArgs> {
 class RestaurantsRouteArgs {
   const RestaurantsRouteArgs({this.key, this.kitchen});
 
-  final _i8.Key? key;
+  final _i9.Key? key;
 
   final String? kitchen;
 
@@ -166,17 +183,17 @@ class RestaurantsRouteArgs {
 }
 
 /// generated route for
-/// [_i6.SplashScreen]
-class SplashRoute extends _i7.PageRouteInfo<void> {
-  const SplashRoute({List<_i7.PageRouteInfo>? children})
+/// [_i7.SplashScreen]
+class SplashRoute extends _i8.PageRouteInfo<void> {
+  const SplashRoute({List<_i8.PageRouteInfo>? children})
     : super(SplashRoute.name, initialChildren: children);
 
   static const String name = 'SplashRoute';
 
-  static _i7.PageInfo page = _i7.PageInfo(
+  static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i6.SplashScreen();
+      return const _i7.SplashScreen();
     },
   );
 }
