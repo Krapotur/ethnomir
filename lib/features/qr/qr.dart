@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ethnomir/repositories/restaurant/model/restaurant.dart';
 import 'package:ethnomir/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/web.dart';
@@ -24,7 +25,7 @@ class _QrState extends State<Qr> {
     super.initState();
     getParams();
     Future.delayed(
-      const Duration(seconds: 5),
+      const Duration(seconds: 4),
       () => AutoRouter.of(context).replace(
         RestaurantsRoute(),
         // RestaurantRoute(
@@ -50,7 +51,7 @@ class _QrState extends State<Qr> {
 
     if (fragment!.length > 4) {
       isQueryParametrs = true;
-      queryParams = fragment!.substring(4);
+      queryParams = fragment!.substring(2);
       List<String> params = queryParams!.split('&');
       hotel = params[0].substring(6);
       room = params[1].substring(5);

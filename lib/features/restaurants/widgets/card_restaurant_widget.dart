@@ -15,9 +15,14 @@ class CardRestaurantWidget extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: const Color.fromARGB(255, 224, 224, 224).withValues(alpha: 0.5),
-            spreadRadius: 1,
-            blurRadius: 3,
+            color: const Color.fromARGB(
+              255,
+              205,
+              205,
+              205,
+            ).withValues(alpha: 0.5),
+            spreadRadius: 3,
+            blurRadius: 5,
             offset: Offset(1, 1),
           ),
         ],
@@ -27,7 +32,7 @@ class CardRestaurantWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height *0.15,
+            height: MediaQuery.of(context).size.height * 0.15,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10),

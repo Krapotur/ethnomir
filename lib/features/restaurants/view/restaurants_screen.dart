@@ -14,6 +14,12 @@ class RestaurantsScreen extends StatefulWidget {
 }
 
 class _RestaurantsScreenState extends State<RestaurantsScreen> {
+  LinearGradient linearGradient = LinearGradient(
+    colors: [Color(0xFFF47920), Color.fromARGB(255, 246, 246, 246)],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+  );
+
   List<Restaurant> restaurantsList = [
     Restaurant(
       title: 'Мудрый кочевник',
@@ -52,6 +58,7 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         surfaceTintColor: Colors.white,
         backgroundColor: Colors.white,
         title: Text('Рестораны'),
@@ -92,11 +99,9 @@ class _RestaurantsScreenState extends State<RestaurantsScreen> {
         padding: EdgeInsets.all(15),
         itemCount: restaurantsList.length,
         itemBuilder: (context, index) => GestureDetector(
-          onTap: () => AutoRouter.of(context).push(
-            RestaurantRoute(
-              restaurant: restaurantsList[index],
-            ),
-          ),
+          onTap: () => AutoRouter.of(
+            context,
+          ).push(RestaurantRoute(restaurant: restaurantsList[index])),
           child: CardRestaurantWidget(restaurant: restaurantsList[index]),
         ),
         separatorBuilder: (context, index) => SizedBox(height: 15),

@@ -56,7 +56,7 @@ class _SliverAppbarWidgetState extends State<SliverAppbarWidget> {
       toolbarHeight: toolbarHeight,
       expandedHeight: expandedHeight,
       pinned: true,
-      // leading: BtnToBackScreenWidget(),
+      leading: BtnToBackScreenWidget(),
       centerTitle: true,
       title: isCollapsed
           ? AppbarTitleWidget(restaurant: widget.restaurant)

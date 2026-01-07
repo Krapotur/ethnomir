@@ -11,10 +11,9 @@ class CategoryBtnContainerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     LinearGradient linearGradient = LinearGradient(
       colors: [Color(0xFFF47920), Color(0xFFFF9141)],
-      begin: Alignment.topCenter,
+      begin: Alignment.centerRight,
       end: Alignment.bottomCenter,
     );
 

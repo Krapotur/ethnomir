@@ -26,7 +26,9 @@ class CardWidget extends StatelessWidget {
       width: isBasicPadding != true
           ? MediaQuery.of(context).size.width / 2
           : null,
-      height: isDefaultSize == true ? null :  MediaQuery.of(context).size.width *0.19,    
+      height: isDefaultSize == true
+          ? null
+          : MediaQuery.of(context).size.width * 0.19,
       padding: isBasicPadding != true
           ? EdgeInsets.symmetric(horizontal: 10, vertical: 5)
           : EdgeInsets.all(15),
