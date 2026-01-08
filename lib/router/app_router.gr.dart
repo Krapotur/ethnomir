@@ -10,10 +10,10 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i8;
-import 'package:ethnomir/features/home/view/home_screen.dart' as _i1;
-import 'package:ethnomir/features/main/view/main_screen.dart' as _i2;
-import 'package:ethnomir/features/profile/view/profile_screen.dart' as _i3;
-import 'package:ethnomir/features/qr/qr.dart' as _i4;
+import 'package:ethnomir/features/alert/alert_screen.dart' as _i1;
+import 'package:ethnomir/features/home/view/home_screen.dart' as _i2;
+import 'package:ethnomir/features/main/view/main_screen.dart' as _i3;
+import 'package:ethnomir/features/profile/view/profile_screen.dart' as _i4;
 import 'package:ethnomir/features/restaurant/view/restaurant_screen.dart'
     as _i5;
 import 'package:ethnomir/features/restaurants/view/restaurants_screen.dart'
@@ -23,7 +23,23 @@ import 'package:ethnomir/repositories/models.dart' as _i10;
 import 'package:flutter/material.dart' as _i9;
 
 /// generated route for
-/// [_i1.HomeScreen]
+/// [_i1.AlertScreen]
+class AlertRoute extends _i8.PageRouteInfo<void> {
+  const AlertRoute({List<_i8.PageRouteInfo>? children})
+    : super(AlertRoute.name, initialChildren: children);
+
+  static const String name = 'AlertRoute';
+
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i1.AlertScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [_i2.HomeScreen]
 class HomeRoute extends _i8.PageRouteInfo<void> {
   const HomeRoute({List<_i8.PageRouteInfo>? children})
     : super(HomeRoute.name, initialChildren: children);
@@ -33,13 +49,13 @@ class HomeRoute extends _i8.PageRouteInfo<void> {
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i1.HomeScreen();
+      return const _i2.HomeScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i2.MainScreen]
+/// [_i3.MainScreen]
 class MainRoute extends _i8.PageRouteInfo<void> {
   const MainRoute({List<_i8.PageRouteInfo>? children})
     : super(MainRoute.name, initialChildren: children);
@@ -49,13 +65,13 @@ class MainRoute extends _i8.PageRouteInfo<void> {
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i2.MainScreen();
+      return const _i3.MainScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i3.ProfileScreen]
+/// [_i4.ProfileScreen]
 class ProfileRoute extends _i8.PageRouteInfo<void> {
   const ProfileRoute({List<_i8.PageRouteInfo>? children})
     : super(ProfileRoute.name, initialChildren: children);
@@ -65,23 +81,7 @@ class ProfileRoute extends _i8.PageRouteInfo<void> {
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i3.ProfileScreen();
-    },
-  );
-}
-
-/// generated route for
-/// [_i4.Qr]
-class Qr extends _i8.PageRouteInfo<void> {
-  const Qr({List<_i8.PageRouteInfo>? children})
-    : super(Qr.name, initialChildren: children);
-
-  static const String name = 'Qr';
-
-  static _i8.PageInfo page = _i8.PageInfo(
-    name,
-    builder: (data) {
-      return const _i4.Qr();
+      return const _i4.ProfileScreen();
     },
   );
 }
