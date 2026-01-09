@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:ethnomir/core/theme/theme.dart';
 import 'package:ethnomir/features/splash/widgets/widgets.dart';
+import 'package:ethnomir/repositories/restaurant/model/restaurant.dart';
 import 'package:ethnomir/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    getParams();
+    // getParams();
     Future.delayed(const Duration(seconds: 4), () {
       if (mounted) {
         AutoRouter.of(context).replace(
@@ -68,7 +69,12 @@ class _SplashScreenState extends State<SplashScreen> {
                 ? Center(
                     child: Text(
                       'Для корректного отображения контента, используйте смартфон',
-                      style: TextStyle(fontSize: ThemeTextScaler().responsiveFontSize(context, 18)),
+                      style: TextStyle(
+                        fontSize: ThemeTextScaler().responsiveFontSize(
+                          context,
+                          18,
+                        ),
+                      ),
                     ),
                   )
                 : Center(
