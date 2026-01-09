@@ -6,8 +6,21 @@ class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
     AutoRoute(path: '/', page: SplashRoute.page),
-    AutoRoute(path: '/restaurants', page: RestaurantsRoute.page),
-    AutoRoute(path: '/restaurant', page: RestaurantRoute.page),
+    CustomRoute(
+      path: '/restaurants',
+      page: RestaurantsRoute.page,
+      transitionsBuilder: TransitionsBuilders.fadeIn,
+      predictiveBackPageTransitionsBuilder: TransitionsBuilders.noTransition,
+      duration: Duration(milliseconds: 100)
+
+    ),
+    CustomRoute(
+      path: '/restaurant',
+      page: RestaurantRoute.page,
+      transitionsBuilder: TransitionsBuilders.fadeIn,
+      predictiveBackPageTransitionsBuilder: TransitionsBuilders.noTransition,
+      duration: Duration(milliseconds: 200)
+    ),
     AutoRoute(path: '/alert', page: AlertRoute.page),
   ];
 }
