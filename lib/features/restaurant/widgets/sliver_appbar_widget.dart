@@ -18,7 +18,7 @@ class SliverAppbarWidget extends StatefulWidget {
 }
 
 class _SliverAppbarWidgetState extends State<SliverAppbarWidget> {
-  double expandedHeight = 80;
+  double expandedHeight = 100;
   double toolbarHeight = 60;
 
   bool isCollapsed = false;
