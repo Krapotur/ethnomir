@@ -17,8 +17,8 @@ class _SliverCategoriesWidgetState extends State<SliverCategoriesWidget> {
       primary: false,
       pinned: true,
       automaticallyImplyLeading: false,
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      surfaceTintColor: const Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(241, 255, 255, 255),
+      surfaceTintColor: const Color.fromARGB(241, 255, 255, 255),
       bottom: PreferredSize(
         preferredSize: Size.fromHeight(50),
         child: CategoriesListviewWidget(),

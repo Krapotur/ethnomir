@@ -18,13 +18,13 @@ class SliverAppbarWidget extends StatefulWidget {
 }
 
 class _SliverAppbarWidgetState extends State<SliverAppbarWidget> {
-  double expandedHeight = 200;
-  double toolbarHeight = 64;
+  double expandedHeight = 80;
+  double toolbarHeight = 60;
 
   bool isCollapsed = false;
 
   Future scrollListener() async {
-    if (widget.scrollController.offset > expandedHeight - toolbarHeight + 30) {
+    if (widget.scrollController.offset > expandedHeight - toolbarHeight) {
       if (!isCollapsed) {
         await Future.delayed(Duration(milliseconds: 125));
         setState(() {

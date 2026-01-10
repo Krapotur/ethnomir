@@ -23,19 +23,21 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
     return ChangeNotifierProvider(
       create: (context) => RestaurantModel(),
       lazy: true,
-      child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        body: CustomScrollView(
-          controller: scrollController,
-          slivers: [
-            SliverAppbarWidget(
-              scrollController: scrollController,
-              restaurant: widget.restaurant,
-            ),
-            SliverInfoRestaurantWidget(restaurant: widget.restaurant),
-            const SliverCategoriesWidget(),
-            const SliverGridPositionsWidget(),
-          ],
+      child: SafeArea(
+        child: Scaffold(
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+          body: CustomScrollView(
+            controller: scrollController,
+            slivers: [
+              SliverAppbarWidget(
+                scrollController: scrollController,
+                restaurant: widget.restaurant,
+              ),
+              SliverInfoRestaurantWidget(restaurant: widget.restaurant),
+              const SliverCategoriesWidget(),
+              const SliverGridPositionsWidget(),
+            ],
+          ),
         ),
       ),
     );
