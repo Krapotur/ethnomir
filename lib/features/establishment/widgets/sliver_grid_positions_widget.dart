@@ -67,7 +67,7 @@ class SliverGridPositionsWidget extends StatelessWidget {
           crossAxisCount: 2,
           mainAxisSpacing: 10,
           crossAxisSpacing: 20,
-          mainAxisExtent: 260,
+          mainAxisExtent: 220,
         ),
         delegate: SliverChildBuilderDelegate((context, index) {
           return CardPositionWidget(position: positionsList[index]);

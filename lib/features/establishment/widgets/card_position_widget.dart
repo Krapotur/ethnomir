@@ -25,10 +25,11 @@ class _CardPositionWidgetState extends State<CardPositionWidget> {
         borderRadius: BorderRadius.circular(18),
       ),
       child: Column(
+        mainAxisSize: .min,
         children: [
           GestureDetector(
             child: SizedBox(
-              height: 150,
+              height: 120,
               child: Stack(
                 children: [
                   ImagePositionWidget(positionImg: widget.position.fileId),

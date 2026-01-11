@@ -18,9 +18,7 @@ class MainInfoAboutEstablishment extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              establishment.isRestaurant
-                  ? 'Ресторан "${establishment.title}"'
-                  : 'Кафе "${establishment.title}"',
+              '${establishment.establishmentTypeId} "${establishment.title}"',
               style: theme.textTheme.titleMedium!.copyWith(height: 1.2),
             ),
             Text(

@@ -10,10 +10,7 @@ class SliverInfoRestaurantWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: CardInfoAboutEstablishmentWidget(
-        isClose: establishment.isClosed,
-        establishment: establishment,
-      ),
+      child: CardInfoAboutEstablishmentWidget(establishment: establishment),
     );
   }
 }

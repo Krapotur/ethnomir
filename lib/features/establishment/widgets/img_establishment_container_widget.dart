@@ -14,7 +14,7 @@ class ImgRestaurantContainerWidget extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         image: DecorationImage(
-          image: AssetImage("assets/images/rest/${establishment.imgTitle}.png"),
+          image: AssetImage("assets/images/rest/${establishment.fileId}.png"),
           fit: BoxFit.cover,
         ),
       ),

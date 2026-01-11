@@ -7,11 +7,9 @@ import 'package:flutter/material.dart';
 class CardInfoAboutEstablishmentWidget extends StatelessWidget {
   const CardInfoAboutEstablishmentWidget({
     super.key,
-    required this.isClose,
     required this.establishment,
   });
 
-  final bool isClose;
   final Establishment establishment;
 
   @override
@@ -21,7 +19,7 @@ class CardInfoAboutEstablishmentWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Badge(
-        isLabelVisible: establishment.isClosed,
+        isLabelVisible: establishment.isDeliveryFreeThreshold,
         offset: Offset(-50, -5),
         backgroundColor: Colors.transparent,
         alignment: .topCenter,
@@ -83,7 +81,7 @@ class CardInfoAboutEstablishmentWidget extends StatelessWidget {
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(
-                            'assets/images/rest/${establishment.imgTitle}.png',
+                            'assets/images/rest/${establishment.fileId}.png',
                           ),
                         ),
                       ),

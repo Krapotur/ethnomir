@@ -28,21 +28,35 @@ class CardEstablishmenttWidget extends StatelessWidget {
         ],
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: .start,
+        mainAxisSize: .min,
         children: [
-          Container(
-            height: MediaQuery.of(context).size.height * 0.15,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(10),
-                topRight: Radius.circular(10),
+          Badge(
+            isLabelVisible: establishment.isDeliveryFreeThreshold,
+            // offset: Offset(-50, -5),
+            backgroundColor: Colors.transparent,
+            alignment: .topCenter,
+            label: Container(
+              color: Colors.red,
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+              child: const Text(
+                "Скоро закроется",
+                style: TextStyle(color: Colors.white),
               ),
-              image: DecorationImage(
-                image: AssetImage(
-                  'assets/images/rest/${establishment.imgTitle}.png',
+            ),
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.15,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
                 ),
-                fit: BoxFit.cover,
+                image: DecorationImage(
+                  image: AssetImage(
+                    'assets/images/rest/${establishment.fileId}.png',
+                  ),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),

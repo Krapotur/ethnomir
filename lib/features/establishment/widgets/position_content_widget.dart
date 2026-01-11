@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 
 class PositionContentWidget extends StatelessWidget {
   final Position position;
-  const PositionContentWidget({
-    super.key,
-    required this.position
-  });
+  const PositionContentWidget({super.key, required this.position});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +21,10 @@ class PositionContentWidget extends StatelessWidget {
             ),
           ),
         ),
-        Text('${position.weight}г * ${position.caloric}ккал', style: TextStyle(fontSize: 10, color: theme.hintColor)),
+        Text(
+          '${position.weight}г * ${position.caloric}ккал',
+          style: TextStyle(fontSize: 10, color: theme.hintColor),
+        ),
         const SizedBox(height: 10),
         SizedBox(
           height: 35,

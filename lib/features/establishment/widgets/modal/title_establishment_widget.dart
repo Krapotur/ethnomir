@@ -16,7 +16,7 @@ class TitleEstablishmentWidget extends StatelessWidget {
           children: [
             Icon(Icons.coffee_outlined, size: 18),
             Text(
-              establishment.isRestaurant ? 'Ресторан' : 'Кафе',
+              establishment.establishmentTypeId,
               style: TextStyle(fontSize: 17),
             ),
           ],

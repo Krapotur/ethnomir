@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:ethnomir/core/theme/theme.dart';
 import 'package:ethnomir/features/splash/widgets/widgets.dart';
+import 'package:ethnomir/repositories/models.dart';
 import 'package:ethnomir/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 
@@ -23,26 +24,29 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // getParams();
-    Future.delayed(const Duration(seconds: 4), () {
+    Future.delayed(const Duration(milliseconds: 3), () {
       if (mounted) {
         context.router.replaceAll(
+          // [
+          //   MediaQuery.of(context).size.width > 800
+          //       ? AlertRoute()
+          //       : EstablishmentsRoute(),
+          // ],
           [
-            MediaQuery.of(context).size.width > 800
-                ? AlertRoute()
-                : EstablishmentsRoute(),
+            EstablishmentRoute(
+              establishment: Establishment(
+                title: 'Мудрый кочевник',
+                kitchen: 'Восточная',
+                isActive: true,
+                establishmentTypeId: 'Кафе',
+                description: 'Отличное место',
+                deliveryPrice: '1100',
+                isDeliveryFreeThreshold: false,
+                deliveryTime: '45',
+                fileId: 'kochevnik',
+              ),
+            ),
           ],
-          // RestaurantRoute(
-          //   restaurant: Restaurant(
-          //     title: 'Мудрый кочевник',
-          //     kitchen: 'Восточная кухня',
-          //     delivery: 'от 1200р',
-          //     isRestaurant: true,
-          //     isClosed: true,
-          //     price: '650',
-          //     raiting: '4.9',
-          //     imgTitle: 'chai',
-          //   ),
-          // ),
         );
       }
     });

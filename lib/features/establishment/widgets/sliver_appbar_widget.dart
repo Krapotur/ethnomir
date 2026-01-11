@@ -62,7 +62,7 @@ class _SliverAppbarWidgetState extends State<SliverAppbarWidget> {
           ? AppbarTitleWidget(restaurant: widget.establishment)
           : null,
       actions: [
-        isCollapsed && widget.establishment.isClosed
+        isCollapsed && widget.establishment.isDeliveryFreeThreshold
             ? Padding(
                 padding: const EdgeInsets.only(right: 20.0),
                 child: Icon(Icons.access_time, color: Colors.red),
@@ -78,7 +78,7 @@ class _SliverAppbarWidgetState extends State<SliverAppbarWidget> {
             ),
             image: DecorationImage(
               image: AssetImage(
-                'assets/images/rest/${widget.establishment.imgTitle}.png',
+                'assets/images/rest/${widget.establishment.fileId}.png',
               ),
               fit: BoxFit.cover,
             ),

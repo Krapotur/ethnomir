@@ -26,7 +26,7 @@ class AppbarTitleWidget extends StatelessWidget {
               Icon(Icons.coffee_outlined, size: 18),
               SizedBox(width: 2),
               Text(
-                restaurant.isRestaurant ? 'Ресторан' : 'Кафе',
+                restaurant.establishmentTypeId,
                 style: theme.textTheme.titleSmall,
               ),
             ],

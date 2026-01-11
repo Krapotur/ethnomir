@@ -35,12 +35,15 @@ class ContentCardEstablishmentWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                   gradient: linearGradient,
                 ),
-                child: Text('45 мин', style: TextStyle(color: Colors.white)),
+                child: Text(
+                  '${establishment.deliveryTime} мин',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
               Spacer(flex: 1),
               DeliveryWidget(
                 linearGradient: linearGradient,
-                delivery: establishment.delivery,
+                delivery: establishment.deliveryPrice,
               ),
               Spacer(flex: 4),
             ],
