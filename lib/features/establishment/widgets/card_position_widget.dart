@@ -1,9 +1,11 @@
 import 'package:ethnomir/core/widgets/widgets.dart';
 import 'package:ethnomir/features/establishment/widgets/widgets.dart';
+import 'package:ethnomir/repositories/models.dart';
 import 'package:flutter/material.dart';
 
 class CardPositionWidget extends StatefulWidget {
-  const CardPositionWidget({super.key});
+  final Position position;
+  const CardPositionWidget({super.key, required this.position});
 
   @override
   State<CardPositionWidget> createState() => _CardPositionWidgetState();
@@ -29,23 +31,29 @@ class _CardPositionWidgetState extends State<CardPositionWidget> {
               height: 150,
               child: Stack(
                 children: [
-                  ImagePositionWidget(),
-                  BadgeWidget(title: 'Новинка', isAlignLeft: false),
-                  BadgeWidget(title: 'Хит', isAlignLeft: true),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 5,
-                        vertical: 3,
-                      ),
-                      color: Colors.red,
-                      child: const Text(
-                        "-10%",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
+                  ImagePositionWidget(positionImg: widget.position.fileId),
+                  widget.position.isNew
+                      ? BadgeWidget(title: 'Новинка', isAlignLeft: false)
+                      : SizedBox.shrink(),
+                  widget.position.isPopular
+                      ? BadgeWidget(title: 'Хит', isAlignLeft: true)
+                      : SizedBox.shrink(),
+                  widget.position.discont.isNotEmpty
+                      ? Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 5,
+                              vertical: 3,
+                            ),
+                            color: Colors.red,
+                            child: Text(
+                              "-${widget.position.discont}%",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        )
+                      : SizedBox.shrink(),
                 ],
               ),
             ),
@@ -53,18 +61,13 @@ class _CardPositionWidgetState extends State<CardPositionWidget> {
               isScrollControlled: true,
               backgroundColor: Colors.transparent,
               context: context,
-              builder: (context) => Container(
-                child: InfoAboutPositionWidget(),
-                // bottomNavigationBar: ButtonAddCart(widget: widget),
-              ),
+              builder: (context) =>
+                  InfoAboutPositionWidget(position: widget.position),
+              // bottomNavigationBar: ButtonAddCart(widget: widget),
             ),
           ),
-          const SizedBox(height: 10),
-          PositionContentWidget(
-            title: 'Шорпа из баранины',
-            weight: '200г + 450ккал',
-            price: '550',
-          ),
+          const SizedBox(height: 5),
+          PositionContentWidget(position: widget.position),
         ],
       ),
     );

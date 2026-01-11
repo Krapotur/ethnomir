@@ -1,15 +1,11 @@
+import 'package:ethnomir/repositories/position/model/position.dart';
 import 'package:flutter/material.dart';
 
 class PositionContentWidget extends StatelessWidget {
-  final String title;
-  final String price;
-  final String weight;
-
+  final Position position;
   const PositionContentWidget({
     super.key,
-    required this.title,
-    required this.price,
-    required this.weight,
+    required this.position
   });
 
   @override
@@ -21,14 +17,14 @@ class PositionContentWidget extends StatelessWidget {
       children: [
         Flexible(
           child: Text(
-            title,
+            position.title,
             style: const TextStyle(
               overflow: TextOverflow.ellipsis,
               fontSize: 14,
             ),
           ),
         ),
-        Text(weight, style: TextStyle(fontSize: 10, color: theme.hintColor)),
+        Text('${position.weight}г * ${position.caloric}ккал', style: TextStyle(fontSize: 10, color: theme.hintColor)),
         const SizedBox(height: 10),
         SizedBox(
           height: 35,
@@ -37,7 +33,7 @@ class PositionContentWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
-                '$price руб',
+                '${position.price} руб',
                 style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 16,

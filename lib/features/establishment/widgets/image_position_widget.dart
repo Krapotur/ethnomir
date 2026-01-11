@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
 
 class ImagePositionWidget extends StatelessWidget {
-  const ImagePositionWidget({super.key});
+  final String positionImg;
+  const ImagePositionWidget({super.key, required this.positionImg});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Container(
       height: 160,
       width: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(18),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(18),
+          topRight: Radius.circular(18),
+        ),
+        border: Border(bottom: BorderSide(color: theme.primaryColor, width: 2)),
         image: DecorationImage(
-          image: AssetImage('assets/images/menu/shorpa.jpg'),
+          image: AssetImage('assets/images/menu/$positionImg.png'),
           fit: BoxFit.cover,
         ),
       ),

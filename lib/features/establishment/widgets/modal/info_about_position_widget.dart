@@ -1,9 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:ethnomir/features/establishment/widgets/widgets.dart';
+import 'package:ethnomir/repositories/models.dart';
 import 'package:flutter/material.dart';
 
 class InfoAboutPositionWidget extends StatelessWidget {
-  const InfoAboutPositionWidget({super.key});
+  final Position position;
+
+  const InfoAboutPositionWidget({super.key, required this.position});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,7 @@ class InfoAboutPositionWidget extends StatelessWidget {
               ),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage('assets/images/menu/shorpa.jpg'),
+                image: AssetImage('assets/images/menu/${position.fileId}.png'),
               ),
             ),
             child: GestureDetector(
@@ -50,7 +53,7 @@ class InfoAboutPositionWidget extends StatelessWidget {
               },
             ),
           ),
-          DescriptionPosition(),
+          DescriptionPosition(position: position),
         ],
       ),
     );
