@@ -51,8 +51,7 @@ class RestaurantsWidget extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: () =>
-                  AutoRouter.of(context).replaceAll([RestaurantsRoute()]),
+              onTap: () => context.router.replaceAll([EstablishmentsRoute()]),
               child: Row(
                 mainAxisAlignment: .center,
                 children: [
@@ -82,7 +81,7 @@ class RestaurantsWidget extends StatelessWidget {
             itemCount: restaurantsList.length,
             itemBuilder: (context, index) => GestureDetector(
               onTap: () => AutoRouter.of(context).replaceAll([
-                RestaurantsRoute(kitchen: restaurantsList[index].title),
+                EstablishmentsRoute(kitchen: restaurantsList[index].title),
               ]),
               child: restaurantsList[index],
             ),

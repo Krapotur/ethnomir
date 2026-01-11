@@ -11,13 +11,13 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i8;
 import 'package:ethnomir/features/alert/alert_screen.dart' as _i1;
-import 'package:ethnomir/features/home/view/home_screen.dart' as _i2;
-import 'package:ethnomir/features/main/view/main_screen.dart' as _i3;
-import 'package:ethnomir/features/profile/view/profile_screen.dart' as _i4;
-import 'package:ethnomir/features/restaurant/view/restaurant_screen.dart'
-    as _i5;
-import 'package:ethnomir/features/restaurants/view/restaurants_screen.dart'
-    as _i6;
+import 'package:ethnomir/features/establishment/view/establishment_screen.dart'
+    as _i2;
+import 'package:ethnomir/features/establishments/view/establishments_screen.dart'
+    as _i3;
+import 'package:ethnomir/features/home/view/home_screen.dart' as _i4;
+import 'package:ethnomir/features/main/view/main_screen.dart' as _i5;
+import 'package:ethnomir/features/profile/view/profile_screen.dart' as _i6;
 import 'package:ethnomir/features/splash/view/splash_screen.dart' as _i7;
 import 'package:ethnomir/repositories/models.dart' as _i10;
 import 'package:flutter/material.dart' as _i9;
@@ -39,7 +39,106 @@ class AlertRoute extends _i8.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.HomeScreen]
+/// [_i2.EstablishmentScreen]
+class EstablishmentRoute extends _i8.PageRouteInfo<EstablishmentRouteArgs> {
+  EstablishmentRoute({
+    _i9.Key? key,
+    required _i10.Establishment establishment,
+    List<_i8.PageRouteInfo>? children,
+  }) : super(
+         EstablishmentRoute.name,
+         args: EstablishmentRouteArgs(key: key, establishment: establishment),
+         initialChildren: children,
+       );
+
+  static const String name = 'EstablishmentRoute';
+
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<EstablishmentRouteArgs>();
+      return _i2.EstablishmentScreen(
+        key: args.key,
+        establishment: args.establishment,
+      );
+    },
+  );
+}
+
+class EstablishmentRouteArgs {
+  const EstablishmentRouteArgs({this.key, required this.establishment});
+
+  final _i9.Key? key;
+
+  final _i10.Establishment establishment;
+
+  @override
+  String toString() {
+    return 'EstablishmentRouteArgs{key: $key, establishment: $establishment}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! EstablishmentRouteArgs) return false;
+    return key == other.key && establishment == other.establishment;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ establishment.hashCode;
+}
+
+/// generated route for
+/// [_i3.EstablishmentsScreen]
+class EstablishmentsRoute extends _i8.PageRouteInfo<EstablishmentsRouteArgs> {
+  EstablishmentsRoute({
+    _i9.Key? key,
+    String? kitchen,
+    List<_i8.PageRouteInfo>? children,
+  }) : super(
+         EstablishmentsRoute.name,
+         args: EstablishmentsRouteArgs(key: key, kitchen: kitchen),
+         initialChildren: children,
+       );
+
+  static const String name = 'EstablishmentsRoute';
+
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<EstablishmentsRouteArgs>(
+        orElse: () => const EstablishmentsRouteArgs(),
+      );
+      return _i3.EstablishmentsScreen(key: args.key, kitchen: args.kitchen);
+    },
+  );
+}
+
+class EstablishmentsRouteArgs {
+  const EstablishmentsRouteArgs({this.key, this.kitchen});
+
+  final _i9.Key? key;
+
+  final String? kitchen;
+
+  @override
+  String toString() {
+    return 'EstablishmentsRouteArgs{key: $key, kitchen: $kitchen}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! EstablishmentsRouteArgs) return false;
+    return key == other.key && kitchen == other.kitchen;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ kitchen.hashCode;
+}
+
+/// generated route for
+/// [_i4.HomeScreen]
 class HomeRoute extends _i8.PageRouteInfo<void> {
   const HomeRoute({List<_i8.PageRouteInfo>? children})
     : super(HomeRoute.name, initialChildren: children);
@@ -49,13 +148,13 @@ class HomeRoute extends _i8.PageRouteInfo<void> {
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i2.HomeScreen();
+      return const _i4.HomeScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i3.MainScreen]
+/// [_i5.MainScreen]
 class MainRoute extends _i8.PageRouteInfo<void> {
   const MainRoute({List<_i8.PageRouteInfo>? children})
     : super(MainRoute.name, initialChildren: children);
@@ -65,13 +164,13 @@ class MainRoute extends _i8.PageRouteInfo<void> {
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i3.MainScreen();
+      return const _i5.MainScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i4.ProfileScreen]
+/// [_i6.ProfileScreen]
 class ProfileRoute extends _i8.PageRouteInfo<void> {
   const ProfileRoute({List<_i8.PageRouteInfo>? children})
     : super(ProfileRoute.name, initialChildren: children);
@@ -81,105 +180,9 @@ class ProfileRoute extends _i8.PageRouteInfo<void> {
   static _i8.PageInfo page = _i8.PageInfo(
     name,
     builder: (data) {
-      return const _i4.ProfileScreen();
+      return const _i6.ProfileScreen();
     },
   );
-}
-
-/// generated route for
-/// [_i5.RestaurantScreen]
-class RestaurantRoute extends _i8.PageRouteInfo<RestaurantRouteArgs> {
-  RestaurantRoute({
-    _i9.Key? key,
-    required _i10.Restaurant restaurant,
-    List<_i8.PageRouteInfo>? children,
-  }) : super(
-         RestaurantRoute.name,
-         args: RestaurantRouteArgs(key: key, restaurant: restaurant),
-         initialChildren: children,
-       );
-
-  static const String name = 'RestaurantRoute';
-
-  static _i8.PageInfo page = _i8.PageInfo(
-    name,
-    builder: (data) {
-      final args = data.argsAs<RestaurantRouteArgs>();
-      return _i5.RestaurantScreen(key: args.key, restaurant: args.restaurant);
-    },
-  );
-}
-
-class RestaurantRouteArgs {
-  const RestaurantRouteArgs({this.key, required this.restaurant});
-
-  final _i9.Key? key;
-
-  final _i10.Restaurant restaurant;
-
-  @override
-  String toString() {
-    return 'RestaurantRouteArgs{key: $key, restaurant: $restaurant}';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (other is! RestaurantRouteArgs) return false;
-    return key == other.key && restaurant == other.restaurant;
-  }
-
-  @override
-  int get hashCode => key.hashCode ^ restaurant.hashCode;
-}
-
-/// generated route for
-/// [_i6.RestaurantsScreen]
-class RestaurantsRoute extends _i8.PageRouteInfo<RestaurantsRouteArgs> {
-  RestaurantsRoute({
-    _i9.Key? key,
-    String? kitchen,
-    List<_i8.PageRouteInfo>? children,
-  }) : super(
-         RestaurantsRoute.name,
-         args: RestaurantsRouteArgs(key: key, kitchen: kitchen),
-         initialChildren: children,
-       );
-
-  static const String name = 'RestaurantsRoute';
-
-  static _i8.PageInfo page = _i8.PageInfo(
-    name,
-    builder: (data) {
-      final args = data.argsAs<RestaurantsRouteArgs>(
-        orElse: () => const RestaurantsRouteArgs(),
-      );
-      return _i6.RestaurantsScreen(key: args.key, kitchen: args.kitchen);
-    },
-  );
-}
-
-class RestaurantsRouteArgs {
-  const RestaurantsRouteArgs({this.key, this.kitchen});
-
-  final _i9.Key? key;
-
-  final String? kitchen;
-
-  @override
-  String toString() {
-    return 'RestaurantsRouteArgs{key: $key, kitchen: $kitchen}';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (other is! RestaurantsRouteArgs) return false;
-    return key == other.key && kitchen == other.kitchen;
-  }
-
-  @override
-  int get hashCode => key.hashCode ^ kitchen.hashCode;
 }
 
 /// generated route for

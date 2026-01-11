@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:ethnomir/core/theme/theme.dart';
 import 'package:ethnomir/features/splash/widgets/widgets.dart';
-import 'package:ethnomir/repositories/restaurant/model/restaurant.dart';
 import 'package:ethnomir/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
           [
             MediaQuery.of(context).size.width > 800
                 ? AlertRoute()
-                : RestaurantsRoute(),
+                : EstablishmentsRoute(),
           ],
           // RestaurantRoute(
           //   restaurant: Restaurant(
