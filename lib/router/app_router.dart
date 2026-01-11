@@ -1,5 +1,9 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ethnomir/features/restaurant/view/restaurant_screen.dart';
+import 'package:ethnomir/features/splash/view/view.dart';
 import 'package:ethnomir/router/app_router.gr.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 @AutoRouterConfig()
 class AppRouter extends RootStackRouter {
@@ -24,3 +28,16 @@ class AppRouter extends RootStackRouter {
     AutoRoute(path: '/alert', page: AlertRoute.page),
   ];
 }
+
+// class AppRouterGo {
+//   GoRouter router = GoRouter(
+//     routes:[
+//       GoRoute(path: '/', 
+//       pageBuilder: (context, state) => MaterialPage(child: SplashScreen()),
+//       ),
+//       GoRoute(path: '/restaurants', 
+//       pageBuilder: (context, state) => MaterialPage(child: RestaurantScreen()),
+//       )
+//     ] 
+//   );
+// }
