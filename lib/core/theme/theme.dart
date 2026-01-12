@@ -8,7 +8,7 @@ final primaryTheme = ThemeData(
     backgroundColor: Color.fromARGB(255, 255, 255, 255),
   ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
-    backgroundColor: Color.fromARGB(255, 255, 255, 255),
+    backgroundColor: Colors.transparent,
     unselectedIconTheme: IconThemeData(
       color: Color.fromARGB(255, 115, 115, 115),
     ),

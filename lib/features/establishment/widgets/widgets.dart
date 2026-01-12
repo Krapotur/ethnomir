@@ -1,4 +1,4 @@
-export 'btn_to_back_widget.dart';
+export '../../../core/widgets/btn_to_back_widget.dart';
 export 'info_about_establishment_widget.dart';
 export 'img_establishment_container_widget.dart';
 export 'badge_label_widget.dart';
@@ -19,3 +19,4 @@ export 'modal/info_about_position_widget.dart';
 export 'modal/description_position.dart';
 export 'modal/info_about_caloric.dart';
 export 'modal/title_establishment_widget.dart';
+export './discont_widget.dart';

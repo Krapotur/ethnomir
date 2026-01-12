@@ -1,5 +1,8 @@
+import 'package:ethnomir/features/establishment/provider/model.dart';
+import 'package:ethnomir/repositories/models.dart';
 import 'package:ethnomir/repositories/position/model/position.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class PositionContentWidget extends StatelessWidget {
   final Position position;
@@ -8,6 +11,7 @@ class PositionContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final model = context.read<EstablishmentModel>();
 
     return Column(
       mainAxisSize: .min,
@@ -52,7 +56,8 @@ class PositionContentWidget extends StatelessWidget {
                     size: 28,
                   ),
                 ),
-                onTap: () {},
+                onTap: () =>
+                    model.addPosition(position: position, context: context),
               ),
             ],
           ),

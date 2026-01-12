@@ -59,7 +59,7 @@ class _SliverAppbarWidgetState extends State<SliverAppbarWidget> {
       leading: BtnToBackScreenWidget(),
       centerTitle: true,
       title: isCollapsed
-          ? AppbarTitleWidget(restaurant: widget.establishment)
+          ? AppbarTitleWidget(establishment: widget.establishment)
           : null,
       actions: [
         isCollapsed && widget.establishment.isDeliveryFreeThreshold

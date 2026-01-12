@@ -25,7 +25,7 @@ class DeliveryWidget extends StatelessWidget {
           Icon(Icons.run_circle, size: 18, color: Colors.white),
           SizedBox(width: 5),
           Text(
-            delivery.isEmpty ? 'Бесплатная' : delivery,
+            delivery.isEmpty ? 'Бесплатная' : '$deliveryр',
             style: TextStyle(color: Colors.white),
           ),
         ],

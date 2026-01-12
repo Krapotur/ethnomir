@@ -2,9 +2,9 @@ import 'package:ethnomir/repositories/models.dart';
 import 'package:flutter/material.dart';
 
 class AppbarTitleWidget extends StatelessWidget {
-  const AppbarTitleWidget({super.key, required this.restaurant});
+  const AppbarTitleWidget({super.key, required this.establishment});
 
-  final Establishment restaurant;
+  final Establishment establishment;
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +26,12 @@ class AppbarTitleWidget extends StatelessWidget {
               Icon(Icons.coffee_outlined, size: 18),
               SizedBox(width: 2),
               Text(
-                restaurant.establishmentTypeId,
+                establishment.establishmentTypeId,
                 style: theme.textTheme.titleSmall,
               ),
             ],
           ),
-          Text('«${restaurant.title}»', style: theme.textTheme.titleMedium),
+          Text('«${establishment.title}»', style: theme.textTheme.titleMedium),
         ],
       ),
     );

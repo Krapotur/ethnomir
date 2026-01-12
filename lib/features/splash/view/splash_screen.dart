@@ -24,29 +24,29 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // getParams();
-    Future.delayed(const Duration(milliseconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       if (mounted) {
         context.router.replaceAll(
-          // [
-          //   MediaQuery.of(context).size.width > 800
-          //       ? AlertRoute()
-          //       : EstablishmentsRoute(),
-          // ],
           [
-            EstablishmentRoute(
-              establishment: Establishment(
-                title: 'Мудрый кочевник',
-                kitchen: 'Восточная',
-                isActive: true,
-                establishmentTypeId: 'Кафе',
-                description: 'Отличное место',
-                deliveryPrice: '1100',
-                isDeliveryFreeThreshold: false,
-                deliveryTime: '45',
-                fileId: 'kochevnik',
-              ),
-            ),
+            MediaQuery.of(context).size.width > 800
+                ? AlertRoute()
+                : EstablishmentsRoute(),
           ],
+          // [
+          //   EstablishmentRoute(
+          //     establishment: Establishment(
+          //       title: 'Мудрый кочевник',
+          //       kitchen: 'Восточная',
+          //       isActive: true,
+          //       establishmentTypeId: 'Кафе',
+          //       description: 'Отличное место',
+          //       deliveryPrice: '1100',
+          //       isDeliveryFreeThreshold: false,
+          //       deliveryTime: '45',
+          //       fileId: 'kochevnik',
+          //     ),
+          //   ),
+          // ],
         );
       }
     });

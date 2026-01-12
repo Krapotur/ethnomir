@@ -17,11 +17,14 @@ class _CardPositionWidgetState extends State<CardPositionWidget> {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(
-          width: 0.5,
-          color: const Color.fromARGB(255, 230, 230, 230),
-          style: BorderStyle.solid,
-        ),
+        boxShadow: [
+          BoxShadow(
+            color: const Color.fromARGB(255, 226, 225, 225).withValues(alpha: 0.5),
+            spreadRadius: 2,
+            blurRadius: 3,
+            // offset: Offset(0, 0),
+          ),
+        ],
         borderRadius: BorderRadius.circular(18),
       ),
       child: Column(
@@ -40,20 +43,7 @@ class _CardPositionWidgetState extends State<CardPositionWidget> {
                       ? BadgeWidget(title: 'Хит', isAlignLeft: true)
                       : SizedBox.shrink(),
                   widget.position.discont.isNotEmpty
-                      ? Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 5,
-                              vertical: 3,
-                            ),
-                            color: Colors.red,
-                            child: Text(
-                              "-${widget.position.discont}%",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                        )
+                      ? DiscontWidget(discont: widget.position.discont)
                       : SizedBox.shrink(),
                 ],
               ),
