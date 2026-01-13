@@ -1,4 +1,4 @@
-import 'package:ethnomir/features/establishment/provider/model.dart';
+import 'package:ethnomir/features/cart/provider/model.dart';
 import 'package:ethnomir/repositories/models.dart';
 import 'package:ethnomir/repositories/position/model/position.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,7 @@ class PositionContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final model = context.read<EstablishmentModel>();
+    final model = context.watch<CartModel>();
 
     return Column(
       mainAxisSize: .min,

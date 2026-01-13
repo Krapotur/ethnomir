@@ -2,7 +2,7 @@ import 'package:ethnomir/repositories/models.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
-class EstablishmentModel with ChangeNotifier {
+class CartModel with ChangeNotifier {
   var logger = Logger(printer: PrettyPrinter());
   bool isSelect = false;
   List<Position> cart = [];
@@ -11,7 +11,7 @@ class EstablishmentModel with ChangeNotifier {
     required Position position,
     required BuildContext context,
   }) {
-    if (cart.length < 10) {
+    if (cart.length < 5) {
       cart.add(position);
     } else {
       showScaffoldMessenger(context);
@@ -35,7 +35,6 @@ class EstablishmentModel with ChangeNotifier {
     for (var position in cart) {
       amount += int.parse(position.price);
     }
-    // notifyListeners();
     return amount;
   }
 
@@ -46,15 +45,19 @@ class EstablishmentModel with ChangeNotifier {
   }
 
   void showScaffoldMessenger(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        content: Text(
-          'Корзина переполнена!',
-          style: TextStyle(color: Colors.white),
-        ),
-        backgroundColor: Color.fromARGB(255, 165, 50, 42),
-      ),
-    );
+    ScaffoldMessenger.of(context)
+        .showSnackBar(
+          SnackBar(
+            duration: Duration(seconds: 1),
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+            content: Text(
+              'Корзина переполнена!',
+              style: TextStyle(color: Colors.white),
+            ),
+            backgroundColor: Color.fromARGB(255, 165, 50, 42),
+          ),
+        )
+        .closed
+        .then((_) => ScaffoldMessenger.of(context).clearSnackBars());
   }
 }

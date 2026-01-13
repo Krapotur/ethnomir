@@ -20,3 +20,5 @@ export 'modal/description_position.dart';
 export 'modal/info_about_caloric.dart';
 export 'modal/title_establishment_widget.dart';
 export './discont_widget.dart';
+export './btn_clear_cart_widget.dart';
+export './btn_in_cart_widget.dart';

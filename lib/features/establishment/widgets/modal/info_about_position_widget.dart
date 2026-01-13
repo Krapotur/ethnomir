@@ -1,4 +1,4 @@
-import 'package:auto_route/auto_route.dart';
+import 'package:ethnomir/core/widgets/widgets.dart';
 import 'package:ethnomir/features/establishment/widgets/widgets.dart';
 import 'package:ethnomir/repositories/models.dart';
 import 'package:flutter/material.dart';
@@ -36,22 +36,7 @@ class InfoAboutPositionWidget extends StatelessWidget {
                 image: AssetImage('assets/images/menu/${position.fileId}.png'),
               ),
             ),
-            child: GestureDetector(
-              child: Align(
-                alignment: AlignmentDirectional.topEnd,
-                child: Container(
-                  padding: const EdgeInsets.all(3),
-                  decoration: BoxDecoration(
-                    color: theme.primaryColor,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: const Icon(Icons.close, color: Colors.white),
-                ),
-              ),
-              onTap: () {
-                context.router.maybePop();
-              },
-            ),
+            child: BtnCloseWidget(),
           ),
           DescriptionPosition(position: position),
         ],
@@ -59,3 +44,5 @@ class InfoAboutPositionWidget extends StatelessWidget {
     );
   }
 }
+
+
