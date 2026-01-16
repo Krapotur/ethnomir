@@ -1,6 +1,6 @@
 class Category {
   final String title;
-  final String imgTitle;
+  final String fileId;
 
-  Category({required this.title, required this.imgTitle});
+  Category({required this.title, required this.fileId});
 }

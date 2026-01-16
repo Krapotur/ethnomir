@@ -22,11 +22,8 @@ class PriceFoodWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(Icons.currency_ruble, size: 14, color: Colors.white),
-          Text(
-            price,
-            style: TextStyle(color: Colors.white),
-          ),
+          const Icon(Icons.currency_ruble, size: 14, color: Colors.white),
+          Text(price, style: TextStyle(color: Colors.white)),
         ],
       ),
     );

@@ -87,7 +87,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        Expanded(flex: 3, child: SizedBox()),
+                      const  Expanded(flex: 3, child: SizedBox()),
                         Expanded(
                           flex: 3,
                           child: Column(
@@ -98,11 +98,11 @@ class _SplashScreenState extends State<SplashScreen> {
                                 width: 300,
                                 fit: BoxFit.cover,
                               ),
-                              TextSloganWidget(),
+                             const TextSloganWidget(),
                             ],
                           ),
                         ),
-                        BottomImgStreetWidget(),
+                        const BottomImgStreetWidget(),
                       ],
                     ),
                   ),

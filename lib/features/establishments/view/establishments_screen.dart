@@ -65,7 +65,7 @@ class _EstablishmentsScreenState extends State<EstablishmentsScreen> {
           automaticallyImplyLeading: false,
           surfaceTintColor: Colors.white,
           backgroundColor: Colors.white,
-          title: Text('Рестораны'),
+          title: const Text('Рестораны'),
           centerTitle: true,
         ),
         body: ListView.separated(
@@ -79,7 +79,7 @@ class _EstablishmentsScreenState extends State<EstablishmentsScreen> {
               establishment: establishmentList[index],
             ),
           ),
-          separatorBuilder: (context, index) => SizedBox(height: 15),
+          separatorBuilder: (context, index) => const SizedBox(height: 15),
         ),
       ),
     );

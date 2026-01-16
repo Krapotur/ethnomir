@@ -7,7 +7,7 @@ class CategoryTitleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 10.0),
-      child: Text(
+      child: const Text(
         'Популярное',
         style: TextStyle(
           color: Color(0xFFF47920),

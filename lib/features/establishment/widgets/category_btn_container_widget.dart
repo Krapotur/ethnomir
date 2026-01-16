@@ -12,12 +12,6 @@ class CategoryBtnContainerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    LinearGradient linearGradient = LinearGradient(
-      colors: [Color(0xFFF47920), Color(0xFFFF9141)],
-      begin: Alignment.centerRight,
-      end: Alignment.bottomCenter,
-    );
-
     return SizedBox(
       height: 70,
       child: Column(
@@ -31,7 +25,7 @@ class CategoryBtnContainerWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(50),
               image: DecorationImage(
                 image: AssetImage(
-                  'assets/images/categories_img/${category.imgTitle}.png',
+                  'assets/images/categories_img/${category.fileId}.png',
                 ),
                 fit: BoxFit.cover,
               ),

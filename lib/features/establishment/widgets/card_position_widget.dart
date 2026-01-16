@@ -19,7 +19,12 @@ class _CardPositionWidgetState extends State<CardPositionWidget> {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: const Color.fromARGB(255, 226, 225, 225).withValues(alpha: 0.5),
+            color: const Color.fromARGB(
+              255,
+              226,
+              225,
+              225,
+            ).withValues(alpha: 0.5),
             spreadRadius: 2,
             blurRadius: 3,
             // offset: Offset(0, 0),
@@ -38,13 +43,13 @@ class _CardPositionWidgetState extends State<CardPositionWidget> {
                   ImagePositionWidget(positionImg: widget.position.fileId),
                   widget.position.isNew
                       ? BadgeWidget(title: 'Новинка', isAlignLeft: false)
-                      : SizedBox.shrink(),
+                      : const SizedBox.shrink(),
                   widget.position.isPopular
                       ? BadgeWidget(title: 'Хит', isAlignLeft: true)
-                      : SizedBox.shrink(),
+                      : const SizedBox.shrink(),
                   widget.position.discont.isNotEmpty
                       ? DiscontWidget(discont: widget.position.discont)
-                      : SizedBox.shrink(),
+                      : const SizedBox.shrink(),
                 ],
               ),
             ),
@@ -54,7 +59,6 @@ class _CardPositionWidgetState extends State<CardPositionWidget> {
               context: context,
               builder: (context) =>
                   InfoAboutPositionWidget(position: widget.position),
-              // bottomNavigationBar: ButtonAddCart(widget: widget),
             ),
           ),
           const SizedBox(height: 5),

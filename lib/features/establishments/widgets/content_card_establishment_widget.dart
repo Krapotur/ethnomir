@@ -25,7 +25,7 @@ class ContentCardEstablishmentWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           MainInfoAboutEstablishment(establishment: establishment),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [

@@ -36,7 +36,7 @@ class InfoAboutPositionWidget extends StatelessWidget {
                 image: AssetImage('assets/images/menu/${position.fileId}.png'),
               ),
             ),
-            child: BtnCloseWidget(),
+            child: const BtnCloseWidget(),
           ),
           DescriptionPosition(position: position),
         ],
@@ -44,5 +44,3 @@ class InfoAboutPositionWidget extends StatelessWidget {
     );
   }
 }
-
-

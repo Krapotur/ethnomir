@@ -22,8 +22,8 @@ class DeliveryWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(Icons.run_circle, size: 18, color: Colors.white),
-          SizedBox(width: 5),
+          const Icon(Icons.run_circle, size: 18, color: Colors.white),
+          const SizedBox(width: 5),
           Text(
             delivery.isEmpty ? 'Бесплатная' : '$deliveryр',
             style: TextStyle(color: Colors.white),

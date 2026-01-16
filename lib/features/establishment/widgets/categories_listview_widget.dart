@@ -9,12 +9,12 @@ class CategoriesListviewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Category> categories = [
       // Category(title: 'Популярное', imgTitle: 'baran'),
-      Category(title: 'Горячее', imgTitle: 'hot'),
-      Category(title: 'Напитки', imgTitle: 'drink'),
-      Category(title: 'Детям', imgTitle: 'kids'),
-      Category(title: 'Мангал', imgTitle: 'mangal'),
-      Category(title: 'Салаты', imgTitle: 'salat'),
-      Category(title: 'Десерт', imgTitle: 'desert'),
+      Category(title: 'Горячее', fileId: 'hot'),
+      Category(title: 'Напитки', fileId: 'drink'),
+      Category(title: 'Детям', fileId: 'kids'),
+      Category(title: 'Мангал', fileId: 'mangal'),
+      Category(title: 'Салаты', fileId: 'salat'),
+      Category(title: 'Десерт', fileId: 'desert'),
     ];
     return Container(
       height: 100,
@@ -33,7 +33,7 @@ class CategoriesListviewWidget extends StatelessWidget {
           category: categories[index],
           isSelect: false,
         ),
-        separatorBuilder: (context, index) => SizedBox(width: 15),
+        separatorBuilder: (context, index) => const SizedBox(width: 15),
       ),
     );
   }

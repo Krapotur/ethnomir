@@ -14,7 +14,7 @@ class TitleEstablishmentWidget extends StatelessWidget {
         Row(
           crossAxisAlignment: .center,
           children: [
-            Icon(Icons.coffee_outlined, size: 18),
+            const Icon(Icons.coffee_outlined, size: 18),
             Text(
               establishment.establishmentTypeId,
               style: TextStyle(fontSize: 17),

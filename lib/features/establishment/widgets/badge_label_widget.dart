@@ -7,8 +7,11 @@ class BadgeLabelWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      decoration: BoxDecoration(color: Colors.red),
-      child: Text('Скоро закроется', style: TextStyle(color: Colors.white)),
+      decoration: const BoxDecoration(color: Colors.red),
+      child: const Text(
+        'Скоро закроется',
+        style: TextStyle(color: Colors.white),
+      ),
     );
   }
 }

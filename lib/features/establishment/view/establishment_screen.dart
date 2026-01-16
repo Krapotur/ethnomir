@@ -40,7 +40,7 @@ class _EstablishmentScreenState extends State<EstablishmentScreen> {
         ),
         bottomNavigationBar: model.cart.isNotEmpty
             ? BtnToCartWidget()
-            : SizedBox.shrink(),
+            : const SizedBox.shrink(),
       ),
     );
   }
