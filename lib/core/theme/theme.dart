@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 final primaryTheme = ThemeData(
   useMaterial3: true,
-  scaffoldBackgroundColor: const Color.fromARGB(255, 244, 246, 246),
+  scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255),
   appBarTheme: const AppBarTheme(
     actionsIconTheme: IconThemeData(color: Color.fromARGB(255, 87, 87, 87)),
     backgroundColor: Color.fromARGB(255, 255, 255, 255),

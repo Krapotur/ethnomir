@@ -1,3 +1,4 @@
+import 'package:animated_flip_counter/animated_flip_counter.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:ethnomir/features/cart/provider/model.dart';
 import 'package:ethnomir/router/app_router.gr.dart';
@@ -43,15 +44,19 @@ class BtnToCartWidget extends StatelessWidget {
                 Container(
                   height: 25,
                   width: 25,
-                  padding: EdgeInsets.all(2),
                   decoration: BoxDecoration(
                     color: Colors.black38,
                     borderRadius: BorderRadius.circular(100),
                   ),
                   child: Center(
-                    child: Text(
-                      model.cart.length.toString(),
-                      style: theme.textTheme.titleSmall!.copyWith(
+                    child: AnimatedFlipCounter(
+                      value: model.cart.length,
+                      duration: const Duration(seconds: 1),
+                      padding: const EdgeInsets.all(0),
+                      curve: Curves.elasticOut,
+                      wholeDigits: 2,
+                      hideLeadingZeroes: true,
+                      textStyle: theme.textTheme.titleSmall!.copyWith(
                         color: Colors.white,
                       ),
                     ),
@@ -59,11 +64,31 @@ class BtnToCartWidget extends StatelessWidget {
                 ),
               ],
             ),
-            Text(
-              '${model.getSumAmount().toString()} р.',
-              style: theme.textTheme.bodyLarge!.copyWith(
-                fontSize: 17,
-                color: Colors.white,
+            SizedBox(
+              height: 25,
+              child: Row(
+                mainAxisSize: .min,
+                children: [
+                  AnimatedFlipCounter(
+                    value: model.getSumAmount(),
+                    duration: const Duration(seconds: 1),
+                    padding: const EdgeInsets.all(0),
+                    curve: Curves.easeInToLinear,
+                    wholeDigits: 2,
+                    hideLeadingZeroes: true,
+                    textStyle: theme.textTheme.bodyLarge!.copyWith(
+                      fontSize: 17,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Text(
+                    ' р.',
+                    style: theme.textTheme.bodyLarge!.copyWith(
+                      fontSize: 17,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

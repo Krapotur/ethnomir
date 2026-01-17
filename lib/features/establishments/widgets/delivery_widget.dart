@@ -13,7 +13,7 @@ class DeliveryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 3),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         gradient: linearGradient,
@@ -22,7 +22,7 @@ class DeliveryWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Icon(Icons.run_circle, size: 18, color: Colors.white),
+          const Icon(Icons.run_circle, size: 23, color: Colors.white),
           const SizedBox(width: 5),
           Text(
             delivery.isEmpty ? 'Бесплатная' : '$deliveryр',

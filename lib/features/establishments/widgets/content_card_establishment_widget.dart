@@ -26,27 +26,30 @@ class ContentCardEstablishmentWidget extends StatelessWidget {
         children: [
           MainInfoAboutEstablishment(establishment: establishment),
           const SizedBox(height: 10),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  gradient: linearGradient,
+          SizedBox(
+            height: 30,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    gradient: linearGradient,
+                  ),
+                  child: Text(
+                    '${establishment.deliveryTime} мин',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
-                child: Text(
-                  '${establishment.deliveryTime} мин',
-                  style: TextStyle(color: Colors.white),
+                Spacer(flex: 1),
+                DeliveryWidget(
+                  linearGradient: linearGradient,
+                  delivery: establishment.deliveryPrice,
                 ),
-              ),
-              Spacer(flex: 1),
-              DeliveryWidget(
-                linearGradient: linearGradient,
-                delivery: establishment.deliveryPrice,
-              ),
-              Spacer(flex: 4),
-            ],
+                Spacer(flex: 4),
+              ],
+            ),
           ),
         ],
       ),

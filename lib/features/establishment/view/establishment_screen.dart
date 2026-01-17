@@ -25,7 +25,6 @@ class _EstablishmentScreenState extends State<EstablishmentScreen> {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         body: CustomScrollView(
           controller: scrollController,
           slivers: [

@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:ethnomir/features/cart/provider/model.dart';
+import 'package:ethnomir/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,35 +17,37 @@ class BtnConfirmOrderWidget extends StatelessWidget {
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
     );
-    LinearGradient linearGreyGradient = LinearGradient(
-      colors: [
-        Color.fromARGB(255, 148, 148, 148),
-        Color.fromARGB(255, 228, 228, 228),
-      ],
-      begin: Alignment.topCenter,
-      end: Alignment.bottomCenter,
-    );
+
     return GestureDetector(
+      onTap: () => model.cart.isEmpty
+          ? context.router.replaceAll([EstablishmentsRoute()])
+          : null,
       child: Container(
-        margin: EdgeInsets.only(left: 30, right: 30, bottom: 20),
-        padding: EdgeInsets.symmetric(vertical: 15),
+        margin: EdgeInsets.only(left: 10, right: 10, bottom: 20),
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(250),
-          gradient: model.cart.isNotEmpty
-              ? linearPrimaryGradient
-              : linearGreyGradient,
+          gradient: linearPrimaryGradient,
         ),
         child: Row(
-          mainAxisAlignment: .center,
+          mainAxisAlignment: .spaceBetween,
           mainAxisSize: .min,
           children: [
             Text(
-              'Оформить заказ',
+              model.cart.isEmpty ? 'Перейти к ресторанам' : 'Оформить заказ',
               style: theme.textTheme.titleMedium!.copyWith(
                 color: Colors.white,
                 fontWeight: .bold,
               ),
             ),
+            model.cart.isEmpty
+                ? const SizedBox.shrink()
+                : Text(
+                    '${model.getSumAmount().toString()} р.',
+                    style: theme.textTheme.titleMedium!.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
           ],
         ),
       ),
