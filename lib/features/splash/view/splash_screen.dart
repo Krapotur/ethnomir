@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ? AlertRoute()
                 : EstablishmentsRoute(),
           ],
-          // [CartRoute()]
+          // [CartRoute()],
           // [
           //   EstablishmentRoute(
           //     establishment: Establishment(
@@ -83,19 +83,11 @@ class _SplashScreenState extends State<SplashScreen> {
                     ),
                   )
                 : Center(
-                    // TweenAnimationBuilder анимирует значение Tween от начального до конечного
                     child: TweenAnimationBuilder<double>(
-                      tween: Tween<double>(
-                        begin: 0.5,
-                        end: 1.0,
-                      ), // Масштаб от 50% до 100%
-                      duration: const Duration(
-                        seconds: 1,
-                      ), // Медленная анимация: 3 секунды
-                      curve: Curves.slowMiddle, // Плавное начало и конец
-
+                      tween: Tween<double>(begin: 0.5, end: 1.0),
+                      duration: const Duration(seconds: 1),
+                      curve: Curves.slowMiddle,
                       builder: (BuildContext context, double scale, Widget? child) {
-                        // scale будет меняться от 0.5 до 1.0 в течение 3 секунд
                         return Transform.scale(
                           scale: scale,
                           child: Image.asset(
