@@ -45,7 +45,7 @@ class SliverAppbarWidget extends StatelessWidget {
         preferredSize: Size.fromHeight(50),
         child: Container(
           alignment: .topLeft,
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: EdgeInsets.only(left: 10,bottom: 10),
           child: Text(
             'В корзине ${model.cart.isEmpty ? 'пусто...' : '${model.cart.length} товара на ${model.getSumAmount()} р.'}',
             style: theme.textTheme.titleLarge!.copyWith(fontSize: 20),
