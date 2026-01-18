@@ -21,10 +21,12 @@ class CartScreen extends StatelessWidget {
               ? ImgEmptyCartWidget()
               : SliverToBoxAdapter(child: SizedBox.shrink()),
           SliverListPositionsWidget(),
+          model.cart.isNotEmpty
+              ? PromocodeWidget()
+              : SliverToBoxAdapter(child: SizedBox.shrink()),
         ],
       ),
       bottomNavigationBar: const BtnConfirmOrderWidget(),
     );
   }
 }
-

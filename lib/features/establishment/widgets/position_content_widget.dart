@@ -36,12 +36,33 @@ class PositionContentWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(
-                '${position.price} руб',
-                style: const TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 16,
-                ),
+              Column(
+                mainAxisSize: .min,
+                crossAxisAlignment: .start,
+                children: [
+                  position.discont > 0
+                      ? Text(
+                          '${model.getDiscontPrice(position: position)} р.',
+                          style: theme.textTheme.titleSmall!.copyWith(
+                            height: 0.5,
+                            fontSize: 17,
+                            color: Colors.red,
+                          ),
+                        )
+                      : const SizedBox.shrink(),
+                  Text(
+                    '${position.price} р.',
+                    style: theme.textTheme.titleSmall!.copyWith(
+                      fontSize: position.discont > 0 ? 12 : 17,
+                      color: position.discont > 0
+                          ? Colors.grey
+                          : Colors.black87,
+                      decoration: position.discont > 0
+                          ? TextDecoration.lineThrough
+                          : null,
+                    ),
+                  ),
+                ],
               ),
               GestureDetector(
                 child: Container(

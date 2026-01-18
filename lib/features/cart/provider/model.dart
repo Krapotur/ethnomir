@@ -38,6 +38,16 @@ class CartModel with ChangeNotifier {
     return amount;
   }
 
+  String getDiscontPrice({required Position position}) {
+    int price;
+
+    price =
+        int.parse(position.price) -
+        (int.parse(position.price) * (position.discont / 100)).round();
+  
+    return price.toString();
+  }
+
   void selectCategory() {
     logger.w(isSelect);
     isSelect ? isSelect = false : isSelect = true;

@@ -7,7 +7,7 @@ class Position {
   final String weight;
   final String caloric;
   final String price;
-  final String discont;
+  final int discont;
   final String establishmentId;
   final String positionCategoryId;
   final String fileId;

@@ -8,7 +8,8 @@ class ImgEmptyCartWidget extends StatelessWidget {
     return SliverToBoxAdapter(
       child: SizedBox(
         height: MediaQuery.of(context).size.height,
-        child: Image.asset('assets/images/cart_empty.png', fit: BoxFit.contain),
+        child: Image.asset('assets/images/cart_empty.png', fit: BoxFit.contain,
+        ),
       ),
     );
   }

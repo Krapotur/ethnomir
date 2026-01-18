@@ -47,7 +47,7 @@ class _CardPositionWidgetState extends State<CardPositionWidget> {
                   widget.position.isPopular
                       ? BadgeWidget(title: 'Хит', isAlignLeft: true)
                       : const SizedBox.shrink(),
-                  widget.position.discont.isNotEmpty
+                  widget.position.discont > 0
                       ? DiscontWidget(discont: widget.position.discont)
                       : const SizedBox.shrink(),
                 ],

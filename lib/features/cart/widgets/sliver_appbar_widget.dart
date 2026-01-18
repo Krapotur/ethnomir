@@ -15,7 +15,7 @@ class SliverAppbarWidget extends StatelessWidget {
     return SliverAppBar(
       surfaceTintColor: Colors.white,
       pinned: true,
-      title: const Text('Корзина'),
+      title:  Text('Корзина', style: theme.textTheme.titleMedium!.copyWith(fontSize: 17, fontWeight: .bold),),
       centerTitle: true,
       leading: GestureDetector(
         onTap: () => context.router.maybePop(),
@@ -25,7 +25,7 @@ class SliverAppbarWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(right: 10.0),
           child: IconButton(
-            onPressed: () {
+            onPressed: model.cart.isEmpty ? null : () {
               showDialog(
                 context: context,
                 builder: (context) => CustomModalDialog(),
@@ -33,8 +33,8 @@ class SliverAppbarWidget extends StatelessWidget {
             },
             icon: model.cart.isNotEmpty
                 ? const Icon(
-                    Icons.delete_sweep_outlined,
-                    size: 33,
+                    Icons.delete_outlined,
+                    size: 25,
                     color: Colors.black87,
                   )
                 : const SizedBox.shrink(),

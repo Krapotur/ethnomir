@@ -6,7 +6,7 @@ class DiscontWidget extends StatelessWidget {
     required this.discont,
   });
 
-  final String discont;
+  final int discont;
 
   @override
   Widget build(BuildContext context) {
