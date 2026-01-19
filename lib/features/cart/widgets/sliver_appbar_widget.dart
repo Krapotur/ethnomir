@@ -15,7 +15,13 @@ class SliverAppbarWidget extends StatelessWidget {
     return SliverAppBar(
       surfaceTintColor: Colors.white,
       pinned: true,
-      title:  Text('Корзина', style: theme.textTheme.titleMedium!.copyWith(fontSize: 17, fontWeight: .bold),),
+      title: Text(
+        'Корзина',
+        style: theme.textTheme.titleMedium!.copyWith(
+          fontSize: 17,
+          fontWeight: .bold,
+        ),
+      ),
       centerTitle: true,
       leading: GestureDetector(
         onTap: () => context.router.maybePop(),
@@ -25,12 +31,14 @@ class SliverAppbarWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(right: 10.0),
           child: IconButton(
-            onPressed: model.cart.isEmpty ? null : () {
-              showDialog(
-                context: context,
-                builder: (context) => CustomModalDialog(),
-              );
-            },
+            onPressed: model.cart.isEmpty
+                ? null
+                : () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => CustomModalDialog(),
+                    );
+                  },
             icon: model.cart.isNotEmpty
                 ? const Icon(
                     Icons.delete_outlined,
@@ -45,9 +53,9 @@ class SliverAppbarWidget extends StatelessWidget {
         preferredSize: Size.fromHeight(50),
         child: Container(
           alignment: .topLeft,
-          padding: EdgeInsets.only(left: 10,bottom: 10),
+          padding: EdgeInsets.only(left: 10, bottom: 10),
           child: Text(
-            'В корзине ${model.cart.isEmpty ? 'пусто...' : '${model.cart.length} товара на ${model.getSumAmount()} р.'}',
+            'В корзине ${model.cart.isEmpty ? 'пусто...' : 'позиций ${model.getQuantityPositionInCart()} на ${model.getSumAmount()} р.'}',
             style: theme.textTheme.titleLarge!.copyWith(fontSize: 20),
           ),
         ),

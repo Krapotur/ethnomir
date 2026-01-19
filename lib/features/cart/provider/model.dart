@@ -11,8 +11,16 @@ class CartModel with ChangeNotifier {
     required Position position,
     required BuildContext context,
   }) {
-    if (cart.length < 5) {
-      cart.add(position);
+    if (getQuantityPositionInCart() < 5) {
+      if (!cart.contains(position)) {
+        cart.add(position);
+      } else {
+        cart.forEach((el) {
+          if (el.id == position.id) {
+            el.quantityInCart += 1;
+          }
+        });
+      }
     } else {
       showScaffoldMessenger(context);
     }
@@ -44,8 +52,28 @@ class CartModel with ChangeNotifier {
     price =
         int.parse(position.price) -
         (int.parse(position.price) * (position.discont / 100)).round();
-  
+
     return price.toString();
+  }
+
+  String getQuantityPositionInOrder({required Position position}) {
+    int quantity = position.quantityInCart;
+    cart.forEach((el) {
+      if (el.id == position.id) {
+        quantity = position.quantityInCart;
+      }
+    });
+
+    return quantity.toString();
+  }
+
+  int getQuantityPositionInCart() {
+    int quantity = 0;
+    cart.forEach((el) {
+      quantity += el.quantityInCart;
+    });
+
+    return quantity;
   }
 
   void selectCategory() {

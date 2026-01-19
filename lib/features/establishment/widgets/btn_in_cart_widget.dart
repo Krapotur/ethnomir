@@ -50,7 +50,7 @@ class BtnToCartWidget extends StatelessWidget {
                   ),
                   child: Center(
                     child: AnimatedFlipCounter(
-                      value: model.cart.length,
+                      value: model.getQuantityPositionInCart(),
                       duration: const Duration(seconds: 1),
                       padding: const EdgeInsets.all(0),
                       curve: Curves.elasticOut,

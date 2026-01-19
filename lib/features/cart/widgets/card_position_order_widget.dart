@@ -70,7 +70,7 @@ class CardPositionOrderWidget extends StatelessWidget {
                         )
                       : const SizedBox.shrink(),
                   Text(
-                    '${position.price} р.',
+                    '${position.price * position.quantityInCart} р.',
                     style: theme.textTheme.titleSmall!.copyWith(
                       fontSize: position.discont > 0 ? 12 : 17,
                       color: position.discont > 0

@@ -35,7 +35,7 @@ class ButtonsRemoveAndAddWidget extends StatelessWidget {
         ),
         const SizedBox(width: 10),
         Text(
-          position.establishmentId.toString(),
+          model.getQuantityPositionInOrder(position: position),
           style: theme.textTheme.titleMedium!.copyWith(
             fontWeight: .bold,
             fontSize: 16,

@@ -9,6 +9,7 @@ class SliverGridPositionsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Position> positionsList = [
       Position(
+        id: '1',
         isActive: true,
         title: 'Шорпа',
         description:
@@ -24,6 +25,7 @@ class SliverGridPositionsWidget extends StatelessWidget {
         isNew: false,
       ),
       Position(
+        id: '2',
         isActive: true,
         title: 'Каурма лагман',
         description:
@@ -39,6 +41,7 @@ class SliverGridPositionsWidget extends StatelessWidget {
         isNew: false,
       ),
       Position(
+        id: '3',
         isActive: true,
         title: 'Манты с бараниной',
         description:
@@ -54,6 +57,7 @@ class SliverGridPositionsWidget extends StatelessWidget {
         isNew: true,
       ),
       Position(
+        id: '4',
         isActive: true,
         title: 'Плов по чайхански',
         description:
@@ -69,6 +73,7 @@ class SliverGridPositionsWidget extends StatelessWidget {
         isNew: true,
       ),
       Position(
+        id: '4',
         isActive: true,
         title: 'Плов по чайхански',
         description:
