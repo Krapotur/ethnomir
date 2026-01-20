@@ -72,22 +72,7 @@ class SliverGridPositionsWidget extends StatelessWidget {
         isPopular: false,
         isNew: true,
       ),
-      Position(
-        id: '4',
-        isActive: true,
-        title: 'Плов по чайхански',
-        description:
-            'Плов по-чайхански — повседневный вариант узбекского плова, который готовят каждый день в чайханах. Название связано с старой ташкентской традицией «ош», когда мужчины собираются по четвергам в чайхане «на ош», что означает «на плов».',
-        weight: '200',
-        caloric: '310',
-        price: '420',
-        discont: 0,
-        establishmentId: '1',
-        positionCategoryId: 'Горячее',
-        fileId: 'plov',
-        isPopular: false,
-        isNew: true,
-      ),
+    
     ];
 
     return SliverPadding(

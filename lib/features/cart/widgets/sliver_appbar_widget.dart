@@ -54,10 +54,15 @@ class SliverAppbarWidget extends StatelessWidget {
         child: Container(
           alignment: .topLeft,
           padding: EdgeInsets.only(left: 10, bottom: 10),
-          child: Text(
-            'В корзине ${model.cart.isEmpty ? 'пусто...' : 'позиций ${model.getQuantityPositionInCart()} на ${model.getSumAmount()} р.'}',
-            style: theme.textTheme.titleLarge!.copyWith(fontSize: 20),
-          ),
+          child: model.cart.isEmpty
+              ? Text(
+                  'В корзине пусто...',
+                  style: theme.textTheme.titleLarge!.copyWith(fontSize: 20),
+                )
+              : Text(
+                  'Товары ${model.getQuantityPositionInCart()} на сумму ${model.getSumAmount()} р.',
+                  style: theme.textTheme.titleLarge!.copyWith(fontSize: 20),
+                ),
         ),
       ),
     );

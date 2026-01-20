@@ -57,11 +57,15 @@ class CardPositionOrderWidget extends StatelessWidget {
                     '${position.title}, ${position.weight}г',
                     style: theme.textTheme.bodyMedium,
                   ),
+                  Text(
+                    '${position.price}р',
+                    style: theme.textTheme.bodySmall!.copyWith(color: Colors.grey, fontSize: 11, height: 0.7),
+                  ),
 
-                  const SizedBox(height: 15),
+                  const SizedBox(height: 25),
                   position.discont > 0
                       ? Text(
-                          '${model.getDiscontPrice(position: position)} р.',
+                          '${model.getDiscontPrice(position: position) * position.quantityInCart} р.',
                           style: theme.textTheme.titleSmall!.copyWith(
                             height: 0.5,
                             fontSize: 17,
@@ -70,7 +74,7 @@ class CardPositionOrderWidget extends StatelessWidget {
                         )
                       : const SizedBox.shrink(),
                   Text(
-                    '${position.price * position.quantityInCart} р.',
+                    '${int.parse(position.price) * position.quantityInCart} р.',
                     style: theme.textTheme.titleSmall!.copyWith(
                       fontSize: position.discont > 0 ? 12 : 17,
                       color: position.discont > 0

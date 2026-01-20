@@ -17,20 +17,23 @@ class ButtonsRemoveAndAddWidget extends StatelessWidget {
       crossAxisAlignment: .center,
       mainAxisSize: .min,
       children: [
-        Container(
-          padding: EdgeInsets.all(3),
-          decoration: BoxDecoration(
-            border: Border.all(
-              width: 2,
-              color: const Color.fromARGB(255, 194, 194, 194),
+        GestureDetector(
+          onTap: () => model.removePosition(position: position),
+          child: Container(
+            padding: EdgeInsets.all(3),
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 2,
+                color: const Color.fromARGB(255, 194, 194, 194),
+              ),
+              borderRadius: BorderRadius.circular(10),
             ),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Icon(
-            Icons.remove,
-            color: Colors.black,
-            size: 15,
-            fontWeight: .bold,
+            child: Icon(
+              Icons.remove,
+              color: Colors.black,
+              size: 15,
+              fontWeight: .bold,
+            ),
           ),
         ),
         const SizedBox(width: 10),
@@ -42,20 +45,23 @@ class ButtonsRemoveAndAddWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 10),
-        Container(
-          padding: EdgeInsets.all(3),
-          decoration: BoxDecoration(
-            border: Border.all(
-              width: 2,
-              color: const Color.fromARGB(255, 194, 194, 194),
+        GestureDetector(
+          onTap: () => model.addPosition(position: position, context: context),
+          child: Container(
+            padding: EdgeInsets.all(3),
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 2,
+                color: const Color.fromARGB(255, 194, 194, 194),
+              ),
+              borderRadius: BorderRadius.circular(10),
             ),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Icon(
-            Icons.add,
-            color: Colors.black,
-            size: 15,
-            fontWeight: .bold,
+            child: Icon(
+              Icons.add,
+              color: Colors.black,
+              size: 15,
+              fontWeight: .bold,
+            ),
           ),
         ),
       ],

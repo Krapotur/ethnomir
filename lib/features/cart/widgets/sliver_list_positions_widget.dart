@@ -16,8 +16,7 @@ class SliverListPositionsWidget extends StatelessWidget {
       padding: EdgeInsetsGeometry.symmetric(horizontal: 15, vertical: 20),
       sliver: SliverList.separated(
         itemCount: model.cart.length,
-        itemBuilder: (context, index) =>
-            CardPositionOrderWidget(position: model.cart[index]),
+        itemBuilder: (context, index) => CardPositionOrderWidget(position: model.cart[index]) ,
         separatorBuilder: (context, index) => const Divider(color:Color.fromARGB(110, 231, 231, 231),),
       ),
     );

@@ -11,15 +11,20 @@ class CartModel with ChangeNotifier {
     required Position position,
     required BuildContext context,
   }) {
-    if (getQuantityPositionInCart() < 5) {
+    if (getQuantityPositionInCart() < 10) {
       if (!cart.contains(position)) {
-        cart.add(position);
-      } else {
-        cart.forEach((el) {
+           for (var el in cart) {
           if (el.id == position.id) {
             el.quantityInCart += 1;
           }
-        });
+        }
+        cart.add(position);
+      } else {
+        for (var el in cart) {
+          if (el.id == position.id) {
+            el.quantityInCart += 1;
+          }
+        }
       }
     } else {
       showScaffoldMessenger(context);
@@ -27,8 +32,17 @@ class CartModel with ChangeNotifier {
     notifyListeners();
   }
 
-  void removePosition(Position position) {
-    cart.remove(position);
+  void removePosition({required Position position}) {
+    for (var el in cart) {
+      if (el.id == position.id) {
+        if (el.quantityInCart != 0) {
+          el.quantityInCart -= 1;
+        } 
+      }
+    }
+    if (position.quantityInCart == 0) {
+      cart.remove(position);
+    }
     notifyListeners();
   }
 
@@ -41,37 +55,37 @@ class CartModel with ChangeNotifier {
   int getSumAmount() {
     int amount = 0;
     for (var position in cart) {
-      amount += int.parse(position.price);
+      amount += int.parse(position.price) * position.quantityInCart;
     }
     return amount;
   }
 
-  String getDiscontPrice({required Position position}) {
+  int getDiscontPrice({required Position position}) {
     int price;
 
     price =
         int.parse(position.price) -
         (int.parse(position.price) * (position.discont / 100)).round();
 
-    return price.toString();
+    return price;
   }
 
   String getQuantityPositionInOrder({required Position position}) {
     int quantity = position.quantityInCart;
-    cart.forEach((el) {
+    for (var el in cart) {
       if (el.id == position.id) {
         quantity = position.quantityInCart;
       }
-    });
+    }
 
     return quantity.toString();
   }
 
   int getQuantityPositionInCart() {
     int quantity = 0;
-    cart.forEach((el) {
+    for (var el in cart) {
       quantity += el.quantityInCart;
-    });
+    }
 
     return quantity;
   }
