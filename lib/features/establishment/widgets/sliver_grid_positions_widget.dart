@@ -72,6 +72,22 @@ class SliverGridPositionsWidget extends StatelessWidget {
         isPopular: false,
         isNew: true,
       ),
+      Position(
+        id: '5',
+        isActive: true,
+        title: 'Шашлык из баранины',
+        description:
+            'Плов по-чайхански — повседневный вариант узбекского плова, который готовят каждый день в чайханах. Название связано с старой ташкентской традицией «ош», когда мужчины собираются по четвергам в чайхане «на ош», что означает «на плов».',
+        weight: '200',
+        caloric: '400',
+        price: '700',
+        discont: 0,
+        establishmentId: '1',
+        positionCategoryId: 'Мангал',
+        fileId: 'georgia_kitchen',
+        isPopular: false,
+        isNew: true,
+      ),
     
     ];
 
