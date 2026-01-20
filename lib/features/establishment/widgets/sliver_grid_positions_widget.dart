@@ -84,11 +84,25 @@ class SliverGridPositionsWidget extends StatelessWidget {
         discont: 0,
         establishmentId: '1',
         positionCategoryId: 'Мангал',
-        fileId: 'georgia_kitchen',
+        fileId: 'mangal',
         isPopular: false,
         isNew: true,
       ),
-    
+      Position(
+        id: '6',
+        isActive: true,
+        title: 'Пицца',
+        description: 'Вкусно',
+        weight: '200',
+        caloric: '400',
+        price: '670',
+        discont: 0,
+        establishmentId: '1',
+        positionCategoryId: 'Мангал',
+        fileId: 'pizza',
+        isPopular: false,
+        isNew: false,
+      ),
     ];
 
     return SliverPadding(

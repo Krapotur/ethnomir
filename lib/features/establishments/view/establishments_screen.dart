@@ -1,8 +1,11 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:ethnomir/core/widgets/widgets.dart';
+import 'package:ethnomir/features/cart/provider/model.dart';
 import 'package:ethnomir/features/establishments/widgets/widgets.dart';
 import 'package:ethnomir/repositories/models.dart';
 import 'package:ethnomir/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 @RoutePage()
 class EstablishmentsScreen extends StatefulWidget {
@@ -58,6 +61,8 @@ class _EstablishmentsScreenState extends State<EstablishmentsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final model = context.watch<CartModel>();
+
     return PopScope(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -81,6 +86,10 @@ class _EstablishmentsScreenState extends State<EstablishmentsScreen> {
           ),
           separatorBuilder: (context, index) => const SizedBox(height: 15),
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+        floatingActionButton: model.cart.isNotEmpty
+            ? const FloatingButtonCartWidget()
+            : const SizedBox.shrink(),
       ),
     );
   }

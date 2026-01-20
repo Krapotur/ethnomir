@@ -26,7 +26,7 @@ class CategoriesListviewWidget extends StatelessWidget {
         ),
       ),
       child: ListView.separated(
-        padding: EdgeInsets.only(left: 10, right: 15, bottom: 5),
+        padding: EdgeInsets.only(left: 10, top: 5, right: 15, bottom: 5),
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
         itemBuilder: (context, index) => CategoryBtnContainerWidget(
