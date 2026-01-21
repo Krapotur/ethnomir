@@ -37,13 +37,14 @@ class CartModel with ChangeNotifier {
   void removePosition({required Position position}) {
     for (var el in cart) {
       if (el.id == position.id) {
-        if (el.quantityInCart != 0) {
+        if (el.quantityInCart > 0) {
           el.quantityInCart -= 1;
         }
       }
     }
     if (position.quantityInCart == 0) {
       cart.remove(position);
+      position.quantityInCart = 1;
     }
     notifyListeners();
   }

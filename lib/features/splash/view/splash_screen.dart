@@ -33,6 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 : EstablishmentsRoute(),
           ],
           // [CartRoute()],
+          // [PreparationOrderRoute()],
           // [
           //   EstablishmentRoute(
           //     establishment: Establishment(

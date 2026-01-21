@@ -23,7 +23,7 @@ class CategoryBtnContainerWidget extends StatelessWidget {
               width: model.activeCategory == category.title ? 72 : 70,
               decoration: BoxDecoration(
                 border: model.activeCategory == category.title
-                    ? Border.all(width: 1, color: Color(0xFFF47920))
+                    ? Border.all(width: 2, color: Color(0xFFF47920))
                     : null,
                 borderRadius: BorderRadius.circular(50),
                 image: DecorationImage(
@@ -32,16 +32,6 @@ class CategoryBtnContainerWidget extends StatelessWidget {
                   ),
                   fit: BoxFit.cover,
                 ),
-                boxShadow: model.activeCategory == category.title
-                    ? [
-                        BoxShadow(
-                          color: Color(0xFFF47920),
-                          spreadRadius: 1,
-                          blurRadius: 3,
-                          // offset: Offset(0, 0),
-                        ),
-                      ]
-                    : null,
               ),
             ),
             Text(

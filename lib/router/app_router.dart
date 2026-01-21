@@ -27,6 +27,13 @@ class AppRouter extends RootStackRouter {
       predictiveBackPageTransitionsBuilder: TransitionsBuilders.noTransition,
       duration: Duration(milliseconds: 200),
     ),
+    CustomRoute(
+      path: '/preparation-order',
+      page: PreparationOrderRoute.page,
+      transitionsBuilder: TransitionsBuilders.fadeIn,
+      predictiveBackPageTransitionsBuilder: TransitionsBuilders.noTransition,
+      duration: Duration(milliseconds: 200),
+    ),
     AutoRoute(path: '/alert', page: AlertRoute.page),
   ];
 }

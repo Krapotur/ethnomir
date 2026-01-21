@@ -16,10 +16,9 @@ class CategoriesListviewWidget extends StatelessWidget {
       Category(title: 'Салаты', fileId: 'salat'),
       Category(title: 'Десерт', fileId: 'desert'),
     ];
-    return Container(
+    return SizedBox(
       height: 110,
       width: MediaQuery.of(context).size.width,
-
       child: ListView.separated(
         padding: EdgeInsets.only(left: 10, top: 5, right: 15, bottom: 5),
         scrollDirection: Axis.horizontal,

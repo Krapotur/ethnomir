@@ -49,6 +49,7 @@ flutter:
     - assets/images/auth_screen/
     - assets/images/rest/
     - assets/images/menu/
+    - assets/images/status_img/
     - assets/images/categories_img/
 
   fonts:

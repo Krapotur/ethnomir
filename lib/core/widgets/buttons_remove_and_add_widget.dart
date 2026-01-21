@@ -20,7 +20,7 @@ class ButtonsRemoveAndAddWidget extends StatelessWidget {
         GestureDetector(
           onTap: () => model.removePosition(position: position),
           child: Container(
-            padding: EdgeInsets.all(3),
+            padding: EdgeInsets.all(5),
             decoration: BoxDecoration(
               border: Border.all(
                 width: 2,
@@ -36,7 +36,7 @@ class ButtonsRemoveAndAddWidget extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: 7),
         Text(
           model.getQuantityPositionInOrder(position: position),
           style: theme.textTheme.titleMedium!.copyWith(
@@ -44,11 +44,11 @@ class ButtonsRemoveAndAddWidget extends StatelessWidget {
             fontSize: 16,
           ),
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: 7),
         GestureDetector(
           onTap: () => model.addPosition(position: position, context: context),
           child: Container(
-            padding: EdgeInsets.all(3),
+            padding: EdgeInsets.all(5),
             decoration: BoxDecoration(
               border: Border.all(
                 width: 2,

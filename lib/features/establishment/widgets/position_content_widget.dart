@@ -1,4 +1,5 @@
 import 'package:ethnomir/features/cart/provider/model.dart';
+import 'package:ethnomir/features/cart/widgets/widgets.dart';
 import 'package:ethnomir/repositories/models.dart';
 import 'package:ethnomir/repositories/position/model/position.dart';
 import 'package:flutter/material.dart';
@@ -64,22 +65,26 @@ class PositionContentWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              GestureDetector(
-                child: Container(
-                  padding: const EdgeInsets.all(3),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor,
-                    borderRadius: BorderRadiusDirectional.circular(30),
-                  ),
-                  child: const Icon(
-                    Icons.add_outlined,
-                    color: Colors.white,
-                    size: 28,
-                  ),
-                ),
-                onTap: () =>
-                    model.addPosition(position: position, context: context),
-              ),
+              model.cart.contains(position)
+                  ? ButtonsRemoveAndAddWidget(position: position)
+                  : GestureDetector(
+                      child: Container(
+                        padding: const EdgeInsets.all(3),
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
+                          borderRadius: BorderRadiusDirectional.circular(30),
+                        ),
+                        child: const Icon(
+                          Icons.add_outlined,
+                          color: Colors.white,
+                          size: 28,
+                        ),
+                      ),
+                      onTap: () => model.addPosition(
+                        position: position,
+                        context: context,
+                      ),
+                    ),
             ],
           ),
         ),

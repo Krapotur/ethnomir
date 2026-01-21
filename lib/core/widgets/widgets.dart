@@ -1,7 +1,7 @@
 export 'card_widget.dart';
-export 'avatar_widget.dart';
 export './badge_widget.dart';
 export './raiting_widget.dart';
 export './btn_to_back_widget.dart';
 export './btn_close_widget.dart';
 export './floating_button_cart_widget.dart';
+export './buttons_remove_and_add_widget.dart';
