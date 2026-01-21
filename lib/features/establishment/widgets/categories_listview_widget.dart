@@ -17,22 +17,15 @@ class CategoriesListviewWidget extends StatelessWidget {
       Category(title: 'Десерт', fileId: 'desert'),
     ];
     return Container(
-      height: 100,
+      height: 110,
       width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(18),
-          bottomRight: Radius.circular(18),
-        ),
-      ),
+
       child: ListView.separated(
         padding: EdgeInsets.only(left: 10, top: 5, right: 15, bottom: 5),
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
-        itemBuilder: (context, index) => CategoryBtnContainerWidget(
-          category: categories[index],
-          isSelect: false,
-        ),
+        itemBuilder: (context, index) =>
+            CategoryBtnContainerWidget(category: categories[index]),
         separatorBuilder: (context, index) => const SizedBox(width: 15),
       ),
     );

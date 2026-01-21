@@ -1,11 +1,13 @@
+import 'package:ethnomir/features/cart/provider/db.dart';
 import 'package:ethnomir/repositories/models.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
 class CartModel with ChangeNotifier {
   var logger = Logger(printer: PrettyPrinter());
-  bool isSelect = false;
+  String activeCategory = '';
   List<Position> cart = [];
+  List<Position> positionsList = positions;
 
   void addPosition({
     required Position position,
@@ -13,7 +15,7 @@ class CartModel with ChangeNotifier {
   }) {
     if (getQuantityPositionInCart() < 10) {
       if (!cart.contains(position)) {
-           for (var el in cart) {
+        for (var el in cart) {
           if (el.id == position.id) {
             el.quantityInCart += 1;
           }
@@ -37,7 +39,7 @@ class CartModel with ChangeNotifier {
       if (el.id == position.id) {
         if (el.quantityInCart != 0) {
           el.quantityInCart -= 1;
-        } 
+        }
       }
     }
     if (position.quantityInCart == 0) {
@@ -90,9 +92,23 @@ class CartModel with ChangeNotifier {
     return quantity;
   }
 
-  void selectCategory() {
-    logger.w(isSelect);
-    isSelect ? isSelect = false : isSelect = true;
+  void selectCategory({required Category category}) {
+    activeCategory = category.title;
+    getPositionsByCategory(category: category.title);
+  }
+
+  void getPositionsByCategory({required String category}) {
+    List<Position> newPositionList = [];
+
+    for (var position in positions) {
+      if (position.positionCategoryId == category) {
+        newPositionList.add(position);
+      }
+    }
+    if (newPositionList.isNotEmpty) {
+      positionsList = newPositionList;
+    }
+
     notifyListeners();
   }
 
