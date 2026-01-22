@@ -8,7 +8,6 @@ class CategoriesListviewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Category> categories = [
-      // Category(title: 'Популярное', imgTitle: 'baran'),
       Category(title: 'Горячее', fileId: 'hot'),
       Category(title: 'Напитки', fileId: 'drink'),
       Category(title: 'Детям', fileId: 'kids'),
