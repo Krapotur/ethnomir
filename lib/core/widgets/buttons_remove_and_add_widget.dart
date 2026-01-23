@@ -1,6 +1,7 @@
 import 'package:ethnomir/features/cart/provider/model.dart';
 import 'package:ethnomir/repositories/position/model/position.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class ButtonsRemoveAndAddWidget extends StatelessWidget {
@@ -18,13 +19,16 @@ class ButtonsRemoveAndAddWidget extends StatelessWidget {
       mainAxisSize: .min,
       children: [
         GestureDetector(
-          onTap: () => model.removePosition(position: position),
+          onTap: () {
+            HapticFeedback.mediumImpact();
+            model.removePosition(position: position);
+          },
           child: Container(
             padding: EdgeInsets.all(5),
             decoration: BoxDecoration(
               border: Border.all(
-                width: 2,
-                color: const Color.fromARGB(255, 194, 194, 194),
+                width: 1,
+                color: const Color.fromARGB(255, 223, 223, 223),
               ),
               borderRadius: BorderRadius.circular(10),
             ),
@@ -46,13 +50,16 @@ class ButtonsRemoveAndAddWidget extends StatelessWidget {
         ),
         const SizedBox(width: 7),
         GestureDetector(
-          onTap: () => model.addPosition(position: position, context: context),
+          onTap: () {
+            HapticFeedback.mediumImpact();
+            model.addPosition(position: position, context: context);
+          },
           child: Container(
             padding: EdgeInsets.all(5),
             decoration: BoxDecoration(
               border: Border.all(
-                width: 2,
-                color: const Color.fromARGB(255, 194, 194, 194),
+                width: 1,
+                color: const Color.fromARGB(255, 223, 223, 223),
               ),
               borderRadius: BorderRadius.circular(10),
             ),

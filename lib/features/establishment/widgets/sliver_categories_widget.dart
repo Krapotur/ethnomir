@@ -20,7 +20,7 @@ class _SliverCategoriesWidgetState extends State<SliverCategoriesWidget> {
       backgroundColor: const Color.fromARGB(241, 255, 255, 255),
       surfaceTintColor: const Color.fromARGB(241, 255, 255, 255),
       bottom: PreferredSize(
-        preferredSize: Size.fromHeight(65),
+        preferredSize: Size.fromHeight(45),
         child: CategoriesListviewWidget(),
       ),
     );

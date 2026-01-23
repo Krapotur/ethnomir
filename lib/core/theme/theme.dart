@@ -2,13 +2,22 @@ import 'package:flutter/material.dart';
 
 final primaryTheme = ThemeData(
   useMaterial3: true,
+  pageTransitionsTheme: PageTransitionsTheme(
+    builders: {
+      TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+      TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+      TargetPlatform.linux: FadeUpwardsPageTransitionsBuilder(),
+      TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
+      TargetPlatform.windows: FadeUpwardsPageTransitionsBuilder(),
+    },
+  ),
   scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255),
   appBarTheme: const AppBarTheme(
     actionsIconTheme: IconThemeData(color: Color.fromARGB(255, 87, 87, 87)),
     backgroundColor: Color.fromARGB(255, 255, 255, 255),
   ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.transparent,
     unselectedIconTheme: IconThemeData(
       color: Color.fromARGB(255, 115, 115, 115),
     ),

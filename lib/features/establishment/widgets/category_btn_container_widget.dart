@@ -1,3 +1,4 @@
+import 'package:ethnomir/core/widgets/widgets.dart';
 import 'package:ethnomir/features/cart/provider/model.dart';
 import 'package:ethnomir/repositories/models.dart';
 import 'package:flutter/material.dart';
@@ -18,22 +19,7 @@ class CategoryBtnContainerWidget extends StatelessWidget {
         child: Column(
           mainAxisSize: .min,
           children: [
-            Container(
-              height: model.activeCategory == category.title ? 72 : 70,
-              width: model.activeCategory == category.title ? 72 : 70,
-              decoration: BoxDecoration(
-                border: model.activeCategory == category.title
-                    ? Border.all(width: 2, color: Color(0xFFF47920))
-                    : null,
-                borderRadius: BorderRadius.circular(50),
-                image: DecorationImage(
-                  image: AssetImage(
-                    'assets/images/categories_img/${category.fileId}.png',
-                  ),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
+            PreloaderAssetImageWidget(category: category),
             Text(
               category.title,
               style: TextStyle(
@@ -48,3 +34,4 @@ class CategoryBtnContainerWidget extends StatelessWidget {
     );
   }
 }
+

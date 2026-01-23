@@ -8,6 +8,8 @@ class CardEstablishmenttWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -44,20 +46,34 @@ class CardEstablishmenttWidget extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.15,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10),
-                  topRight: Radius.circular(10),
-                ),
-                image: DecorationImage(
-                  image: AssetImage(
-                    'assets/images/rest/${establishment.fileId}.png',
+            child: Stack(
+              alignment: .center,
+              children: [
+                Container(
+                  color: Colors.transparent,
+                  child: Center(
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2,
+                      valueColor: AlwaysStoppedAnimation(theme.primaryColor),
+                    ),
                   ),
-                  fit: BoxFit.cover,
                 ),
-              ),
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.15,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                    ),
+                    image: DecorationImage(
+                      image: AssetImage(
+                        'assets/images/rest/${establishment.fileId}.png',
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           ContentCardEstablishmentWidget(establishment: establishment),

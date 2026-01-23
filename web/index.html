@@ -34,44 +34,90 @@
 </head>
 <body>
    <script>
-    // Предотвращаем навигацию жестами
-    history.pushState(null, null, location.href);
-    window.onpopstate = function(event) {
-      history.go(1); // Всегда остаемся на текущей странице
-    };
-
-    // Блокировка жестов свайпа
-    document.addEventListener('touchstart', handleTouchStart, {passive: false});
-    document.addEventListener('touchmove', handleTouchMove, {passive: false});
+    // === ПОЛНАЯ БЛОКИРОВКА СВАЙПОВ БРАУЗЕРА ===
     
-    let xDown = null;
-    let yDown = null;
-
-    function handleTouchStart(evt) {
-      xDown = evt.touches[0].clientX;
-      yDown = evt.touches[0].clientY;
-    }
-
-    function handleTouchMove(evt) {
-      if (!xDown || !yDown) return;
+    // 1. Блокировка навигации через историю
+    (function() {
+      // Добавляем текущую страницу в историю
+      history.pushState(null, null, location.href);
       
-      const xUp = evt.touches[0].clientX;
-      const yUp = evt.touches[0].clientY;
+      // Блокируем кнопку "назад" браузера
+      window.onpopstate = function(event) {
+        // Всегда возвращаемся на текущую страницу
+        history.go(1);
+        
+        // Можно показать уведомление
+        if (window.flutter_inappwebview) {
+          window.flutter_inappwebview.callHandler('showToast', 'Навигация заблокирована');
+        }
+      };
+    })();
+    
+    // 2. Блокировка жестов свайпа
+    document.addEventListener('DOMContentLoaded', function() {
+      let touchStartX = 0;
+      let touchStartY = 0;
+      const edgeThreshold = 30; // Пиксели от края для блокировки
+      const minSwipeDistance = 20; // Минимальное расстояние свайпа
       
-      const xDiff = xDown - xUp;
-      const yDiff = yDown - yUp;
+      // Начало касания
+      document.addEventListener('touchstart', function(e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        
+        // Блокируем мультитач и масштабирование
+        if (e.touches.length > 1) {
+          e.preventDefault();
+        }
+      }, { passive: false });
       
-      // Блокируем горизонтальные свайпы у краев экрана
-      const edgeThreshold = 50;
-      const isNearLeftEdge = xDown < edgeThreshold;
-      const isNearRightEdge = xDown > window.innerWidth - edgeThreshold;
+      // Движение пальцем
+      document.addEventListener('touchmove', function(e) {
+        const touchX = e.touches[0].clientX;
+        const touchY = e.touches[0].clientY;
+        
+        const deltaX = touchX - touchStartX;
+        const deltaY = touchY - touchStartY;
+        
+        // Определяем, начинается ли свайп у края экрана
+        const isNearLeftEdge = touchStartX < edgeThreshold;
+        const isNearRightEdge = touchStartX > window.innerWidth - edgeThreshold;
+        
+        // Если горизонтальный свайп у края экрана - блокируем
+        if ((isNearLeftEdge || isNearRightEdge) && 
+            Math.abs(deltaX) > Math.abs(deltaY) && 
+            Math.abs(deltaX) > minSwipeDistance) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Вибрация (если поддерживается)
+          if (navigator.vibrate) {
+            navigator.vibrate(50);
+          }
+        }
+      }, { passive: false });
       
-      if ((isNearLeftEdge || isNearRightEdge) && Math.abs(xDiff) > Math.abs(yDiff)) {
-        // Горизонтальный свайп у края экрана - блокируем
-        evt.preventDefault();
-        evt.stopPropagation();
+      // Блокировка контекстного меню (долгое нажатие)
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+      });
+    });
+    
+    // 3. Блокировка клавиш навигации (Alt+Left/Right, Backspace)
+    document.addEventListener('keydown', function(e) {
+      // Блокировка Alt+Left (назад) и Alt+Right (вперед)
+      if (e.altKey && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+        e.preventDefault();
+        e.stopPropagation();
       }
-    }
+      
+      // Блокировка Backspace для навигации назад
+      if (e.key === 'Backspace' && e.target === document.body) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
   </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>

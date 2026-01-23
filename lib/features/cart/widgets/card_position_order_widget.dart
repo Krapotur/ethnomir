@@ -1,6 +1,7 @@
 import 'package:ethnomir/features/cart/provider/model.dart';
 import 'package:ethnomir/features/cart/widgets/widgets.dart';
 import 'package:ethnomir/features/establishment/widgets/discont_widget.dart';
+import 'package:ethnomir/features/establishment/widgets/widgets.dart';
 import 'package:ethnomir/repositories/position/model/position.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -24,27 +25,36 @@ class CardPositionOrderWidget extends StatelessWidget {
         children: [
           Row(
             children: [
-              Container(
-                height: 80,
-                width: 80,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      'assets/images/menu/${position.fileId}.png',
-                    ),
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: BorderRadius.circular(18),
-                ),
-                child: SizedBox(
+              GestureDetector(
+                child: Container(
                   height: 80,
-                  child: Stack(
-                    children: [
-                      position.discont > 0
-                          ? DiscontWidget(discont: position.discont)
-                          : const SizedBox.shrink(),
-                    ],
+                  width: 80,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                        'assets/images/menu/${position.fileId}.png',
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.circular(18),
                   ),
+                  child: SizedBox(
+                    height: 80,
+                    child: Stack(
+                      children: [
+                        position.discont > 0
+                            ? DiscontWidget(discont: position.discont)
+                            : const SizedBox.shrink(),
+                      ],
+                    ),
+                  ),
+                ),
+                onTap: () => showModalBottomSheet(
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  context: context,
+                  builder: (context) =>
+                      InfoAboutPositionWidget(position: position),
                 ),
               ),
 
@@ -54,12 +64,16 @@ class CardPositionOrderWidget extends StatelessWidget {
                 crossAxisAlignment: .start,
                 children: [
                   Text(
-                    '${position.title}, ${position.weight}г',
+                    '${position.title}, ${position.weight}${position.positionCategoryId == 'Напитки'?'мл' : 'г' }',
                     style: theme.textTheme.bodyMedium,
                   ),
                   Text(
                     '${position.price}р',
-                    style: theme.textTheme.bodySmall!.copyWith(color: Colors.grey, fontSize: 11, height: 0.7),
+                    style: theme.textTheme.bodySmall!.copyWith(
+                      color: Colors.grey,
+                      fontSize: 11,
+                      height: 0.7,
+                    ),
                   ),
 
                   const SizedBox(height: 25),

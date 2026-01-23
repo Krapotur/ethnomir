@@ -3,6 +3,7 @@ import 'package:ethnomir/features/cart/widgets/widgets.dart';
 import 'package:ethnomir/repositories/models.dart';
 import 'package:ethnomir/repositories/position/model/position.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class PositionContentWidget extends StatelessWidget {
@@ -18,16 +19,21 @@ class PositionContentWidget extends StatelessWidget {
       mainAxisSize: .min,
       children: [
         Flexible(
-          child: Text(
-            position.title,
-            style: const TextStyle(
-              overflow: TextOverflow.ellipsis,
-              fontSize: 14,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 5.0),
+            child: Text(
+              position.title,
+              style: const TextStyle(
+                overflow: TextOverflow.ellipsis,
+                fontSize: 14,
+                height: 0.9,
+              ),
+              maxLines: 2,
             ),
           ),
         ),
         Text(
-          '${position.weight}г * ${position.caloric}ккал',
+          '${position.weight}${position.positionCategoryId == 'Напитки'?'мл' : 'г' } * ${position.caloric}ккал',
           style: TextStyle(fontSize: 10, color: theme.hintColor),
         ),
         const SizedBox(height: 10),
@@ -80,10 +86,10 @@ class PositionContentWidget extends StatelessWidget {
                           size: 28,
                         ),
                       ),
-                      onTap: () => model.addPosition(
-                        position: position,
-                        context: context,
-                      ),
+                      onTap: () {
+                        HapticFeedback.mediumImpact();
+                        model.addPosition(position: position, context: context);
+                      },
                     ),
             ],
           ),

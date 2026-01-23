@@ -5,3 +5,5 @@ export './btn_to_back_widget.dart';
 export './btn_close_widget.dart';
 export './floating_button_cart_widget.dart';
 export './buttons_remove_and_add_widget.dart';
+export './banner_widget.dart';
+export './preloader_img_widget.dart';

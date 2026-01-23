@@ -40,7 +40,11 @@ class _CardPositionWidgetState extends State<CardPositionWidget> {
               height: 120,
               child: Stack(
                 children: [
-                  ImagePositionWidget(positionImg: widget.position.fileId),
+                  PreloaderAssetImageWidget(
+                    position: widget.position,
+                    height: 160,
+                  ),
+                  // ImagePositionWidget(positionImg: widget.position.fileId),
                   widget.position.isNew
                       ? BadgeWidget(title: 'Новинка', isAlignLeft: false)
                       : const SizedBox.shrink(),

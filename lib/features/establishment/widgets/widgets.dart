@@ -13,7 +13,6 @@ export 'appbar_title_widget.dart';
 export 'sliver_info_establishment_widget.dart';
 export 'sliver_categories_widget.dart';
 export 'sliver_grid_positions_widget.dart';
-export 'image_position_widget.dart';
 export 'position_content_widget.dart';
 export 'modal/info_about_position_widget.dart';
 export 'modal/description_position.dart';

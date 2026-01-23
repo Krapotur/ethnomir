@@ -191,23 +191,6 @@ class _SliverAppbarWidgetState extends State<SliverAppbarWidget> {
                           //   style: theme.textTheme.labelSmall,
                           // ),
                           const Divider(),
-
-                          // Flexible(
-                          //   child: Text(
-                          //     textDirection: TextDirection.ltr,
-                          //     softWrap: true,
-                          //     maxLines: 10,
-                          //     'После долгой прогулки по парку, наполненной увлекательными приключениями, так хочется найти уютное место, чтобы подкрепиться, отдохнуть и не спеша обменяться полученными впечатлениями.',
-                          //   ),
-                          // ),
-                          // Flexible(
-                          //   child: Text(
-                          //     textDirection: TextDirection.ltr,
-                          //     softWrap: true,
-                          //     maxLines: 10,
-                          //     'Для этого идеально подходит ресторан восточной кухни «Чайхана»!',
-                          //   ),
-                          // ),
                         ],
                       ),
                     ),
