@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:ethnomir/router/app_router.gr.dart';
 import 'package:flutter/material.dart';
 
 class BtnToBackScreenWidget extends StatelessWidget {
@@ -13,7 +12,7 @@ class BtnToBackScreenWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           GestureDetector(
-            onTap: () => context.router.replaceAll([EstablishmentsRoute()]),
+            onTap: () => context.router.back(),
             child: Container(
               height: 40,
               width: 40,

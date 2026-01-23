@@ -63,34 +63,36 @@ class _EstablishmentsScreenState extends State<EstablishmentsScreen> {
   Widget build(BuildContext context) {
     final model = context.watch<CartModel>();
 
-    return PopScope(
-      child: Scaffold(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        surfaceTintColor: Colors.white,
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          surfaceTintColor: Colors.white,
-          backgroundColor: Colors.white,
-          title: const Text('Рестораны'),
-          centerTitle: true,
-        ),
-        body: ListView.separated(
-          padding: EdgeInsets.all(15),
-          itemCount: establishmentList.length,
-          itemBuilder: (context, index) => GestureDetector(
-            onTap: () => context.router.navigate(
-              EstablishmentRoute(establishment: establishmentList[index]),
-            ),
-            child: CardEstablishmenttWidget(
-              establishment: establishmentList[index],
-            ),
-          ),
-          separatorBuilder: (context, index) => const SizedBox(height: 15),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
-        floatingActionButton: model.cart.isNotEmpty
-            ? const FloatingButtonCartWidget()
-            : const SizedBox.shrink(),
+        title: const Text('Рестораны'),
+        centerTitle: true,
       ),
+      body: ListView.separated(
+        padding: EdgeInsets.all(15),
+        itemCount: establishmentList.length,
+        itemBuilder: (context, index) => GestureDetector(
+          onTap: () => context.router.navigate(
+            EstablishmentRoute(establishment: establishmentList[index]),
+          ),
+
+          // context.router.push(
+          //   EstablishmentRoute(establishment: establishmentList[index]),
+          // ),
+          child: CardEstablishmenttWidget(
+            establishment: establishmentList[index],
+          ),
+        ),
+        separatorBuilder: (context, index) => const SizedBox(height: 15),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+      floatingActionButton: model.cart.isNotEmpty
+          ? const FloatingButtonCartWidget()
+          : const SizedBox.shrink(),
     );
   }
 

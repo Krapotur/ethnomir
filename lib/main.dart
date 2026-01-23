@@ -1,33 +1,36 @@
-import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:ethnomir/core/theme/theme.dart';
 import 'package:ethnomir/features/cart/provider/model.dart';
 import 'package:ethnomir/router/app_router.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:url_strategy/url_strategy.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  void _initSwipeBlocker() {
-    // Блокируем ВСЕ системные свайпы и кнопку "Назад"
-    BackButtonInterceptor.add(
-      (bool stopDefaultButtonEvent, RouteInfo info) {
-        print('Блокировка навигации браузера');
+  Future<void> _configureWeb() async {
+    // Дополнительные настройки для Web
+    await Future.delayed(Duration.zero);
 
-        // Всегда возвращаем true для блокировки
-        // Это предотвратит:
-        // 1. Свайп слева для "назад"
-        // 2. Свайп справа для "вперед"
-        // 3. Кнопку "Назад" в браузере
-        return true;
-      },
-      name: 'BrowserSwipeBlocker',
-      zIndex: 1000,
-    );
+    // Можно добавить Service Worker регистрацию
+    // или другие Web-specific настройки
   }
 
-  // Инициализация блокировщика перед запуском приложения
-  _initSwipeBlocker();
+  if (kIsWeb) {
+    // Убираем # только на Web
+    setPathUrlStrategy();
+
+    // Настройка для PWA
+    await _configureWeb();
+  }
+
+  // Ориентация портретная по умолчанию
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
 
   runApp(
     MultiProvider(

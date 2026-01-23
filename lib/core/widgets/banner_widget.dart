@@ -10,12 +10,12 @@ class BannerWidget extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-      child: Stack(
-        alignment: AlignmentGeometry.bottomRight,
-        children: [
-          InkWell(
-            onTap: () => _openLink(context),
-            child: Container(
+      child: InkWell(
+        onTap: () => _openLink(context),
+        child: Stack(
+          alignment: AlignmentGeometry.bottomRight,
+          children: [
+            Container(
               height: 100,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
@@ -26,36 +26,36 @@ class BannerWidget extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10, bottom: 10),
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(185, 255, 255, 255),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              crossAxisAlignment: .start,
-              mainAxisSize: .min,
-              children: [
-                Text(
-                  'Широкая масленица',
-                  style: theme.textTheme.titleMedium!.copyWith(
-                    fontWeight: .bold,
-                    height: 1,
+            Container(
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.only(right: 10, bottom: 10),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(185, 255, 255, 255),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                crossAxisAlignment: .start,
+                mainAxisSize: .min,
+                children: [
+                  Text(
+                    'Широкая масленица',
+                    style: theme.textTheme.titleMedium!.copyWith(
+                      fontWeight: .bold,
+                      height: 1,
+                    ),
                   ),
-                ),
-                Text(
-                  '21 - 22 февраля',
-                  style: theme.textTheme.titleMedium!.copyWith(
-                    fontWeight: .bold,
-                    height: 0.8,
+                  Text(
+                    '21 - 22 февраля',
+                    style: theme.textTheme.titleMedium!.copyWith(
+                      fontWeight: .bold,
+                      height: 0.8,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
