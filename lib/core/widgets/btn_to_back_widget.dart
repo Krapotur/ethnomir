@@ -12,7 +12,7 @@ class BtnToBackScreenWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           GestureDetector(
-            onTap: () => context.router.back(),
+            onTap: () => context.router.maybePop(),
             child: Container(
               height: 40,
               width: 40,
