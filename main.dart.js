@@ -38250,7 +38250,7 @@ o=A.bo(q,q,B.n,q,new A.bi(q,A.pb(B.bI,new A.fw("assets/images/banner.png",q,q)),
 n=A.cK(10)
 s=p.ok.w
 r=t.p
-return new A.c9(B.BH,A.anx(!1,!0,A.fU(B.jS,A.c([o,A.bo(q,A.dD(A.c([A.be("\u0428\u0438\u0440\u043e\u043a\u0430\u044f \u043c\u0430\u0441\u043b\u0435\u043d\u0438\u0446\u0430",q,s.MT(B.ah,1),q),A.be("21 - 22 \u0444\u0435\u0432\u0440\u0430\u043b\u044f",q,s.MT(B.ah,0.8),q)],r),B.aa,B.E,B.a4),B.n,q,new A.bi(B.AE,q,q,n,q,q,B.A),q,new A.ad(0,0,10,10),new A.ad(10,10,10,10),q)],r),B.L,B.b2),q,!0,q,q,q,q,q,q,new A.Tz(this,a),q,q,q),q)},
+return A.anx(!1,!0,new A.c9(B.BH,A.fU(B.jS,A.c([o,A.bo(q,A.dD(A.c([A.be("\u0428\u0438\u0440\u043e\u043a\u0430\u044f \u043c\u0430\u0441\u043b\u0435\u043d\u0438\u0446\u0430",q,s.MT(B.ah,1),q),A.be("21 - 22 \u0444\u0435\u0432\u0440\u0430\u043b\u044f",q,s.MT(B.ah,0.8),q)],r),B.aa,B.E,B.a4),B.n,q,new A.bi(B.AE,q,q,n,q,q,B.A),q,new A.ad(0,0,10,10),new A.ad(10,10,10,10),q)],r),B.L,B.b2),q),q,!0,q,q,q,q,q,q,new A.Tz(this,a),q,q,q)},
 pv(a){return this.a2A(a)},
 a2A(a){var s=0,r=A.M(t.H),q=1,p=[],o=this,n,m,l,k
 var $async$pv=A.N(function(b,c){if(b===1){p.push(c)
