@@ -8,10 +8,10 @@ class BannerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-      child: InkWell(
-        onTap: () => _openLink(context),
+    return InkWell(
+      onTap: () => _openLink(context),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
         child: Stack(
           alignment: AlignmentGeometry.bottomRight,
           children: [
