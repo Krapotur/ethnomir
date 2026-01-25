@@ -1,6 +1,5 @@
 import 'package:ethnomir/features/cart/provider/model.dart';
 import 'package:ethnomir/features/cart/widgets/widgets.dart';
-import 'package:ethnomir/features/establishment/widgets/discont_widget.dart';
 import 'package:ethnomir/features/establishment/widgets/widgets.dart';
 import 'package:ethnomir/repositories/position/model/position.dart';
 import 'package:flutter/material.dart';

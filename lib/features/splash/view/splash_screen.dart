@@ -26,28 +26,27 @@ class _SplashScreenState extends State<SplashScreen> {
     // getParams();
     Future.delayed(const Duration(seconds: 2), () {
       if (mounted) {
-        context.router.replaceAll(
-          [
-            MediaQuery.of(context).size.width > 800
-                ? AlertRoute()
-                : EstablishmentsRoute(),
-          ],
+        context.router.replace(
+          MediaQuery.of(context).size.width > 800
+              ? AlertRoute()
+              : EstablishmentsRoute(),
+
           // [CartRoute()],
           // [PreparationOrderRoute()],
           // [
-          //   EstablishmentRoute(
-          //     establishment: Establishment(
-          //       title: 'Мудрый кочевник',
-          //       kitchen: 'Восточная',
-          //       isActive: true,
-          //       establishmentTypeId: 'Кафе',
-          //       description: 'Отличное место',
-          //       deliveryPrice: '1100',
-          //       isDeliveryFreeThreshold: false,
-          //       deliveryTime: '45',
-          //       fileId: 'kochevnik',
-          //     ),
+          // EstablishmentRoute(
+          //   establishment: Establishment(
+          //     title: 'Мудрый кочевник',
+          //     kitchen: 'Восточная',
+          //     isActive: true,
+          //     establishmentTypeId: 'Кафе',
+          //     description: 'Отличное место',
+          //     deliveryPrice: '1100',
+          //     isDeliveryFreeThreshold: false,
+          //     deliveryTime: '45',
+          //     fileId: 'kochevnik',
           //   ),
+          // ),
           // ],
         );
       }

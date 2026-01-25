@@ -24,7 +24,7 @@ class SliverAppbarWidget extends StatelessWidget {
       ),
       centerTitle: true,
       leading: GestureDetector(
-        onTap: () => context.router.maybePop(),
+        onTap: () => context.router.pop(),
         child: Icon(Icons.chevron_left, size: 35),
       ),
       actions: [

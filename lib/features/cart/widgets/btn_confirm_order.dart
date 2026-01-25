@@ -20,7 +20,7 @@ class BtnConfirmOrderWidget extends StatelessWidget {
 
     return GestureDetector(
       onTap: () => model.cart.isEmpty
-          ? context.router.replaceAll([EstablishmentsRoute()])
+          ? context.router.replace(EstablishmentsRoute())
           : context.router.push(PreparationOrderRoute()),
       child: Container(
         margin: EdgeInsets.only(left: 10, right: 10, bottom: 20),

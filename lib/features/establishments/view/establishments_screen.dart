@@ -76,7 +76,7 @@ class _EstablishmentsScreenState extends State<EstablishmentsScreen> {
         padding: EdgeInsets.all(15),
         itemCount: establishmentList.length,
         itemBuilder: (context, index) => GestureDetector(
-          onTap: () => context.router.navigate(
+          onTap: () => context.router.push(
             EstablishmentRoute(establishment: establishmentList[index]),
           ),
 

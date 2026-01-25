@@ -58,7 +58,7 @@ class CartModel with ChangeNotifier {
   int getSumAmount() {
     int amount = 0;
     for (var position in cart) {
-      amount += int.parse(position.price) * position.quantityInCart;
+      amount += getDiscontPrice(position: position) * position.quantityInCart;
     }
     return amount;
   }
